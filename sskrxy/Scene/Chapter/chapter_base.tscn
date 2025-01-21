@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ewp2hrkovssq"]
+
+[ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/BG/c1.png" id="1_xe43n"]
+
+[node name="ChapterBase" type="Node2D"]
+
+[node name="BG" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xe43n")

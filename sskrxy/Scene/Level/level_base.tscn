@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b18163ipdt2ox"]
+
+[ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/BG/L1/主3.PNG" id="1_awqdd"]
+[ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/BG/L1/主2.PNG" id="2_g82cb"]
+[ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/BG/L1/主1.PNG" id="3_8noda"]
+[ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
+
+[node name="LevelBase" type="Node2D"]
+
+[node name="Edge" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Edge"]
+build_mode = 1
+polygon = PackedVector2Array(565.9, 0, 565.9, 1080, 1375.9, 1080, 1375.9, 0)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(565.9, 0)
+scale = Vector2(0.5625, 0.5625)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("1_awqdd")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("2_g82cb")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasGroup"]
+texture = ExtResource("3_8noda")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("4_g82cb")]
+position = Vector2(960, 857)
