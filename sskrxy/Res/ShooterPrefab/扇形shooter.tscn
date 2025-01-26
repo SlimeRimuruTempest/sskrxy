@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://badyl3axqy4bi"]
+
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="1_oq0f3"]
+
+[node name="扇形Shooter" instance=ExtResource("1_oq0f3")]
+bullet_rot_start = 240.0
+bullet_rot_offset = 30.0
+shoot_num = 10.0

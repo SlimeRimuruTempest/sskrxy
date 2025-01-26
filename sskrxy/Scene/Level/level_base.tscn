@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=6 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/BG/L1/主3.PNG" id="1_awqdd"]
 [ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/BG/L1/主2.PNG" id="2_g82cb"]
 [ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/BG/L1/主1.PNG" id="3_8noda"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
+
+[sub_resource type="GDScript" id="GDScript_8noda"]
+script/source = "extends Marker2D
+"
 
 [node name="LevelBase" type="Node2D"]
 
@@ -29,5 +33,12 @@ centered = false
 texture = ExtResource("3_8noda")
 centered = false
 
+[node name="Root" type="Marker2D" parent="." groups=["Marker"]]
+position = Vector2(960, 200)
+script = SubResource("GDScript_8noda")
+
 [node name="Player" parent="." instance=ExtResource("4_g82cb")]
 position = Vector2(960, 857)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+autoplay = true

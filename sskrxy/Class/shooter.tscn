@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs7idtpfatvw7"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_rc0l3"]
+
+[node name="Shooter" type="Node2D"]
+script = ExtResource("1_rc0l3")
+metadata/_custom_type_script = ExtResource("1_rc0l3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
