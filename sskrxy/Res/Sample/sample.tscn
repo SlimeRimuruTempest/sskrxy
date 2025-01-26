@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=8 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_fnby8"]
+[ext_resource type="PackedScene" uid="uid://do70dgaywyjxi" path="res://Res/Sample/环形shooter.tscn" id="2_rhpqf"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_h52jr"]
 [ext_resource type="PackedScene" uid="uid://badyl3axqy4bi" path="res://Res/ShooterPrefab/扇形shooter.tscn" id="4_3lyvt"]
+[ext_resource type="PackedScene" uid="uid://bhmh0a2o8qea0" path="res://Res/Sample/烟花bullet.tscn" id="5_b0w5h"]
+[ext_resource type="PackedScene" uid="uid://w2jodrnkcqpg" path="res://Res/Sample/连续扇形shooter.tscn" id="5_utjr0"]
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
-[node name="Shooter" parent="." index="5" instance=ExtResource("2_fnby8")]
+[node name="环形Shooter" parent="Root" index="0" instance=ExtResource("2_rhpqf")]
+position = Vector2(-195, -37)
+
+[node name="Shooter" parent="Root" index="1" instance=ExtResource("2_fnby8")]
+position = Vector2(-78, 113)
 bullet_ps = ExtResource("3_h52jr")
 bullet_lifetime = 10.0
 bullet_rot_offset = 10.0
@@ -15,9 +22,14 @@ shoot_cd = 0.1
 shoot_num = 100.0
 start_time = 2.0
 
-[node name="扇形Shooter" parent="." index="6" instance=ExtResource("4_3lyvt")]
-bullet_ps = ExtResource("3_h52jr")
+[node name="扇形Shooter放烟花" parent="Root" index="2" instance=ExtResource("4_3lyvt")]
+position = Vector2(173, -45)
+bullet_ps = ExtResource("5_b0w5h")
 bullet_rot_start = 60.0
 bullet_rot_offset = 5.0
-shoot_num = 12.0
+shoot_num = 13.0
 start_time = 10.0
+
+[node name="连续扇形Shooter" parent="Root" index="3" instance=ExtResource("5_utjr0")]
+position = Vector2(187, 148)
+start_time = 12.0

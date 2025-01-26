@@ -20,11 +20,13 @@ class_name NodeSTG
 func _physics_process(delta: float) -> void:
 	var dir: Vector2 = Vector2.from_angle(deg_to_rad(rot_angle))
 	# TODO 加速度
-	position += dir * speed * delta
+	global_position += dir * speed * delta
 
 func delete():
-	if next_nodestg:
-		replace_by(next_nodestg.instantiate())
+	if next_nodestg != null:
+		var nt: NodeSTG = next_nodestg.instantiate()
+		marker.add_child(nt)
+		nt.global_position = self.global_position
 	queue_free()
 
 func _ready() -> void:

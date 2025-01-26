@@ -20,9 +20,10 @@ func _on_ready() -> void:
 	await get_tree().create_timer(start_time).timeout
 	for i in shoot_num:
 		var bullet: NodeSTG = bullet_ps.instantiate()
+		marker.add_child(bullet)
+		bullet.global_position = self.global_position
 		bullet.speed = bullet_speed
 		bullet.rot_angle = bullet_rot_start + i * bullet_rot_offset
 		bullet.lifetime = bullet_lifetime
-		marker.add_child.call_deferred(bullet)
 		if shoot_cd > 0.0:
 			await get_tree().create_timer(shoot_cd).timeout
