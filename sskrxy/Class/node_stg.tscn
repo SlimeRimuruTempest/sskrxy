@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnsvrubkc08em"]
+[gd_scene load_steps=3 format=3 uid="uid://cnsvrubkc08em"]
 
 [ext_resource type="Script" uid="uid://b5h1qqcaiuqka" path="res://Class/node_stg.gd" id="1_xajes"]
 
+[sub_resource type="Curve" id="Curve_xajes"]
+
 [node name="NodeSTG" type="Node2D"]
 script = ExtResource("1_xajes")
+lin_curve = SubResource("Curve_xajes")
 metadata/_custom_type_script = ExtResource("1_xajes")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cidaoyhe06v1g"]
-
-[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="1_pj0r0"]
-
-[node name="直线Shooter" instance=ExtResource("1_pj0r0")]
-bullet_lifetime = 10.0
-bullet_rot_start = 270.0
-shoot_cd = 0.05
-shoot_num = 50.0
