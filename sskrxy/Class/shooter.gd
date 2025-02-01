@@ -24,6 +24,7 @@ func _on_ready() -> void:
 		marker.add_child(bullet)
 		var pos_offset: Vector2 = dir * shoot_offset
 		bullet.global_position = self.global_position + pos_offset
+		bullet.ori_ang = ang
 		bullet.lin_curve = bullet_lin_curve
 		bullet.ang_curve = bullet_ang_curve
 		if shoot_cd > 0.0:
