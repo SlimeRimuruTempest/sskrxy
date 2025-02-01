@@ -3,6 +3,7 @@ class_name Shooter
 
 ## 出生到启动的等待时间
 @export var start_time: float
+
 ## 发射物
 @export var bullet_ps: PackedScene = null
 

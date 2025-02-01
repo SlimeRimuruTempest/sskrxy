@@ -10,8 +10,8 @@ class_name NodeSTG
 ## 角度曲线
 @export var ang_curve: Curve
 
-## 自己消失后顶替自己的节点
-@export var next_nodestg: PackedScene = null
+# 自己消失后顶替自己的节点
+#@export var next_nodestg: PackedScene = null
 
 var tot_time: float = 0
 
@@ -30,11 +30,8 @@ func _physics_process(delta: float) -> void:
 	global_position += dir * lin * delta
 
 func delete():
-	if next_nodestg != null:
-		var nt: NodeSTG = next_nodestg.instantiate()
-		marker.add_child(nt)
-		nt.global_position = self.global_position
+	#if next_nodestg != null:
+		#var nt: NodeSTG = next_nodestg.instantiate()
+		#marker.add_child(nt)
+		#nt.global_position = self.global_position
 	queue_free()
-
-func _ready() -> void:
-	pass

@@ -9,8 +9,9 @@
 motion_mode = 1
 script = ExtResource("1_67a6e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_a1qst")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_yic5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a1qst")
+debug_color = Color(1, 0, 0, 0.419608)

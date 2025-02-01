@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cui2h4b6424kg"]
+
+[ext_resource type="Script" uid="uid://byqnpmumtru8n" path="res://Class/disappear_area_detector.gd" id="1_r8oot"]
+
+[node name="DisappearAreaDetector" type="Area2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_r8oot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
