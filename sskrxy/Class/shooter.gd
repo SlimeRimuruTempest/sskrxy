@@ -8,8 +8,9 @@ class_name Shooter
 @export var bullet_ps: PackedScene = null
 
 ## 发射物曲线
-@export var bullet_lin_curve: Curve
-@export var bullet_ang_curve: Curve
+@export var bullet_lin_curve: Curve = Curve.new()
+
+@export var bullet_ang_curve: Curve = Curve.new()
 
 ## 发射位置在发射方向的偏移
 @export var shoot_offset: float
