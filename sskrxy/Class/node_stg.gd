@@ -3,7 +3,11 @@ class_name NodeSTG
 
 @onready var marker: = get_tree().get_first_node_in_group("Marker")
 
+## 以多少度角为0度角
+@export var ori_ang: float
+## 线速率曲线
 @export var lin_curve: Curve
+## 角度曲线
 @export var ang_curve: Curve
 
 ## 自己消失后顶替自己的节点
@@ -11,11 +15,18 @@ class_name NodeSTG
 
 var tot_time: float = 0
 
+var lin: float:
+	get:
+		return lin_curve.sample(tot_time)
+var ang: float:
+	get:
+		return ang_curve.sample(tot_time) + ori_ang
+var dir: Vector2:
+	get:
+		return Vector2.from_angle(deg_to_rad(ang))
+
 func _physics_process(delta: float) -> void:
 	tot_time += delta
-	var lin: float = lin_curve.sample(tot_time)
-	var ang: float = ang_curve.sample(tot_time)
-	var dir: Vector2 = Vector2.from_angle(deg_to_rad(ang))
 	global_position += dir * lin * delta
 
 func delete():

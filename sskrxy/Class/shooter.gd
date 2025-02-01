@@ -10,6 +10,8 @@ class_name Shooter
 @export var bullet_lin_curve: Curve
 @export var bullet_ang_curve: Curve
 
+## 发射位置在发射方向的偏移
+@export var shoot_offset: float
 ## 发射时间间隔
 @export var shoot_cd: float
 ## 发射数量
@@ -20,7 +22,8 @@ func _on_ready() -> void:
 	for i in shoot_num:
 		var bullet: NodeSTG = bullet_ps.instantiate()
 		marker.add_child(bullet)
-		bullet.global_position = self.global_position
+		var pos_offset: Vector2 = dir * shoot_offset
+		bullet.global_position = self.global_position + pos_offset
 		bullet.lin_curve = bullet_lin_curve
 		bullet.ang_curve = bullet_ang_curve
 		if shoot_cd > 0.0:
