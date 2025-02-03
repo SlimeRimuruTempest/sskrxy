@@ -1,32 +1,55 @@
 extends NodeSTG
 class_name Shooter
 
-## 出生到启动的等待时间
+## 出生到显示的等待时间
+@export var show_time: float
+## 显示到启动的等待时间
 @export var start_time: float
 
 ## 发射物
 @export var bullet_ps: PackedScene = null
 
-## 发射物曲线
-@export var bullet_lin_curve: Curve
-@export var bullet_ang_curve: Curve
+## 发射物速率曲线
+@export var bullet_lin_curve: Curve = Curve.new()
+## 发射物角度曲线
+@export var bullet_ang_curve: Curve = Curve.new()
+
+## 单次发射个数
+@export var once_num: float
+# 同时发射时每个子弹速率偏移曲线 x为第几发 x范围必须是[0,once_num) y为那一发相对原速率的偏移速率
+#@export var once_lin_curve: Curve = Curve.new()
+## 同时发射时每个子弹角度偏移曲线 x为第几发 x范围必须是[0,once_num) y为那一发相对原角度的偏移角度
+@export var once_ang_curve: Curve = Curve.new()
 
 ## 发射位置在发射方向的偏移
-@export var shoot_offset: float
+@export var shoot_pos_offset: float
 ## 发射时间间隔
 @export var shoot_cd: float
-## 发射数量
+## 发射次数
 @export var shoot_num: float
 
-func _on_ready() -> void:
-	await get_tree().create_timer(start_time).timeout
-	for i in shoot_num:
+func shoot_once():
+	for i in once_num:
+		#var lin_off: = once_lin_curve.sample(i)
+		var ang_off: = once_ang_curve.sample(i)
 		var bullet: NodeSTG = bullet_ps.instantiate()
 		marker.add_child(bullet)
-		var pos_offset: Vector2 = dir * shoot_offset
+		var pos_offset: Vector2 = get_dir(ang + ang_off) * shoot_pos_offset
 		bullet.global_position = self.global_position + pos_offset
-		bullet.ori_ang = ang
+		bullet.ori_ang = ang + ang_off
 		bullet.lin_curve = bullet_lin_curve
 		bullet.ang_curve = bullet_ang_curve
+
+func shoot():
+	await get_tree().create_timer(start_time).timeout
+	for i in shoot_num:
+		await shoot_once()
 		if shoot_cd > 0.0:
 			await get_tree().create_timer(shoot_cd).timeout
+	delete()
+
+func _on_ready() -> void:
+	hide()
+	await get_tree().create_timer(show_time).timeout
+	show()
+	shoot()
