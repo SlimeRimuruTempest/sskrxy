@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ewp2hrkovssq"]
 
-[ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/BG/c1.png" id="1_xe43n"]
+[ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_xe43n"]
 [ext_resource type="PackedScene" uid="uid://rspc6iao21u6" path="res://Scene/Chapter/LyricBook/lyric_book.tscn" id="2_hfele"]
 [ext_resource type="Texture2D" uid="uid://cnlxgt8g54tik" path="res://Art/LyricBook/エルゴスム/quiz.png" id="3_nr430"]
 [ext_resource type="Texture2D" uid="uid://deb4j712kvlh5" path="res://Art/LyricBook/エルゴスム/- quiz.jpg" id="4_k1oo7"]

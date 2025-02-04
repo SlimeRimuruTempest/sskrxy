@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjskd8r8fqyyq"]
+[gd_scene load_steps=4 format=3 uid="uid://bjskd8r8fqyyq"]
 
 [ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Class/bullet.tscn" id="1_ks63p"]
-[ext_resource type="Texture2D" uid="uid://bp6iyuag8morw" path="res://icon.svg" id="2_0ap10"]
+[ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/Scene/C1/bullet2.png" id="2_y3ful"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks63p"]
+atlas = ExtResource("2_y3ful")
+region = Rect2(427, 106, 72, 91)
 
 [node name="B1" instance=ExtResource("1_ks63p")]
 damage = 5
+sprite_rot_off = 90.0
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_0ap10")
+texture = SubResource("AtlasTexture_ks63p")

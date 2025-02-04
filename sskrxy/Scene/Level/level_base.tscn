@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b18163ipdt2ox"]
 
-[ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/BG/L1/主3.PNG" id="1_awqdd"]
-[ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/BG/L1/主2.PNG" id="2_g82cb"]
-[ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/BG/L1/主1.PNG" id="3_8noda"]
+[ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/Scene/L1/主3.PNG" id="1_awqdd"]
+[ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/Scene/L1/主2.PNG" id="2_g82cb"]
+[ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/Scene/L1/主1.PNG" id="3_8noda"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
 
 [node name="LevelBase" type="Node2D"]

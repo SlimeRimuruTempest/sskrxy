@@ -15,7 +15,7 @@ class_name Shooter
 @export var bullet_ang_curve: Curve = Curve.new()
 
 ## 单次发射个数
-@export var once_num: float
+@export var once_num: int = 1
 # 同时发射时每个子弹速率偏移曲线 x为第几发 x范围必须是[0,once_num) y为那一发相对原速率的偏移速率
 #@export var once_lin_curve: Curve = Curve.new()
 ## 同时发射时每个子弹角度偏移曲线 x为第几发 x范围必须是[0,once_num) y为那一发相对原角度的偏移角度
@@ -26,7 +26,7 @@ class_name Shooter
 ## 发射时间间隔
 @export var shoot_cd: float
 ## 发射次数
-@export var shoot_num: float
+@export var shoot_num: int
 
 func shoot_once():
 	for i in once_num:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b80ntv7xrq57b"
-path="res://.godot/imported/主1.PNG-83caeef51d9865fd57b94e79f70e7be5.ctex"
+uid="uid://n0xxtvgh66ek"
+path="res://.godot/imported/副1.PNG-b483e2653d83904e684bbc67212fe9b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/BG/L1/主1.PNG"
-dest_files=["res://.godot/imported/主1.PNG-83caeef51d9865fd57b94e79f70e7be5.ctex"]
+source_file="res://Art/Scene/L1/副1.PNG"
+dest_files=["res://.godot/imported/副1.PNG-b483e2653d83904e684bbc67212fe9b0.ctex"]
 
 [params]
 
