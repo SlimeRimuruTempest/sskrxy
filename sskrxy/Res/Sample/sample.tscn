@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=30 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
@@ -31,8 +31,8 @@ atlas = ExtResource("4_3lyvt")
 region = Rect2(310, 274, 53, 67)
 
 [sub_resource type="Curve" id="Curve_savq6"]
-_limits = [0.0, 100.0, 0.0, 100.0]
-_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Curve" id="Curve_t2oe5"]
@@ -82,6 +82,22 @@ metadata/_snap_enabled = true
 _limits = [0.0, 180.0, 0.0, 2.4]
 _data = [Vector2(0, 0), 0.0, 75.0, 0, 1, Vector2(2.4, 180), 75.0, 0.0, 1, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_uc3bf"]
+_limits = [0.0, 1000.0, 0.0, 1.0]
+_data = [Vector2(0, 1000), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_wppxb"]
+_limits = [0.0, 3600.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 360.0, 0, 1, Vector2(10, 3600), 360.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_m5xrl"]
+
+[sub_resource type="Curve" id="Curve_iuwxi"]
+
+[sub_resource type="Curve" id="Curve_cwhxq"]
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
@@ -149,7 +165,23 @@ ang_curve = SubResource("Curve_jg6ky")
 [node name="Sprite" parent="Root/停一下启动Shooter" index="0"]
 texture = SubResource("AtlasTexture_utjr0")
 
+[node name="环形护盾Shooter" parent="Root" index="4" instance=ExtResource("2_h52jr")]
+position = Vector2(207, -37)
+show_time = 35.0
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_uc3bf")
+bullet_ang_curve = SubResource("Curve_wppxb")
+once_ang_curve = SubResource("Curve_m5xrl")
+shoot_cd = 0.1
+shoot_num = 10
+lin_curve = SubResource("Curve_iuwxi")
+ang_curve = SubResource("Curve_cwhxq")
+
+[node name="Sprite" parent="Root/环形护盾Shooter" index="0"]
+texture = SubResource("AtlasTexture_utjr0")
+
 [editable path="Root/环形自带位移Shooter"]
 [editable path="Root/超绝拖把头Shooter"]
 [editable path="Root/抽水马桶Shooter"]
 [editable path="Root/停一下启动Shooter"]
+[editable path="Root/环形护盾Shooter"]
