@@ -1,16 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=5 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/BG/L1/主3.PNG" id="1_awqdd"]
 [ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/BG/L1/主2.PNG" id="2_g82cb"]
 [ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/BG/L1/主1.PNG" id="3_8noda"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
-[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="5_w5tha"]
-[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="6_nds4u"]
-
-[sub_resource type="Curve" id="Curve_yy3y6"]
-_limits = [0.0, 1.0, 0.99, 1.0]
-_data = [Vector2(0.99, 0), 0.0, 100.0, 0, 1, Vector2(1, 1), 100.0, 0.0, 1, 0]
-point_count = 2
 
 [node name="LevelBase" type="Node2D"]
 
@@ -51,11 +44,4 @@ collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DisappearArea"]
 build_mode = 1
-polygon = PackedVector2Array(192, 1408, 1728, 1408, 1728, -320, 192, -320)
-
-[node name="Shooter" parent="DisappearArea" instance=ExtResource("5_w5tha")]
-position = Vector2(957, 359)
-bullet_ps = ExtResource("6_nds4u")
-bullet_lin_curve = SubResource("Curve_yy3y6")
-shoot_cd = 0.2
-shoot_num = 4.0
+polygon = PackedVector2Array(-234.1, -800, -234.1, 1880, 2175.9, 1880, 2175.9, -800)

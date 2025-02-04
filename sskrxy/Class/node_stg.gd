@@ -5,10 +5,10 @@ class_name NodeSTG
 
 ## 以多少度角为0度角
 @export var ori_ang: float
-## 线速率曲线
-@export var lin_curve: Curve
+## 速率曲线
+@export var lin_curve: Curve = Curve.new()
 ## 角度曲线
-@export var ang_curve: Curve
+@export var ang_curve: Curve = Curve.new()
 
 # 自己消失后顶替自己的节点
 #@export var next_nodestg: PackedScene = null
@@ -21,13 +21,14 @@ var lin: float:
 var ang: float:
 	get:
 		return ang_curve.sample(tot_time) + ori_ang
-var dir: Vector2:
-	get:
-		return Vector2.from_angle(deg_to_rad(ang))
+func get_dir(a: float):
+	return Vector2.from_angle(deg_to_rad(a))
 
 func _physics_process(delta: float) -> void:
+	if visible == false:
+		return
 	tot_time += delta
-	global_position += dir * lin * delta
+	global_position += get_dir(ang) * lin * delta
 
 func delete():
 	#if next_nodestg != null:

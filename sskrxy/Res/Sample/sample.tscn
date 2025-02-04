@@ -1,5 +1,102 @@
-[gd_scene load_steps=2 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=18 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
+
+[sub_resource type="Curve" id="Curve_h52jr"]
+_limits = [0.0, 100.0, 0.0, 100.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_3lyvt"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+
+[sub_resource type="Curve" id="Curve_rhpqf"]
+_limits = [0.0, 360.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(12, 360), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_utjr0"]
+_limits = [-300.0, 300.0, 0.0, 10.0]
+_data = [Vector2(0, -0.0663719), 0.0, 0.0, 0, 0, Vector2(1.24661, 300), 0.0, 0.0, 0, 0, Vector2(2.49322, -300), 0.0, 0.0, 0, 0, Vector2(4.22764, 300), 0.0, 0.0, 0, 0, Vector2(6.12466, -300), 0.0, 0.0, 0, 0, Vector2(7.66938, 300), 0.0, 0.0, 0, 0, Vector2(9.21409, -299.668), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Curve" id="Curve_b0w5h"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+
+[sub_resource type="Curve" id="Curve_savq6"]
+_limits = [0.0, 100.0, 0.0, 100.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_t2oe5"]
+
+[sub_resource type="Curve" id="Curve_hsppd"]
+_limits = [0.0, 180.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(10, 180), 37.3107, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ckmpx"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 90.0, 0.0, 100.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(4.60705, 90), 0.0, 0.0, 0, 0, Vector2(12.4661, 0), 0.0, 0.0, 0, 0, Vector2(16.5312, 90), 0.0, 0.0, 0, 0, Vector2(24.1192, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_1py4d"]
+_limits = [-200.0, 200.0, 0.0, 100.0]
+_data = [Vector2(0, -200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_7hlpf"]
+
+[sub_resource type="Curve" id="Curve_nawph"]
+_limits = [0.0, 1.0, 0.0, 100.0]
+
+[sub_resource type="Curve" id="Curve_50ijf"]
+_limits = [0.0, 720.0, 0.0, 40.0]
+_data = [Vector2(0, 0), 0.0, 18.0, 0, 1, Vector2(40, 720), 18.0, 0.0, 1, 0]
+point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
+
+[node name="环形自带位移Shooter" parent="Root" index="0" instance=ExtResource("2_h52jr")]
+start_time = 2.0
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_h52jr")
+bullet_ang_curve = SubResource("Curve_3lyvt")
+once_num = 12.0
+once_ang_curve = SubResource("Curve_rhpqf")
+shoot_cd = 0.5
+shoot_num = 5.0
+lin_curve = SubResource("Curve_utjr0")
+ang_curve = SubResource("Curve_b0w5h")
+
+[node name="超绝拖把头Shooter" parent="Root" index="1" instance=ExtResource("2_h52jr")]
+show_time = 4.0
+start_time = 4.0
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_savq6")
+bullet_ang_curve = SubResource("Curve_t2oe5")
+once_num = 10.0
+once_ang_curve = SubResource("Curve_hsppd")
+shoot_cd = 0.4
+shoot_num = 50.0
+lin_curve = SubResource("Curve_ckmpx")
+ang_curve = SubResource("Curve_insau")
+
+[node name="抽水马桶Shooter" parent="Root" index="2" instance=ExtResource("2_h52jr")]
+show_time = 15.0
+start_time = 15.0
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_1py4d")
+bullet_ang_curve = SubResource("Curve_7hlpf")
+once_num = 12.0
+once_ang_curve = SubResource("Curve_rhpqf")
+shoot_pos_offset = 800.0
+shoot_cd = 0.2
+shoot_num = 100.0
+lin_curve = SubResource("Curve_nawph")
+ang_curve = SubResource("Curve_50ijf")

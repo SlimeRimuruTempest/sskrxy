@@ -7,7 +7,7 @@
 script = ExtResource("1_rc0l3")
 metadata/_custom_type_script = ExtResource("1_rc0l3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="DisappearAreaDetector" parent="." instance=ExtResource("2_kieh3")]
 
