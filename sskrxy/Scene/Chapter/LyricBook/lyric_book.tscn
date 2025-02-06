@@ -64,6 +64,7 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 visible = false
@@ -75,9 +76,11 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
+mouse_filter = 0
 texture = ExtResource("3_rksui")
 expand_mode = 5
 stretch_mode = 5
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="gui_input" from="CanvasLayer/PanelContainer" to="." method="_on_panel_container_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/PanelContainer/TextureRect" to="." method="_on_texture_rect_gui_input"]

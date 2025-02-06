@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl0aibsnqncf"
-path="res://.godot/imported/IMG_0002.jpg-1e641e3867709f83e2a59d3ffb75429e.ctex"
+path="res://.godot/imported/エゴ.jpg-d2968f20e86b8ee7b60785b7e1883a9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LyricBook/エルゴスム/IMG_0002.jpg"
-dest_files=["res://.godot/imported/IMG_0002.jpg-1e641e3867709f83e2a59d3ffb75429e.ctex"]
+source_file="res://Art/LyricBook/エルゴスム/エゴ.jpg"
+dest_files=["res://.godot/imported/エゴ.jpg-d2968f20e86b8ee7b60785b7e1883a9f.ctex"]
 
 [params]
 

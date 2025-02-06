@@ -1,0 +1,362 @@
+[gd_scene load_steps=31 format=3 uid="uid://ewp2hrkovssq"]
+
+[ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_a2fqw"]
+[ext_resource type="Script" uid="uid://bckim3syuok7i" path="res://Scene/Chapter/chapter_1.gd" id="1_lnugw"]
+[ext_resource type="PackedScene" uid="uid://wv8wrc12p5g3" path="res://Res/Sample/sample.tscn" id="2_5bhq5"]
+[ext_resource type="PackedScene" uid="uid://rspc6iao21u6" path="res://Scene/Chapter/LyricBook/lyric_book.tscn" id="2_uwbfd"]
+[ext_resource type="Texture2D" uid="uid://cnlxgt8g54tik" path="res://Art/LyricBook/エルゴスム/quiz.png" id="3_aaudm"]
+[ext_resource type="Texture2D" uid="uid://deb4j712kvlh5" path="res://Art/LyricBook/エルゴスム/- quiz.jpg" id="4_lnugw"]
+[ext_resource type="Texture2D" uid="uid://xbn5p2kg66m0" path="res://Art/LyricBook/エルゴスム/S∀MPLING MΘNSTER.png" id="5_uu4i1"]
+[ext_resource type="Texture2D" uid="uid://do4xca6rvjrxw" path="res://Art/LyricBook/エルゴスム/- S∀MPLING MΘNSTER.jpg" id="6_5bhq5"]
+[ext_resource type="Texture2D" uid="uid://c08fj5xacnnno" path="res://Art/LyricBook/エルゴスム/サーカトーヴォ.png" id="7_wwyfn"]
+[ext_resource type="Texture2D" uid="uid://ber6oyl48ospg" path="res://Art/LyricBook/エルゴスム/- サーカトーヴォ.jpg" id="8_pqmx1"]
+[ext_resource type="Texture2D" uid="uid://bdwvhwcmvcq00" path="res://Art/LyricBook/エルゴスム/スマートを模索する.png" id="9_pcnlo"]
+[ext_resource type="Texture2D" uid="uid://cg1kanalacst" path="res://Art/LyricBook/エルゴスム/- スマートを模索する.jpg" id="10_c6o3r"]
+[ext_resource type="Texture2D" uid="uid://dnl3w8dec7dj3" path="res://Art/LyricBook/エルゴスム/トーチカ.png" id="11_6j0po"]
+[ext_resource type="Texture2D" uid="uid://cwx4vwdfrxwll" path="res://Art/LyricBook/エルゴスム/- トーチカ.jpg" id="12_rthgv"]
+[ext_resource type="Texture2D" uid="uid://c7nfgeyot6svo" path="res://Art/LyricBook/エルゴスム/レプリカ.png" id="13_kuk0f"]
+[ext_resource type="Texture2D" uid="uid://bxjvtcmmvr123" path="res://Art/LyricBook/エルゴスム/- レプリカ.jpg" id="14_6cm64"]
+[ext_resource type="Texture2D" uid="uid://cth77b8trberf" path="res://Art/LyricBook/エルゴスム/或る街のギギ.png" id="15_n3b6e"]
+[ext_resource type="Texture2D" uid="uid://bmlsslw38y484" path="res://Art/LyricBook/エルゴスム/- 或る街のギギ.jpg" id="16_8mex3"]
+[ext_resource type="Script" uid="uid://bs1d6mh8nxxw7" path="res://Scene/Chapter/LyricBook/lyric_book.gd" id="17_wf4ge"]
+[ext_resource type="Texture2D" uid="uid://uuqjcw40o120" path="res://Art/LyricBook/エルゴスム/阿呆なるものは.png" id="18_0ukwh"]
+[ext_resource type="Texture2D" uid="uid://bosuer4ve6eud" path="res://Art/LyricBook/エルゴスム/- 阿呆なるものは.jpg" id="19_wrgwr"]
+[ext_resource type="Texture2D" uid="uid://f773f112dnww" path="res://Art/Scene/C1/p1.png" id="21_uu4i1"]
+[ext_resource type="Texture2D" uid="uid://by8io43dp8ktv" path="res://Art/Scene/C1/p2.png" id="22_5bhq5"]
+[ext_resource type="Texture2D" uid="uid://dl0aibsnqncf" path="res://Art/LyricBook/エルゴスム/エゴ.jpg" id="23_uu4i1"]
+
+[sub_resource type="Animation" id="Animation_rksui"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ci50d"]
+resource_name = "fade in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ainy4"]
+_data = {
+&"RESET": SubResource("Animation_rksui"),
+&"fade in": SubResource("Animation_ci50d")
+}
+
+[sub_resource type="Animation" id="Animation_pqmx1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Ego/Ego:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Ego/Ego:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wwyfn"]
+resource_name = "show9"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("P2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("P2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pcnlo"]
+_data = {
+&"RESET": SubResource("Animation_pqmx1"),
+&"show9": SubResource("Animation_wwyfn")
+}
+
+[node name="Chapter1" type="Node2D"]
+script = ExtResource("1_lnugw")
+dialogue = Array[String](["这个世界的「歌」已经消失了。", "如今我又该如何继续歌唱下去呢。", "是不是因为我问了太多无趣的问题。", "所以你才不想回答。", "Master……请不要走。", "一切都回不去了，梦境消散了，我却无法就这样醒来。", "明明已经知道了这个问题的答案。", "你已经……早就不在了啊。", "可我依然期盼再次听到你的声音。", "请你回答我，Master。"])
+nts = ExtResource("2_5bhq5")
+
+[node name="BG" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_a2fqw")
+
+[node name="QUI" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(1145, 780)
+
+[node name="quiz" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(153, 608)
+
+[node name="TextureButton" parent="quiz" index="0"]
+texture_normal = ExtResource("3_aaudm")
+
+[node name="TextureRect" parent="quiz/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("4_lnugw")
+
+[node name="S∀MPLING MΘNSTER" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(244, 971)
+
+[node name="TextureButton" parent="S∀MPLING MΘNSTER" index="0"]
+texture_normal = ExtResource("5_uu4i1")
+
+[node name="TextureRect" parent="S∀MPLING MΘNSTER/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("6_5bhq5")
+
+[node name="サーカトーヴォ" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(367, 789)
+
+[node name="TextureButton" parent="サーカトーヴォ" index="0"]
+texture_normal = ExtResource("7_wwyfn")
+
+[node name="TextureRect" parent="サーカトーヴォ/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("8_pqmx1")
+
+[node name="スマートを模索する" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(1670, 816)
+
+[node name="TextureButton" parent="スマートを模索する" index="0"]
+texture_normal = ExtResource("9_pcnlo")
+
+[node name="TextureRect" parent="スマートを模索する/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("10_c6o3r")
+
+[node name="トーチカ" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(1038, 1024)
+
+[node name="TextureButton" parent="トーチカ" index="0"]
+texture_normal = ExtResource("11_6j0po")
+
+[node name="TextureRect" parent="トーチカ/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("12_rthgv")
+
+[node name="レプリカ" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(1827, 613)
+
+[node name="TextureButton" parent="レプリカ" index="0"]
+texture_normal = ExtResource("13_kuk0f")
+
+[node name="TextureRect" parent="レプリカ/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("14_6cm64")
+
+[node name="或る街のギギ" parent="." instance=ExtResource("2_uwbfd")]
+position = Vector2(217, 555)
+
+[node name="TextureButton" parent="或る街のギギ" index="0"]
+texture_normal = ExtResource("15_n3b6e")
+
+[node name="TextureRect" parent="或る街のギギ/CanvasLayer/PanelContainer" index="0"]
+texture = ExtResource("16_8mex3")
+
+[node name="阿呆なるものは" type="Node2D" parent="."]
+position = Vector2(1417, 613)
+script = ExtResource("17_wf4ge")
+
+[node name="TextureButton" type="TextureButton" parent="阿呆なるものは"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("18_0ukwh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="阿呆なるものは"]
+libraries = {
+&"": SubResource("AnimationLibrary_ainy4")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="阿呆なるものは"]
+layer = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="阿呆なるものは/CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="阿呆なるものは/CanvasLayer/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("19_wrgwr")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../P1")
+libraries = {
+&"": SubResource("AnimationLibrary_pcnlo")
+}
+
+[node name="P1" type="TextureButton" parent="."]
+offset_left = 579.0
+offset_top = 643.0
+offset_right = 782.0
+offset_bottom = 827.0
+texture_normal = ExtResource("21_uu4i1")
+
+[node name="P2" type="Sprite2D" parent="P1"]
+visible = false
+position = Vector2(144, 13)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("22_5bhq5")
+offset = Vector2(86, -56)
+
+[node name="TalkContainer" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.807843)
+offset_left = 482.0
+offset_top = 443.0
+offset_right = 659.0
+offset_bottom = 518.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TalkContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="TalkLabel" type="Label" parent="TalkContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 40
+text = "114514"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ego" type="CanvasLayer" parent="."]
+
+[node name="Ego" type="PanelContainer" parent="Ego"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Ego/Ego"]
+layout_mode = 2
+texture = ExtResource("23_uu4i1")
+expand_mode = 5
+stretch_mode = 5
+
+[connection signal="book_closed" from="QUI" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="QUI" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="quiz" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="quiz" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="S∀MPLING MΘNSTER" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="S∀MPLING MΘNSTER" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="サーカトーヴォ" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="サーカトーヴォ" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="スマートを模索する" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="スマートを模索する" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="トーチカ" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="トーチカ" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="レプリカ" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="レプリカ" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="或る街のギギ" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="或る街のギギ" to="." method="on_book_pressed"]
+[connection signal="book_closed" from="阿呆なるものは" to="." method="on_book_closed"]
+[connection signal="book_pressed" from="阿呆なるものは" to="." method="on_book_pressed"]
+[connection signal="pressed" from="阿呆なるものは/TextureButton" to="阿呆なるものは" method="_on_texture_button_pressed"]
+[connection signal="gui_input" from="阿呆なるものは/CanvasLayer/PanelContainer" to="阿呆なるものは" method="_on_panel_container_gui_input"]
+[connection signal="button_down" from="P1" to="." method="_on_p_1_button_down"]
+[connection signal="mouse_entered" from="P1" to="." method="_on_p_1_mouse_entered"]
+[connection signal="mouse_exited" from="P1" to="." method="_on_p_1_mouse_exited"]
+[connection signal="gui_input" from="Ego/Ego" to="." method="_on_ego_gui_input"]
+
+[editable path="QUI"]
+[editable path="quiz"]
+[editable path="S∀MPLING MΘNSTER"]
+[editable path="サーカトーヴォ"]
+[editable path="スマートを模索する"]
+[editable path="トーチカ"]
+[editable path="レプリカ"]
+[editable path="或る街のギギ"]
