@@ -16,14 +16,17 @@ signal health_updated(current_health: float, max_health: float)
 
 var current_health: int:
 	set(v):
-		current_health = v
+		if current_health == 0 and v <= 0:
+			current_health = -1
+		else:
+			current_health = clamp(v, 0, max_health)
 		health_updated.emit(current_health, max_health)
 
 @export var speed = 300.0
 
 func get_damage(value: int):
 	current_health -= value
-	if current_health <= 0:
+	if current_health == 0:
 		await get_tree().create_timer(0.3).timeout
 		GlobalCanvasLayer.reload_current_scene()
 
