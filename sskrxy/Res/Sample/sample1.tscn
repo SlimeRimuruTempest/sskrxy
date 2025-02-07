@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2igikx5pwley"]
+[gd_scene load_steps=35 format=3 uid="uid://c2igikx5pwley"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_1w2ty"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_nn11b"]
@@ -60,6 +60,21 @@ _limits = [0.0, 720.0, 0.0, 40.0]
 _data = [Vector2(0, 0), 0.0, 18.0, 0, 1, Vector2(40, 720), 18.0, 0.0, 1, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_huxls"]
+_limits = [0.0, 150.0, 0.0, 1.0]
+_data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_tbwu2"]
+_limits = [0.0, 3600.0, 0.0, 20.0]
+_data = [Vector2(0, 0), 0.0, 180.0, 0, 1, Vector2(20, 3600), 180.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vbp8b"]
+_limits = [0.0, 360.0, 0.0, 6.0]
+_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(6, 360), 60.0, 0.0, 1, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_4405c"]
 _limits = [0.0, 150.0, 0.0, 20.0]
 _data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
@@ -75,6 +90,42 @@ point_count = 9
 [sub_resource type="Curve" id="Curve_crrwj"]
 
 [sub_resource type="Curve" id="Curve_2ll4j"]
+
+[sub_resource type="Curve" id="Curve_5566p"]
+_limits = [0.0, 200.0, 0.0, 20.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_fapwp"]
+_limits = [-45.0, 45.0, 0.0, 20.0]
+_data = [Vector2(0, -45), 0.0, 0.0, 0, 0, Vector2(1, 45), 0.0, 0.0, 0, 0, Vector2(2, -45), 0.0, 0.0, 0, 0, Vector2(3, 45), 0.0, 0.0, 0, 0, Vector2(4, -45), 0.0, 0.0, 0, 0, Vector2(5, 45), 0.0, 0.0, 0, 0, Vector2(6, -45), 0.0, 0.0, 0, 0, Vector2(7, 45), 0.0, 0.0, 0, 0, Vector2(8, -45), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[sub_resource type="Curve" id="Curve_7d4jr"]
+
+[sub_resource type="Curve" id="Curve_vamaj"]
+
+[sub_resource type="Curve" id="Curve_7fs3h"]
+
+[sub_resource type="Curve" id="Curve_p4upm"]
+_limits = [1.0, 1024.0, 0.0, 1024.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_dusej"]
+_limits = [1.0, 1024.0, 0.0, 1024.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_24ijw"]
+_limits = [1.0, 1024.0, 0.0, 1024.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_4jidr"]
+_limits = [1.0, 1024.0, 0.0, 1024.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [node name="Sample" instance=ExtResource("1_1w2ty")]
 
@@ -117,23 +168,49 @@ shoot_num = 100.0
 lin_curve = SubResource("Curve_k1gvw")
 ang_curve = SubResource("Curve_nhoh0")
 
-[node name="原地转圈Shooter" parent="Root" index="3" instance=ExtResource("2_nn11b")]
+[node name="反复抽水Shooter" parent="Root" index="3" instance=ExtResource("2_nn11b")]
+start_time = 100.0
+bullet_ps = ExtResource("3_iwywa")
+bullet_lin_curve = SubResource("Curve_huxls")
+bullet_ang_curve = SubResource("Curve_tbwu2")
+once_num = 6.0
+once_ang_curve = SubResource("Curve_vbp8b")
+shoot_cd = 0.5
+shoot_num = 1.0
+
+[node name="原地转圈Shooter" parent="Root" index="4" instance=ExtResource("2_nn11b")]
 position = Vector2(0, 300)
 start_time = 100.0
 bullet_ps = ExtResource("3_iwywa")
 bullet_lin_curve = SubResource("Curve_4405c")
 bullet_ang_curve = SubResource("Curve_2b1yv")
+once_num = 1.0
 once_ang_curve = SubResource("Curve_duk4a")
 shoot_cd = 1.0
 shoot_num = 3.0
 lin_curve = SubResource("Curve_crrwj")
 ang_curve = SubResource("Curve_2ll4j")
 
-[node name="Loop1" parent="Root" index="4"]
-position = Vector2(-0.820557, 0.0368652)
-
-[node name="心跳" parent="Root" index="5"]
+[node name="蛇形Shooter" parent="Root" index="5" instance=ExtResource("2_nn11b")]
+position = Vector2(-0.300049, 100.9)
 start_time = 100.0
+bullet_ps = ExtResource("3_iwywa")
+bullet_lin_curve = SubResource("Curve_5566p")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 1.0
+once_ang_curve = SubResource("Curve_7d4jr")
+shoot_cd = 0.1
+shoot_num = 5.0
+ori_ang = 90.0
+lin_curve = SubResource("Curve_vamaj")
+ang_curve = SubResource("Curve_7fs3h")
 
-[node name="BGM" parent="." index="4"]
-volume_db = -10.0
+[node name="Shooter" parent="." index="6" instance=ExtResource("2_nn11b")]
+position = Vector2(962, 256)
+bullet_ps = ExtResource("3_iwywa")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_dusej")
+shoot_cd = 0.5
+shoot_num = 5.0
+lin_curve = SubResource("Curve_24ijw")
+ang_curve = SubResource("Curve_4jidr")
