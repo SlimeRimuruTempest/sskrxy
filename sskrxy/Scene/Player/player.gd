@@ -23,6 +23,9 @@ var current_health: int:
 
 func get_damage(value: int):
 	current_health -= value
+	if current_health <= 0:
+		await get_tree().create_timer(0.3).timeout
+		GlobalCanvasLayer.reload_current_scene()
 
 func _ready() -> void:
 	current_health = max_health
