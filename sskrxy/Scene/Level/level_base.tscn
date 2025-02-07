@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=8 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/Scene/L1/主3.PNG" id="1_awqdd"]
 [ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/Scene/L1/主2.PNG" id="2_g82cb"]
 [ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/Scene/L1/主1.PNG" id="3_8noda"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
+[ext_resource type="Shader" uid="uid://dejval1hdjjji" path="res://Art/Shader/gblur.gdshader" id="5_w5tha"]
+[ext_resource type="Texture2D" uid="uid://da5autd2vkepq" path="res://Art/Scene/L1/场景1.PNG" id="6_nds4u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yy3y6"]
+shader = ExtResource("5_w5tha")
+shader_parameter/blur_radius = 16
+shader_parameter/Darkness = 0.1
+shader_parameter/R = 0.0
+shader_parameter/G = 0.0
+shader_parameter/B = 0.0
+shader_parameter/blur_strength = 10.0
 
 [node name="LevelBase" type="Node2D"]
 
@@ -29,11 +40,26 @@ centered = false
 texture = ExtResource("3_8noda")
 centered = false
 
-[node name="Root" type="Node2D" parent="." groups=["Marker"]]
-position = Vector2(960, 200)
-
 [node name="Player" parent="." instance=ExtResource("4_g82cb")]
 position = Vector2(960, 857)
 
+[node name="Root" type="Node2D" parent="." groups=["Marker"]]
+position = Vector2(960, 200)
+
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 autoplay = true
+
+[node name="BGL" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yy3y6")
+texture = ExtResource("6_nds4u")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 565.9, 1080)
+
+[node name="BGR" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yy3y6")
+position = Vector2(1375.72, 0)
+texture = ExtResource("6_nds4u")
+centered = false
+region_enabled = true
+region_rect = Rect2(1375.72, 0, 544.28, 1080)
