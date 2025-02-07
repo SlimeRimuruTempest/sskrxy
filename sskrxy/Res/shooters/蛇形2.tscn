@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqa77uvigvuc0"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_yddij"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_3r6hv"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_wr3wr"]
+
+[sub_resource type="Curve" id="Curve_p4upm"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_dusej"]
+_limits = [-45.0, 45.0, 0.0, 20.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, 0.0, 1, 0]
+point_count = 13
+
+[sub_resource type="Curve" id="Curve_24ijw"]
+_limits = [0.0, 180.0, 0.0, 5.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(5, 150), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4jidr"]
+
+[sub_resource type="Curve" id="Curve_ojgjm"]
+
+[node name="蛇形Shooter2" type="Node2D"]
+script = ExtResource("1_yddij")
+bullet_ps = ExtResource("2_3r6hv")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 5
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 10
+ori_ang = 30.0
+lin_curve = SubResource("Curve_4jidr")
+ang_curve = SubResource("Curve_ojgjm")
+metadata/_custom_type_script = ExtResource("1_yddij")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_wr3wr")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]

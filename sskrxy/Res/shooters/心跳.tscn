@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://drmjbhwxqd6fu"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_4uh2l"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_o4hyq"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_trd4i"]
+
+[sub_resource type="Curve" id="Curve_huxls"]
+_limits = [0.0, 2500.0, 0.0, 25.0]
+_data = [Vector2(24, 500), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_tbwu2"]
+_limits = [0.0, 5760.0, 0.0, 25.0]
+_data = [Vector2(0, 0), 0.0, 240.0, 0, 1, Vector2(24, 5760), 240.0, -5.74816e+06, 1, 1, Vector2(24.001, 15), -5.74816e+06, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_vbp8b"]
+_limits = [0.0, 360.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(12, 360), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="心跳" type="Node2D"]
+script = ExtResource("1_4uh2l")
+bullet_ps = ExtResource("2_o4hyq")
+bullet_lin_curve = SubResource("Curve_huxls")
+bullet_ang_curve = SubResource("Curve_tbwu2")
+once_num = 12
+once_ang_curve = SubResource("Curve_vbp8b")
+shoot_cd = 0.5
+shoot_num = 1.0
+metadata/_custom_type_script = ExtResource("1_4uh2l")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_trd4i")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
