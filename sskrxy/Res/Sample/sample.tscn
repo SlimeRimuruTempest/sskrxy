@@ -103,6 +103,7 @@ point_count = 2
 
 [node name="环形自带位移Shooter" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 start_time = 2.0
+end_time = 5.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_h52jr")
 bullet_ang_curve = SubResource("Curve_3lyvt")
@@ -110,6 +111,7 @@ once_num = 12
 once_ang_curve = SubResource("Curve_rhpqf")
 shoot_cd = 0.5
 shoot_num = 5
+bullet_follow_mum = true
 lin_curve = SubResource("Curve_utjr0")
 ang_curve = SubResource("Curve_b0w5h")
 

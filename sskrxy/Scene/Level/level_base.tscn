@@ -37,11 +37,3 @@ position = Vector2(960, 857)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 autoplay = true
-
-[node name="DisappearArea" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 4
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DisappearArea"]
-build_mode = 1
-polygon = PackedVector2Array(-234.1, -800, -234.1, 1880, 2175.9, 1880, 2175.9, -800)

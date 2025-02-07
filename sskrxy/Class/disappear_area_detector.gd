@@ -1,5 +1,5 @@
-extends Area2D
+extends Node2D
 
-
-func _on_area_entered(area: Area2D) -> void:
-	get_parent().delete()
+func _physics_process(delta: float) -> void:
+	if (global_position - Vector2(960, 540)).length() >= 1000:
+		get_parent().delete()

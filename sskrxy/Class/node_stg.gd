@@ -23,12 +23,14 @@ var ang: float:
 		return ang_curve.sample(tot_time) + ori_ang
 func get_dir(a: float):
 	return Vector2.from_angle(deg_to_rad(a))
+func get_movement(delta: float):
+	return get_dir(ang) * lin * delta
 
 func _physics_process(delta: float) -> void:
 	if visible == false:
 		return
 	tot_time += delta
-	global_position += get_dir(ang) * lin * delta
+	global_position += get_movement(delta)
 
 func delete():
 	#if next_nodestg != null:
