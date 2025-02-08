@@ -46,6 +46,7 @@ shape = SubResource("CircleShape2D_a1qst")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Point" type="Sprite2D" parent="."]
+visible = false
 texture = SubResource("GradientTexture2D_g0r71")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]

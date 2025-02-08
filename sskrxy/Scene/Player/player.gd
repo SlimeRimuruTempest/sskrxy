@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerBody
 
 @onready var player_sprite: Sprite2D = $PlayerSprite
+@onready var point: Sprite2D = $Point
 
 @export var wudi: bool = false
 
@@ -24,7 +25,13 @@ var current_health: int:
 			current_health = clamp(v, 0, max_health)
 		health_updated.emit(current_health, max_health)
 
-@export var speed = 300.0
+@export var speed: = 600.0
+@export var slow_speed: = 300.0
+
+func get_speed():
+	if Input.is_action_pressed("slow"):
+		return slow_speed
+	return speed
 
 func get_damage(value: int):
 	if wudi:
@@ -53,8 +60,14 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("move_up", "move_down")
 		).normalized()
 	if dir:
-		velocity = dir * speed
+		velocity = dir * get_speed()
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.y = move_toward(velocity.y, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, get_speed())
+		velocity.y = move_toward(velocity.y, 0, get_speed())
 	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("slow"):
+		point.show()
+	if event.is_action_released("slow"):
+		point.hide()
