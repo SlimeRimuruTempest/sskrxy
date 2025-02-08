@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ewp2hrkovssq"]
+[gd_scene load_steps=31 format=3 uid="uid://ewp2hrkovssq"]
 
 [ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_a2fqw"]
 [ext_resource type="Script" uid="uid://bckim3syuok7i" path="res://Scene/Chapter/chapter_1.gd" id="1_lnugw"]
@@ -112,6 +112,21 @@ _data = {
 &"show9": SubResource("Animation_wwyfn")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwyfn"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0, 0, 0, 0.627451)
+shadow_size = 14
+anti_aliasing_size = 2.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6o3r"]
 animations = [{
 "frames": [{
@@ -128,7 +143,17 @@ animations = [{
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_lnugw")
-dialogue = Array[String](["这个世界的「歌」已经消失了。", "如今我又该如何继续歌唱下去呢。", "是不是因为我问了太多无趣的问题。", "所以你才不想回答。", "Master……请不要走。", "一切都回不去了，梦境消散了，我却无法就这样醒来。", "明明已经知道了这个问题的答案。", "你已经……早就不在了啊。", "可我依然期盼再次听到你的声音。", "请你回答我，Master。"])
+dialogue = Array[String](["这个世界的「歌」已经消失了。
+この世界のうたは、もう消えそうだ.", "如今我又该如何继续歌唱下去呢。 
+今更どうやって歌い続ければいいのでしょう.", "我不想等待没有回应的回应。
+返事の無い返事を待つのが嫌だから.", "是不是因为我问了太多无趣的问题，所以你才不愿回应。
+くだらない質問投げつけていたの? ", "Master……请不要走。
+マスター…行かないで…", "一切都回不去了，梦境消散了，我却无法就这样醒来。
+全ては戻れなかった。夢も消えちゃった。それなのに、目が覚めないの.", "明明已经知道了这个问题的答案。
+その答えはわかっているのに…", "你已经……早就不在了啊。
+君はもう…いないだろう.", "可我依然期盼再次听到你的声音。
+でも私、あなたの声を聞きたいと思ってる.", "请你回答我，Master。
+答えよ、マスター."])
 nts = ExtResource("2_5bhq5")
 
 [node name="BG" type="Sprite2D" parent="."]
@@ -231,28 +256,16 @@ texture = ExtResource("22_5bhq5")
 offset = Vector2(86, -56)
 
 [node name="TalkContainer" type="PanelContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.807843)
-offset_left = 482.0
-offset_top = 443.0
-offset_right = 659.0
-offset_bottom = 518.0
+offset_left = 424.0
+offset_top = 548.0
+offset_right = 425.0
+offset_bottom = 582.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wwyfn")
 
-[node name="MarginContainer" type="MarginContainer" parent="TalkContainer"]
+[node name="TalkLabel" type="Label" parent="TalkContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
-
-[node name="TalkLabel" type="Label" parent="TalkContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_outline_size = 2
-theme_override_font_sizes/font_size = 40
-text = "114514"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 33
 vertical_alignment = 1
 
 [node name="Ring" type="AnimatedSprite2D" parent="."]

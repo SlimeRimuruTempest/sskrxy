@@ -2,13 +2,17 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var talk_container: PanelContainer = $TalkContainer
-@onready var talk_label: Label = $TalkContainer/MarginContainer/TalkLabel
+@onready var talk_label: Label = $TalkContainer/TalkLabel
 @onready var ego: PanelContainer = $Ego/Ego
 
 var book_cnt: int = 0
 
-@export var dialogue: Array[String]
+@export_multiline var dialogue: Array[String]
 @export var nts: PackedScene
+
+func _ready() -> void:
+	talk_container.modulate.a = 0
+	talk_label.text = ""
 
 func talk():
 	var tween: Tween = create_tween()
