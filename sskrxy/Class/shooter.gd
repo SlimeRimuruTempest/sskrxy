@@ -5,6 +5,8 @@ class_name Shooter
 @export var show_time: float
 ## 显示到启动的等待时间
 @export var start_time: float
+## 发射完到销毁的等待时间
+@export var end_time: float
 
 ## 发射物
 @export var bullet_ps: PackedScene = null
@@ -28,12 +30,18 @@ class_name Shooter
 ## 发射次数
 @export var shoot_num: int
 
+## 是否跟随老妈
+@export var bullet_follow_mum: bool = false
+
 func shoot_once():
 	for i in once_num:
 		#var lin_off: = once_lin_curve.sample(i)
-		var ang_off: = once_ang_curve.sample(i)
+		var ang_off: = once_ang_curve.sample_baked(i)
 		var bullet: NodeSTG = bullet_ps.instantiate()
-		marker.add_child(bullet)
+		if bullet_follow_mum:
+			add_child(bullet)
+		else:
+			marker.add_child(bullet)
 		var pos_offset: Vector2 = get_dir(ang + ang_off) * shoot_pos_offset
 		bullet.global_position = self.global_position + pos_offset
 		bullet.ori_ang = ang + ang_off
@@ -46,7 +54,14 @@ func shoot():
 		await shoot_once()
 		if shoot_cd > 0.0:
 			await get_tree().create_timer(shoot_cd).timeout
+	await get_tree().create_timer(end_time).timeout
 	delete()
+
+func delete():
+	for child in get_children():
+		if child is NodeSTG:
+			child.reparent(marker)
+	super()
 
 func _on_ready() -> void:
 	hide()

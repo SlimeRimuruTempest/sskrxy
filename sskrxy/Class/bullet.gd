@@ -1,7 +1,6 @@
 extends NodeSTG
 class_name Bullet
 
-@onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var damage: int = 1
@@ -10,3 +9,9 @@ class_name Bullet
 func _physics_process(delta: float) -> void:
 	super(delta)
 	sprite_2d.rotation_degrees = ang + sprite_rot_off
+
+
+func _on_bullet_area_body_entered(body: Node2D) -> void:
+	if body is PlayerBody:
+		body.get_damage(damage)
+		queue_free()

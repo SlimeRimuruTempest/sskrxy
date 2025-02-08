@@ -1,17 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://6hmqde5av0ks"]
+[gd_scene load_steps=10 format=3 uid="uid://6hmqde5av0ks"]
 
 [ext_resource type="Script" uid="uid://ctfxqf8jy68j4" path="res://Scene/Player/player.gd" id="1_67a6e"]
-[ext_resource type="Texture2D" uid="uid://bp6iyuag8morw" path="res://icon.svg" id="2_yic5t"]
+[ext_resource type="Texture2D" uid="uid://bj2lwyuirhh4q" path="res://Art/SpriteSheet/Player.png" id="2_yic5t"]
+[ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="3_uuj77"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuj77"]
+atlas = ExtResource("2_yic5t")
+region = Rect2(123, 1, 80, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0r71"]
+atlas = ExtResource("2_yic5t")
+region = Rect2(0, 0, 71, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88wa8"]
+atlas = ExtResource("2_yic5t")
+region = Rect2(240, 1, 80, 168)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1qst"]
 
+[sub_resource type="Gradient" id="Gradient_uuj77"]
+offsets = PackedFloat32Array(0.51585, 0.881844)
+colors = PackedColorArray(0.780392, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g0r71"]
+gradient = SubResource("Gradient_uuj77")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_67a6e")
+tex_l = SubResource("AtlasTexture_uuj77")
+tex_m = SubResource("AtlasTexture_g0r71")
+tex_r = SubResource("AtlasTexture_88wa8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_yic5t")
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_g0r71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a1qst")
 debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Point" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("GradientTexture2D_g0r71")
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="PlayerUI" instance=ExtResource("3_uuj77")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 20.0
+offset_right = 239.5
+offset_bottom = 93.0
+grow_horizontal = 2
+
+[connection signal="health_updated" from="." to="PlayerUI/HealthBar" method="_on_player_health_updated"]
