@@ -44,6 +44,7 @@ once_ang_curve = SubResource("Curve_rhpqf")
 shoot_pos_offset = -800.0
 shoot_cd = 0.05
 shoot_num = 1200
+lock_rot = true
 lin_curve = SubResource("Curve_nawph")
 ang_curve = SubResource("Curve_50ijf")
 
