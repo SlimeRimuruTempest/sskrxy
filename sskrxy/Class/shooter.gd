@@ -36,7 +36,7 @@ class_name Shooter
 func shoot_once():
 	for i in once_num:
 		#var lin_off: = once_lin_curve.sample(i)
-		var ang_off: = once_ang_curve.sample(i)
+		var ang_off: = once_ang_curve.sample_baked(i)
 		var bullet: NodeSTG = bullet_ps.instantiate()
 		if bullet_follow_mum:
 			add_child(bullet)
