@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdb70bf0punpw"]
+[gd_scene load_steps=10 format=3 uid="uid://cdb70bf0punpw"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_87xo5"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_lup7g"]
+[ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/Scene/C1/bullet2.png" id="3_dndth"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_qmc1h"]
 
 [sub_resource type="Curve" id="Curve_hfgm2"]
@@ -12,8 +13,8 @@ point_count = 1
 [sub_resource type="Curve" id="Curve_hnvg0"]
 
 [sub_resource type="Curve" id="Curve_ief0i"]
-_limits = [0.0, 360.0, 0.0, 72.0]
-_data = [Vector2(0, 0), 0.0, 5.0, 0, 1, Vector2(72, 360), 5.0, 0.0, 1, 0]
+_limits = [0.0, 360.0, 0.0, 24.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(24, 360), 15.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ed3tp"]
@@ -21,12 +22,16 @@ _limits = [0.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0thsu"]
+atlas = ExtResource("3_dndth")
+region = Rect2(418, 6, 89, 88)
+
 [node name="loop" type="Node2D"]
 script = ExtResource("1_87xo5")
 bullet_ps = ExtResource("2_lup7g")
 bullet_lin_curve = SubResource("Curve_hfgm2")
 bullet_ang_curve = SubResource("Curve_hnvg0")
-once_num = 72
+once_num = 24
 once_ang_curve = SubResource("Curve_ief0i")
 shoot_cd = 0.2
 shoot_num = 5
@@ -35,6 +40,8 @@ metadata/_custom_type_script = ExtResource("1_87xo5")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 z_index = 1
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_0thsu")
 
 [node name="DisappearAreaDetector" parent="." instance=ExtResource("3_qmc1h")]
 

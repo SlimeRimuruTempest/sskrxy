@@ -1,12 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw2vdrxxsxep7"]
+[gd_scene load_steps=7 format=3 uid="uid://cw2vdrxxsxep7"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_y60al"]
 [ext_resource type="PackedScene" uid="uid://cdb70bf0punpw" path="res://Res/shooters/loop.tscn" id="2_prc2l"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_gjl3l"]
 
 [sub_resource type="Curve" id="Curve_hfgm2"]
-_limits = [0.0, 50.0, 0.0, 10.0]
-_data = [Vector2(0, 50), 0.0, 0.0, 0, 0]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Curve" id="Curve_hnvg0"]
@@ -15,11 +15,9 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ief0i"]
-
-[sub_resource type="Curve" id="Curve_y60al"]
-_limits = [0.0, 360.0, 0.0, 10.5]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1.4, 180), 0.0, 0.0, 0, 0, Vector2(2.9, 30), 0.0, 0.0, 0, 0, Vector2(4.4, 150), 0.0, 0.0, 0, 0, Vector2(5.9, 60), 0.0, 0.0, 0, 0, Vector2(7.4, 120), 0.0, 0.0, 0, 0, Vector2(8.9, 90), 0.0, 0.0, 0, 0]
-point_count = 7
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="LoopShooter" type="Node2D"]
 script = ExtResource("1_y60al")
@@ -30,7 +28,6 @@ bullet_ang_curve = SubResource("Curve_hnvg0")
 once_ang_curve = SubResource("Curve_ief0i")
 shoot_cd = 1.5
 shoot_num = 7
-ang_curve = SubResource("Curve_y60al")
 metadata/_custom_type_script = ExtResource("1_y60al")
 
 [node name="Sprite" type="Sprite2D" parent="."]

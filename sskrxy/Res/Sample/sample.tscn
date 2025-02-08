@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=19 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/loop_shooter.tscn" id="2_fnby8"]
@@ -7,6 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/心跳.tscn" id="3_rhpqf"]
 [ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/蛇形1.tscn" id="4_savq6"]
 [ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/蛇形2.tscn" id="5_t2oe5"]
+[ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="8_savq6"]
+[ext_resource type="PackedScene" uid="uid://d1qcraswkctwa" path="res://Res/Bullet/绿全音符.tscn" id="8_t2oe5"]
+
+[sub_resource type="Curve" id="Curve_hsppd"]
+_limits = [-300.0, 300.0, 0.0, 1.5]
+_data = [Vector2(0, -300), 0.0, 0.0, 0, 0, Vector2(1.49862, 300), 84.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ckmpx"]
+_limits = [0.0, 360.0, 0.0, 6.0]
+_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(6, 360), 60.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 180.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 20.0, 0, 1, Vector2(9, 180), 20.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_p4upm"]
 _limits = [0.0, 250.0, 0.0, 10.0]
@@ -28,10 +45,16 @@ _limits = [-45.0, 45.0, 0.0, 15.0]
 _data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
 point_count = 16
 
+[sub_resource type="Curve" id="Curve_savq6"]
+
+[sub_resource type="Curve" id="Curve_t2oe5"]
+
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
 [node name="Player" parent="." index="2"]
 wudi = true
+speed = 500.0
+slow_speed = 250.0
 
 [node name="Root" parent="." index="3"]
 position = Vector2(970, 200)
@@ -39,13 +62,35 @@ position = Vector2(970, 200)
 [node name="LoopShooter" parent="Root" index="0" instance=ExtResource("2_fnby8")]
 
 [node name="心跳" parent="Root" index="1" instance=ExtResource("3_rhpqf")]
+end_time = 35.0
+
+[node name="前奏" parent="Root/心跳" index="2" instance=ExtResource("2_h52jr")]
+end_time = 20.0
+bullet_ps = ExtResource("8_t2oe5")
+bullet_lin_curve = SubResource("Curve_hsppd")
+once_num = 6
+once_ang_curve = SubResource("Curve_ckmpx")
+shoot_cd = 1.5
+shoot_num = 7
+ori_ang = 90.0
+ang_curve = SubResource("Curve_insau")
 
 [node name="蛇形Shooter" parent="Root" index="2" instance=ExtResource("4_savq6")]
+start_time = 10.5
+end_time = 2.0
+once_num = 3
+ori_ang = 60.0
 
 [node name="蛇形Shooter2" parent="Root" index="3" instance=ExtResource("5_t2oe5")]
+start_time = 10.5
+end_time = 2.0
+once_num = 3
+ori_ang = 60.0
 
 [node name="右侧蛇1" parent="Root" index="4" instance=ExtResource("2_h52jr")]
-position = Vector2(201.5, 100)
+position = Vector2(323, 200)
+start_time = 10.5
+end_time = 2.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_p4upm")
 bullet_ang_curve = SubResource("Curve_fapwp")
@@ -53,9 +98,12 @@ once_num = 3
 once_ang_curve = SubResource("Curve_24ijw")
 shoot_cd = 0.1
 shoot_num = 5
+ori_ang = 90.0
 
 [node name="右侧蛇2" parent="Root" index="5" instance=ExtResource("2_h52jr")]
-position = Vector2(201.5, 100)
+position = Vector2(323, 200)
+start_time = 10.5
+end_time = 2.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_p4upm")
 bullet_ang_curve = SubResource("Curve_dusej")
@@ -63,8 +111,12 @@ once_num = 3
 once_ang_curve = SubResource("Curve_24ijw")
 shoot_cd = 0.1
 shoot_num = 5
+ori_ang = 90.0
 
 [node name="左侧蛇1" parent="Root" index="6" instance=ExtResource("2_h52jr")]
+position = Vector2(-300, 200)
+start_time = 10.5
+end_time = 2.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_p4upm")
 bullet_ang_curve = SubResource("Curve_fapwp")
@@ -72,8 +124,12 @@ once_num = 3
 once_ang_curve = SubResource("Curve_24ijw")
 shoot_cd = 0.1
 shoot_num = 5
+ori_ang = 30.0
 
 [node name="左侧蛇2" parent="Root" index="7" instance=ExtResource("2_h52jr")]
+position = Vector2(-300, 200)
+start_time = 10.5
+end_time = 2.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_p4upm")
 bullet_ang_curve = SubResource("Curve_dusej")
@@ -81,3 +137,9 @@ once_num = 3
 once_ang_curve = SubResource("Curve_24ijw")
 shoot_cd = 0.1
 shoot_num = 5
+ori_ang = 30.0
+lin_curve = SubResource("Curve_savq6")
+ang_curve = SubResource("Curve_t2oe5")
+
+[node name="BGM" parent="." index="4"]
+stream = ExtResource("8_savq6")

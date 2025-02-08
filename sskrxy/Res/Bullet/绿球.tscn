@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd5su0g1cimkc"]
+
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_3yghe"]
+[ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/Scene/C1/bullet2.png" id="2_gupkt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpng8"]
+atlas = ExtResource("2_gupkt")
+region = Rect2(618, 6, 89, 88)
+
+[node name="绿球" instance=ExtResource("1_3yghe")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_tpng8")
