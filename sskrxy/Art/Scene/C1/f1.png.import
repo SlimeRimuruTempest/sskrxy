@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ber6oyl48ospg"
-path="res://.godot/imported/- サーカトーヴォ.jpg-968f19948d43f8aa0f30ddf84c9d3495.ctex"
+uid="uid://dnbuyiaf7gpto"
+path="res://.godot/imported/f1.png-88c7460be958cdded58bd0cd7c92990b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LyricBook/エルゴスム/- サーカトーヴォ.jpg"
-dest_files=["res://.godot/imported/- サーカトーヴォ.jpg-968f19948d43f8aa0f30ddf84c9d3495.ctex"]
+source_file="res://Art/Scene/C1/f1.png"
+dest_files=["res://.godot/imported/f1.png-88c7460be958cdded58bd0cd7c92990b.ctex"]
 
 [params]
 

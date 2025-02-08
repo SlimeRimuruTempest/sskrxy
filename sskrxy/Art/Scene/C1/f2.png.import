@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwx4vwdfrxwll"
-path="res://.godot/imported/- トーチカ.jpg-0ac6b3612fc638650efb898fae396044.ctex"
+uid="uid://2he2xrfmm7lo"
+path="res://.godot/imported/f2.png-9d234f0e9d7430d90257acb1b1c0b50b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/LyricBook/エルゴスム/- トーチカ.jpg"
-dest_files=["res://.godot/imported/- トーチカ.jpg-0ac6b3612fc638650efb898fae396044.ctex"]
+source_file="res://Art/Scene/C1/f2.png"
+dest_files=["res://.godot/imported/f2.png-9d234f0e9d7430d90257acb1b1c0b50b.ctex"]
 
 [params]
 
