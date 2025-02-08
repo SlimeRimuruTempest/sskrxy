@@ -327,7 +327,7 @@ vertical_alignment = 1
 [node name="Ring" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6o3r")
 autoplay = "default"
-frame_progress = 0.493563
+frame_progress = 0.19809
 centered = false
 
 [node name="Ego" type="CanvasLayer" parent="."]

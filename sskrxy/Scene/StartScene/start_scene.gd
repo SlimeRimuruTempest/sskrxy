@@ -9,6 +9,7 @@ var can_accept: bool = false
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if can_accept:
+			can_accept = false
 			GlobalCanvasLayer.change_scene(nts)
 
 func _ready() -> void:
@@ -23,4 +24,5 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	if can_accept:
+		can_accept = false
 		GlobalCanvasLayer.change_scene(nts)
