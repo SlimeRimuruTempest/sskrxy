@@ -1,4 +1,196 @@
-[gd_scene format=3 uid="uid://dkb2h8gnjfae8"]
+[gd_scene load_steps=13 format=3 uid="uid://dkb2h8gnjfae8"]
+
+[ext_resource type="Script" uid="uid://c17mfb3r5dlpt" path="res://Scene/StartScene/start_scene.gd" id="1_63fgh"]
+[ext_resource type="Texture2D" uid="uid://dhi7u1r6cl0c" path="res://Art/Scene/StartScene/BG1.png" id="1_o3q03"]
+[ext_resource type="Texture2D" uid="uid://d0ombw4xgegap" path="res://Art/Scene/StartScene/BG2.png" id="2_63fgh"]
+[ext_resource type="PackedScene" uid="uid://ewp2hrkovssq" path="res://Scene/Chapter/chapter1.tscn" id="2_p5kcj"]
+[ext_resource type="Texture2D" uid="uid://72s0uynhkx82" path="res://Art/Scene/StartScene/BG3.png" id="3_c762k"]
+[ext_resource type="Texture2D" uid="uid://buct3842si3uc" path="res://Art/Scene/StartScene/PL.png" id="5_o05gn"]
+[ext_resource type="Texture2D" uid="uid://c8t3qsx1ak1jo" path="res://Art/Scene/StartScene/PR.png" id="6_cea66"]
+[ext_resource type="Texture2D" uid="uid://bdlo68k5qe8a0" path="res://Art/Scene/StartScene/Title.png" id="7_p5kcj"]
+[ext_resource type="Texture2D" uid="uid://chidtxm4821sl" path="res://Art/Scene/StartScene/- start game -.png" id="8_cea66"]
+
+[sub_resource type="Animation" id="Animation_c762k"]
+resource_name = "sts"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(0.4, 0.2),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PL:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 0.4),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PR:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.4),
+"transitions": PackedFloat32Array(1, 1, 0.4),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 0.4),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PL:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 10),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(0, -40), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PR:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.6, 10),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(0, -32), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 10),
+"transitions": PackedFloat32Array(1, 0.05),
+"update": 0,
+"values": [Vector2(0, -60), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_63fgh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PL:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PR:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PL:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -40)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PR:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -32)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a5c1a"]
+_data = {
+&"RESET": SubResource("Animation_63fgh"),
+&"sts": SubResource("Animation_c762k")
+}
 
 [node name="StartScene" type="Control"]
 layout_mode = 3
@@ -7,3 +199,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_63fgh")
+nts = ExtResource("2_p5kcj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a5c1a")
+}
+autoplay = "sts"
+
+[node name="BG1" type="Sprite2D" parent="."]
+texture = ExtResource("1_o3q03")
+centered = false
+
+[node name="BG2" type="Sprite2D" parent="."]
+texture = ExtResource("2_63fgh")
+centered = false
+
+[node name="BG3" type="Sprite2D" parent="."]
+position = Vector2(0, 100)
+texture = ExtResource("3_c762k")
+centered = false
+offset = Vector2(0, 118)
+
+[node name="Title" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -60)
+texture = ExtResource("7_p5kcj")
+centered = false
+
+[node name="PL" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -40)
+texture = ExtResource("5_o05gn")
+centered = false
+
+[node name="PR" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -32)
+texture = ExtResource("6_cea66")
+centered = false
+
+[node name="StartButton" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartGame" type="Sprite2D" parent="."]
+texture = ExtResource("8_cea66")
+centered = false
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
