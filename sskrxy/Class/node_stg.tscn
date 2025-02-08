@@ -10,4 +10,7 @@ script = ExtResource("1_xajes")
 lin_curve = SubResource("Curve_xajes")
 metadata/_custom_type_script = ExtResource("1_xajes")
 
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
 [node name="DisappearAreaDetector" parent="." instance=ExtResource("2_epm1g")]

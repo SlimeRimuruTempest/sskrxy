@@ -7,7 +7,7 @@
 script = ExtResource("1_7sn2a")
 metadata/_custom_type_script = ExtResource("1_7sn2a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="BulletArea" type="Area2D" parent="."]
 collision_layer = 2
