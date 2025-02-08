@@ -32,6 +32,12 @@ func get_dir(a: float):
 func get_movement(delta: float):
 	return get_dir(ang) * lin * delta
 
+func _ready() -> void:
+	if not lock_rot:
+		sprite.rotation_degrees = ang + sprite_rot_off
+	else:
+		sprite.rotation_degrees = sprite_rot_off
+
 func _process(delta: float) -> void:
 	if not lock_rot:
 		sprite.rotation_degrees = ang + sprite_rot_off
