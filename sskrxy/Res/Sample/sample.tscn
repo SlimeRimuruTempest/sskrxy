@@ -1,53 +1,83 @@
-[gd_scene load_steps=11 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=12 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
+[ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/loop_shooter.tscn" id="2_fnby8"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="4_3lyvt"]
+[ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/心跳.tscn" id="3_rhpqf"]
+[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/蛇形1.tscn" id="4_savq6"]
+[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/蛇形2.tscn" id="5_t2oe5"]
 
-[sub_resource type="Curve" id="Curve_1py4d"]
-_limits = [0.0, 400.0, 0.0, 100.0]
-_data = [Vector2(0, 400), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_p4upm"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
 point_count = 1
 
-[sub_resource type="Curve" id="Curve_7hlpf"]
+[sub_resource type="Curve" id="Curve_fapwp"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
 
-[sub_resource type="Curve" id="Curve_rhpqf"]
-_limits = [0.0, 2880.0, 0.0, 24.0]
-_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(24, 1440), 60.0, 0.0, 1, 0]
+[sub_resource type="Curve" id="Curve_24ijw"]
+_limits = [0.0, 180.0, 0.0, 5.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(5, 150), 30.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_nawph"]
-_limits = [0.0, 1.0, 0.0, 100.0]
-
-[sub_resource type="Curve" id="Curve_50ijf"]
-_limits = [0.0, 1440.0, 0.0, 40.0]
-_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(40, 1440), 36.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_utjr0"]
-atlas = ExtResource("4_3lyvt")
-region = Rect2(310, 274, 53, 67)
+[sub_resource type="Curve" id="Curve_dusej"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
 [node name="Player" parent="." index="2"]
 wudi = true
 
-[node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
-position = Vector2(-69, 221)
+[node name="Root" parent="." index="3"]
+position = Vector2(970, 200)
+
+[node name="LoopShooter" parent="Root" index="0" instance=ExtResource("2_fnby8")]
+
+[node name="心跳" parent="Root" index="1" instance=ExtResource("3_rhpqf")]
+
+[node name="蛇形Shooter" parent="Root" index="2" instance=ExtResource("4_savq6")]
+
+[node name="蛇形Shooter2" parent="Root" index="3" instance=ExtResource("5_t2oe5")]
+
+[node name="右侧蛇1" parent="Root" index="4" instance=ExtResource("2_h52jr")]
+position = Vector2(201.5, 100)
 bullet_ps = ExtResource("3_3lyvt")
-bullet_lin_curve = SubResource("Curve_1py4d")
-bullet_ang_curve = SubResource("Curve_7hlpf")
-once_num = 24
-once_ang_curve = SubResource("Curve_rhpqf")
-shoot_pos_offset = -800.0
-shoot_cd = 0.05
-shoot_num = 1200
-lin_curve = SubResource("Curve_nawph")
-ang_curve = SubResource("Curve_50ijf")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 5
 
-[node name="Sprite" parent="Root/压力测试" index="0"]
-texture = SubResource("AtlasTexture_utjr0")
+[node name="右侧蛇2" parent="Root" index="5" instance=ExtResource("2_h52jr")]
+position = Vector2(201.5, 100)
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 3
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 5
 
-[editable path="Root/压力测试"]
+[node name="左侧蛇1" parent="Root" index="6" instance=ExtResource("2_h52jr")]
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 5
+
+[node name="左侧蛇2" parent="Root" index="7" instance=ExtResource("2_h52jr")]
+bullet_ps = ExtResource("3_3lyvt")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 3
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 5
