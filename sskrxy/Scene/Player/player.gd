@@ -3,6 +3,8 @@ class_name PlayerBody
 
 @onready var player_sprite: Sprite2D = $PlayerSprite
 
+@export var wudi: bool = false
+
 @export var tex_l: Texture2D
 @export var tex_m: Texture2D
 @export var tex_r: Texture2D
@@ -25,6 +27,8 @@ var current_health: int:
 @export var speed = 300.0
 
 func get_damage(value: int):
+	if wudi:
+		return
 	current_health -= value
 	if current_health == 0:
 		await get_tree().create_timer(0.3).timeout

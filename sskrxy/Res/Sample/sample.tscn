@@ -101,6 +101,9 @@ point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
+[node name="Player" parent="." index="2"]
+wudi = true
+
 [node name="环形自带位移Shooter" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 start_time = 2.0
 end_time = 5.0
