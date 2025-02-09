@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddv6gle85xb1w"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_6c2tm"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_euvei"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_pok4i"]
+
+[sub_resource type="Curve" id="Curve_p4upm"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_fapwp"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_24ijw"]
+_limits = [0.0, 180.0, 0.0, 5.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(5, 150), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="右侧蛇1" type="Node2D"]
+script = ExtResource("1_6c2tm")
+show_time = 10.5
+bullet_ps = ExtResource("2_euvei")
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+once_ang_curve = SubResource("Curve_24ijw")
+shoot_cd = 0.1
+shoot_num = 5
+ori_ang = 90.0
+metadata/_custom_type_script = ExtResource("1_6c2tm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_pok4i")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
