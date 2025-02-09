@@ -1,10 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=10 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/Scene/L1/主3.PNG" id="1_awqdd"]
 [ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/Scene/L1/主2.PNG" id="2_g82cb"]
 [ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/Scene/L1/主1.PNG" id="3_8noda"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
 [ext_resource type="Texture2D" uid="uid://dsbt6u58nbbis" path="res://Art/Scene/L1/Fg.png" id="5_8noda"]
+[ext_resource type="Texture2D" uid="uid://bm40ii6ppvubd" path="res://Art/Scene/L1/Teach.png" id="6_w5tha"]
+
+[sub_resource type="Animation" id="Animation_nds4u"]
+resource_name = "show_teach"
+length = 4.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yy3y6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kblds"]
+_data = {
+&"RESET": SubResource("Animation_yy3y6"),
+&"show_teach": SubResource("Animation_nds4u")
+}
 
 [node name="LevelBase" type="Node2D"]
 
@@ -52,3 +91,14 @@ texture = ExtResource("5_8noda")
 centered = false
 region_enabled = true
 region_rect = Rect2(1375.72, 0, 544.28, 1080)
+
+[node name="Teach" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("6_w5tha")
+centered = false
+
+[node name="TeachAnimationPlayer" type="AnimationPlayer" parent="Teach"]
+libraries = {
+&"": SubResource("AnimationLibrary_kblds")
+}
+autoplay = "show_teach"
