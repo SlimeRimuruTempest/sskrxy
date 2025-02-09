@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs7mwdpsefx6a"]
+[gd_scene load_steps=4 format=3 uid="uid://ejam5td0cbfy"]
 
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_4imq7"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_yy4pd"]
@@ -13,3 +13,6 @@ scale = Vector2(2, 2)
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_owllv")
+
+[node name="CollisionShape2D" parent="BulletArea" index="0"]
+position = Vector2(-0.147221, 8.93613)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b23oovjgyo1fm"]
+[gd_scene load_steps=4 format=3 uid="uid://cw4iwi04ci61y"]
 
 [ext_resource type="PackedScene" uid="uid://d1qcraswkctwa" path="res://Res/Bullet/绿全音符.tscn" id="1_2v8u5"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_7h3na"]
@@ -11,3 +11,6 @@ region = Rect2(176, 67, 72, 94)
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("AtlasTexture_etc1j")
+
+[node name="CollisionShape2D" parent="BulletArea" index="0"]
+position = Vector2(-2.84893, 5.63006)
