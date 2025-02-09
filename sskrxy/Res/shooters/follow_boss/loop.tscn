@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdb70bf0punpw"]
+[gd_scene load_steps=10 format=3 uid="uid://ckd03sorrkr4n"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_87xo5"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_lup7g"]
@@ -13,8 +13,8 @@ point_count = 1
 [sub_resource type="Curve" id="Curve_hnvg0"]
 
 [sub_resource type="Curve" id="Curve_ief0i"]
-_limits = [0.0, 360.0, 0.0, 24.0]
-_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(24, 360), 15.0, 0.0, 1, 0]
+_limits = [0.0, 360.0, 0.0, 36.0]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(36, 360), 10.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ed3tp"]
@@ -31,7 +31,7 @@ script = ExtResource("1_87xo5")
 bullet_ps = ExtResource("2_lup7g")
 bullet_lin_curve = SubResource("Curve_hfgm2")
 bullet_ang_curve = SubResource("Curve_hnvg0")
-once_num = 24
+once_num = 36
 once_ang_curve = SubResource("Curve_ief0i")
 shoot_cd = 0.2
 shoot_num = 5
