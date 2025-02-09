@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dviqu4h0ee1w"]
+
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_psa3s"]
+[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_je5xo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgisr"]
+atlas = ExtResource("2_je5xo")
+region = Rect2(300, 139, 93, 42)
+
+[node name="花瓣3" instance=ExtResource("1_psa3s")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_jgisr")
