@@ -1,12 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2igikx5pwley"]
+[gd_scene load_steps=7 format=3 uid="uid://c2igikx5pwley"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_huiin"]
-[ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="2_mihg7"]
-[ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="3_hn1d7"]
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_hn1d7"]
+[ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="3_huiin"]
+[ext_resource type="AudioStream" uid="uid://fhb2ir6rr13" path="res://music/ego1.mp3" id="3_mihg7"]
+
+[sub_resource type="Curve" id="Curve_hn1d7"]
+_limits = [0.0, 150.0, 0.0, 10.0]
+_data = [Vector2(1, 150), 0.0, 0.0, 0, 0, Vector2(1.001, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_h7jda"]
+_limits = [0.0, 360.0, 0.0, 36.0]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(36, 360), 10.0, 0.0, 1, 0]
+point_count = 2
 
 [node name="Sample" instance=ExtResource("1_huiin")]
 
-[node name="钢琴" parent="Root" index="0" instance=ExtResource("2_mihg7")]
+[node name="主歌2" type="Node2D" parent="Root" index="0"]
+
+[node name="打击垫左" parent="Root/主歌2" index="0" instance=ExtResource("2_hn1d7")]
+position = Vector2(-200, 150)
+bullet_ps = ExtResource("3_huiin")
+bullet_lin_curve = SubResource("Curve_hn1d7")
+once_num = 36
+once_ang_curve = SubResource("Curve_h7jda")
+shoot_num = 1
+
+[node name="打击垫右" parent="Root/主歌2" index="1" instance=ExtResource("2_hn1d7")]
+position = Vector2(200, 150)
+bullet_ps = ExtResource("3_huiin")
+bullet_lin_curve = SubResource("Curve_hn1d7")
+once_num = 36
+once_ang_curve = SubResource("Curve_h7jda")
+shoot_num = 1
 
 [node name="BGM" parent="." index="4"]
-stream = ExtResource("3_hn1d7")
+stream = ExtResource("3_mihg7")

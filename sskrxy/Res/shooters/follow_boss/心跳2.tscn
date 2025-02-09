@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b60yfnd1s2qvw"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_nm5pt"]
+[ext_resource type="PackedScene" uid="uid://d1qcraswkctwa" path="res://Res/Bullet/绿全音符.tscn" id="2_sksqn"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_5qcjc"]
+
+[sub_resource type="Curve" id="Curve_kneyp"]
+_limits = [-300.0, 300.0, 0.0, 10.0]
+_data = [Vector2(0, -300), 0.0, 400.0, 0, 1, Vector2(1.5, 300), 400.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_1xoib"]
+_limits = [0.0, 360.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(12, 360), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="心跳2" type="Node2D"]
+script = ExtResource("1_nm5pt")
+bullet_ps = ExtResource("2_sksqn")
+bullet_lin_curve = SubResource("Curve_kneyp")
+once_num = 12
+once_ang_curve = SubResource("Curve_1xoib")
+shoot_cd = 1.5
+shoot_num = 16
+metadata/_custom_type_script = ExtResource("1_nm5pt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_5qcjc")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]

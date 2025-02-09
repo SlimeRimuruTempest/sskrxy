@@ -10,5 +10,4 @@ region = Rect2(299, 201, 43, 56)
 [node name="花1" instance=ExtResource("1_w3hvx")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_ff2tk")
