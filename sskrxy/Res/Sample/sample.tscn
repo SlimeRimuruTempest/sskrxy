@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=65 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="16_yr0h5"]
 [ext_resource type="PackedScene" uid="uid://byigexai5jfki" path="res://Res/Bullet/花2.tscn" id="17_jft22"]
 [ext_resource type="PackedScene" uid="uid://x3jyhn5m10eb" path="res://Res/shooters/follow_boss/红loop.tscn" id="19_5k170"]
+[ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="21_uc3bf"]
 
 [sub_resource type="Curve" id="Curve_fapwp"]
 _limits = [-45.0, 45.0, 0.0, 15.0]
@@ -226,16 +227,6 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_ief0i"]
 _limits = [0.0, 30.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_kneyp"]
-_limits = [0.0, 200.0, 0.0, 10.0]
-_data = [Vector2(1, 200), 0.0, 0.0, 0, 0, Vector2(1.001, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_1xoib"]
-_limits = [0.0, 360.0, 0.0, 36.0]
-_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(36, 360), 10.0, 0.0, 1, 0]
 point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
@@ -589,21 +580,8 @@ z_index = 1
 
 [node name="主歌2" type="Node2D" parent="Root" index="8"]
 
-[node name="打击垫左" parent="Root/主歌2" index="0" instance=ExtResource("2_h52jr")]
-position = Vector2(-200, 150)
-bullet_ps = ExtResource("15_50ijf")
-bullet_lin_curve = SubResource("Curve_kneyp")
-once_num = 36
-once_ang_curve = SubResource("Curve_1xoib")
-shoot_num = 1
-
-[node name="打击垫右" parent="Root/主歌2" index="1" instance=ExtResource("2_h52jr")]
-position = Vector2(200, 150)
-bullet_ps = ExtResource("15_50ijf")
-bullet_lin_curve = SubResource("Curve_kneyp")
-once_num = 36
-once_ang_curve = SubResource("Curve_1xoib")
-shoot_num = 1
+[node name="波与粒的境界" parent="Root/主歌2" index="0" instance=ExtResource("21_uc3bf")]
+position = Vector2(0, 200)
 
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("8_savq6")
