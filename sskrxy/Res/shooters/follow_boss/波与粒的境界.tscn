@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bptfyjnaqw0nq"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_demc3"]
+[ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="2_5fcwg"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_8irm0"]
+
+[sub_resource type="Curve" id="Curve_huiin"]
+_limits = [0.0, 300.0, 0.0, 10.0]
+_data = [Vector2(10, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_hn1d7"]
+_limits = [0.0, 360.0, 0.0, 18.0]
+_data = [Vector2(0, 0), 0.0, 20.0, 0, 1, Vector2(18, 360), 20.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_h7jda"]
+_limits = [-360.0, 3600.0, 0.0, 14.0]
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(14, 3600), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="波与粒的境界" type="Node2D"]
+script = ExtResource("1_demc3")
+bullet_ps = ExtResource("2_5fcwg")
+bullet_lin_curve = SubResource("Curve_huiin")
+once_num = 18
+once_ang_curve = SubResource("Curve_hn1d7")
+shoot_cd = 0.1
+shoot_num = 100
+ang_curve = SubResource("Curve_h7jda")
+metadata/_custom_type_script = ExtResource("1_demc3")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_8irm0")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
