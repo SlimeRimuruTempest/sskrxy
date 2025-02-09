@@ -15,17 +15,17 @@ point_count = 1
 [sub_resource type="Curve" id="Curve_7hlpf"]
 
 [sub_resource type="Curve" id="Curve_rhpqf"]
-_limits = [0.0, 2880.0, 0.0, 24.0]
-_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(24, 1440), 60.0, 0.0, 1, 0]
+_limits = [0.0, 720.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(12, 360), 30.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_nawph"]
 _limits = [0.0, 1.0, 0.0, 100.0]
 
 [sub_resource type="Curve" id="Curve_50ijf"]
-_limits = [0.0, 1440.0, 0.0, 40.0]
-_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(40, 1440), 36.0, 0.0, 1, 0]
-point_count = 2
+_limits = [-720.0, 720.0, 0.0, 40.0]
+_data = [Vector2(0, 0), 0.0, 144.0, 0, 1, Vector2(5, 720), 0.0, 0.0, 0, 0, Vector2(15, -720), 0.0, 0.0, 0, 0, Vector2(25, 720), 0.0, 0.0, 0, 0, Vector2(35, -720), 0.0, 0.0, 0, 0, Vector2(40, 0), 144.0, 0.0, 1, 0]
+point_count = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utjr0"]
 atlas = ExtResource("4_3lyvt")
@@ -33,16 +33,18 @@ region = Rect2(310, 274, 53, 67)
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
+[node name="Player" parent="." index="2"]
+wudi = true
+
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
-position = Vector2(-69, 221)
+position = Vector2(0, 176)
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt"), ExtResource("4_utjr0")])
 shoot_mode_2 = 1
 bullet_lin_curve = SubResource("Curve_1py4d")
 bullet_ang_curve = SubResource("Curve_7hlpf")
-once_num = 24
+once_num = 12
 once_ang_curve = SubResource("Curve_rhpqf")
-shoot_pos_offset = -800.0
-shoot_cd = 0.1
+shoot_cd = 0.05
 shoot_num = 600
 lock_rot = true
 lin_curve = SubResource("Curve_nawph")

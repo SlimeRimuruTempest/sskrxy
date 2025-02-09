@@ -23,10 +23,10 @@ var tot_time: float = 0
 
 var lin: float:
 	get:
-		return lin_curve.sample_baked(tot_time)
+		return lin_curve.sample(tot_time)
 var ang: float:
 	get:
-		return ang_curve.sample_baked(tot_time) + ori_ang
+		return ang_curve.sample(tot_time) + ori_ang
 func get_dir(a: float):
 	return Vector2.from_angle(deg_to_rad(a))
 func get_movement(delta: float):

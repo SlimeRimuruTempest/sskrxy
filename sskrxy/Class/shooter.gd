@@ -8,7 +8,6 @@ class_name Shooter
 ## 发射完到销毁的等待时间
 @export var end_time: float
 
-
 ## 发射物
 @export var bullet_pool: Array[PackedScene]
 
@@ -67,7 +66,7 @@ func shoot_once():
 				bullet_ps = get_bullet()
 		#var lin_off: = once_lin_curve.sample(i)
 		var bullet: = bullet_ps.instantiate()
-		var ang_off: = once_ang_curve.sample_baked(i)
+		var ang_off: = once_ang_curve.sample(i)
 		if bullet_follow_mum:
 			add_child(bullet)
 		else:
