@@ -1,19 +1,29 @@
-[gd_scene load_steps=31 format=3 uid="uid://ewp2hrkovssq"]
+[gd_scene load_steps=39 format=3 uid="uid://ewp2hrkovssq"]
 
 [ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_a2fqw"]
 [ext_resource type="Script" uid="uid://bckim3syuok7i" path="res://Scene/Chapter/chapter_1.gd" id="1_lnugw"]
 [ext_resource type="PackedScene" uid="uid://wv8wrc12p5g3" path="res://Res/Sample/sample.tscn" id="2_5bhq5"]
 [ext_resource type="PackedScene" uid="uid://rspc6iao21u6" path="res://Scene/Chapter/LyricBook/lyric_book.tscn" id="2_uwbfd"]
+[ext_resource type="Texture2D" uid="uid://kyv5ocj51dlo" path="res://Art/Scene/C1/Dialogue/D1.png" id="2_wf4ge"]
+[ext_resource type="Texture2D" uid="uid://dsdtggqah6saa" path="res://Art/Scene/C1/Dialogue/D2.png" id="3_0ukwh"]
 [ext_resource type="Texture2D" uid="uid://cnlxgt8g54tik" path="res://Art/LyricBook/エルゴスム/quiz.png" id="3_aaudm"]
 [ext_resource type="Texture2D" uid="uid://c3hnd3cltatp1" path="res://Art/Scene/C1/Ring1.png" id="4_pqmx1"]
+[ext_resource type="Texture2D" uid="uid://dyxl3x4slgkpy" path="res://Art/Scene/C1/Dialogue/D3.png" id="4_wrgwr"]
+[ext_resource type="Texture2D" uid="uid://c3gsqydp4j7s5" path="res://Art/Scene/C1/Dialogue/D4.png" id="5_elaay"]
 [ext_resource type="Texture2D" uid="uid://cveodwsj4mx6j" path="res://Art/Scene/C1/Ring2.png" id="5_pcnlo"]
 [ext_resource type="Texture2D" uid="uid://xbn5p2kg66m0" path="res://Art/LyricBook/エルゴスム/S∀MPLING MΘNSTER.png" id="5_uu4i1"]
+[ext_resource type="Texture2D" uid="uid://q1oyra54y2ii" path="res://Art/Scene/C1/Dialogue/D5.png" id="6_6yi7t"]
+[ext_resource type="Texture2D" uid="uid://cpt6q457tqfi7" path="res://Art/Scene/C1/Dialogue/D6.png" id="7_0hvb1"]
 [ext_resource type="Texture2D" uid="uid://cw1fghfq7t2li" path="res://Art/LyricBook/エルゴスム/- quiz.png" id="7_6j0po"]
 [ext_resource type="Texture2D" uid="uid://c08fj5xacnnno" path="res://Art/LyricBook/エルゴスム/サーカトーヴォ.png" id="7_wwyfn"]
+[ext_resource type="Texture2D" uid="uid://mf4nyonm46tj" path="res://Art/Scene/C1/Dialogue/D7.png" id="8_jeb21"]
 [ext_resource type="Texture2D" uid="uid://bdwvhwcmvcq00" path="res://Art/LyricBook/エルゴスム/スマートを模索する.png" id="9_pcnlo"]
 [ext_resource type="Texture2D" uid="uid://dqouw0r0u7xq6" path="res://Art/LyricBook/エルゴスム/- S∀MPLING MΘNSTER.png" id="9_rthgv"]
+[ext_resource type="Texture2D" uid="uid://cwxbkcioowy38" path="res://Art/Scene/C1/Dialogue/D8.png" id="9_ytnsm"]
+[ext_resource type="Texture2D" uid="uid://bdfch7fpjjul" path="res://Art/Scene/C1/Dialogue/D9.png" id="10_so0ql"]
 [ext_resource type="Texture2D" uid="uid://dnl3w8dec7dj3" path="res://Art/LyricBook/エルゴスム/トーチカ.png" id="11_6j0po"]
 [ext_resource type="Texture2D" uid="uid://dgnjtmrecdj07" path="res://Art/LyricBook/エルゴスム/- サーカトーヴォ.png" id="11_kuk0f"]
+[ext_resource type="Texture2D" uid="uid://dytyix8u0prjx" path="res://Art/Scene/C1/Dialogue/D10.png" id="11_v1t0q"]
 [ext_resource type="Texture2D" uid="uid://7i22aj64awbu" path="res://Art/LyricBook/エルゴスム/- スマートを模索する.png" id="13_6cm64"]
 [ext_resource type="Texture2D" uid="uid://c7nfgeyot6svo" path="res://Art/LyricBook/エルゴスム/レプリカ.png" id="13_kuk0f"]
 [ext_resource type="Texture2D" uid="uid://su5h5lkjmfsg" path="res://Art/LyricBook/エルゴスム/- トーチカ.png" id="15_8mex3"]
@@ -24,7 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://f773f112dnww" path="res://Art/Scene/C1/p1.png" id="21_uu4i1"]
 [ext_resource type="Texture2D" uid="uid://by8io43dp8ktv" path="res://Art/Scene/C1/p2.png" id="22_5bhq5"]
 [ext_resource type="Texture2D" uid="uid://des0c51q2ljl7" path="res://Art/LyricBook/エルゴスム/- 阿呆なるものは.png" id="22_elaay"]
-[ext_resource type="Texture2D" uid="uid://dl0aibsnqncf" path="res://Art/LyricBook/エルゴスム/エゴ.jpg" id="23_uu4i1"]
 
 [sub_resource type="Animation" id="Animation_pqmx1"]
 length = 0.001
@@ -112,21 +121,6 @@ _data = {
 &"show9": SubResource("Animation_wwyfn")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwyfn"]
-bg_color = Color(0, 0, 0, 0)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-corner_detail = 12
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-shadow_color = Color(0, 0, 0, 0.627451)
-shadow_size = 14
-anti_aliasing_size = 2.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6o3r"]
 animations = [{
 "frames": [{
@@ -143,17 +137,7 @@ animations = [{
 
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_lnugw")
-dialogue = Array[String](["这个世界的「歌」已经消失了。
-この世界のうたは、もう消えそうだ.", "如今我又该如何继续歌唱下去呢。 
-今更どうやって歌い続ければいいのでしょう.", "我不想等待没有回应的回应。
-返事の無い返事を待つのが嫌だから.", "是不是因为我问了太多无趣的问题，所以你才不愿回应。
-くだらない質問投げつけていたの? ", "Master……请不要走。
-マスター…行かないで…", "一切都回不去了，梦境消散了，我却无法就这样醒来。
-全ては戻れなかった。夢も消えちゃった。それなのに、目が覚めないの.", "明明已经知道了这个问题的答案。
-その答えはわかっているのに…", "你已经……早就不在了啊。
-君はもう…いないだろう.", "可我依然期盼再次听到你的声音。
-でも私、あなたの声を聞きたいと思ってる.", "请你回答我，Master。
-答えよ、マスター."])
+dialogue_tex = Array[Texture2D]([ExtResource("2_wf4ge"), ExtResource("3_0ukwh"), ExtResource("4_wrgwr"), ExtResource("5_elaay"), ExtResource("6_6yi7t"), ExtResource("7_0hvb1"), ExtResource("8_jeb21"), ExtResource("9_ytnsm"), ExtResource("10_so0ql")])
 nts = ExtResource("2_5bhq5")
 
 [node name="BG" type="Sprite2D" parent="."]
@@ -255,23 +239,13 @@ scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("22_5bhq5")
 offset = Vector2(86, -56)
 
-[node name="TalkContainer" type="PanelContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0.807843)
-offset_left = 424.0
-offset_top = 548.0
-offset_right = 425.0
-offset_bottom = 582.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wwyfn")
-
-[node name="TalkLabel" type="Label" parent="TalkContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 33
-vertical_alignment = 1
-
 [node name="Ring" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_c6o3r")
 autoplay = "default"
 frame_progress = 0.19809
+centered = false
+
+[node name="DialogueSprite" type="Sprite2D" parent="."]
 centered = false
 
 [node name="Ego" type="CanvasLayer" parent="."]
@@ -287,7 +261,7 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Ego/Ego"]
 layout_mode = 2
-texture = ExtResource("23_uu4i1")
+texture = ExtResource("11_v1t0q")
 expand_mode = 5
 stretch_mode = 5
 
