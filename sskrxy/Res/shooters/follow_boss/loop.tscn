@@ -28,7 +28,7 @@ region = Rect2(418, 6, 89, 88)
 
 [node name="loop" type="Node2D"]
 script = ExtResource("1_87xo5")
-bullet_ps = ExtResource("2_lup7g")
+bullet_pool = Array[PackedScene]([ExtResource("2_lup7g")])
 bullet_lin_curve = SubResource("Curve_hfgm2")
 bullet_ang_curve = SubResource("Curve_hnvg0")
 once_num = 36

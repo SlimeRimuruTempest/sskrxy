@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://yk0edmr3j6jw"]
+
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_jt7ta"]
+[ext_resource type="Texture2D" uid="uid://cfdfsq4kp4cws" path="res://Art/Scene/words/702B376620251FF1C5CE0DFDF0EAF2D9.png" id="2_tuwmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es6ip"]
+atlas = ExtResource("2_tuwmw")
+region = Rect2(367.694, 43.3887, 937.333, 1440.12)
+
+[node name="B1" instance=ExtResource("1_jt7ta")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("AtlasTexture_es6ip")
