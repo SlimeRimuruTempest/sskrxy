@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://kll2wtrhjhpv"]
+
+[ext_resource type="PackedScene" uid="uid://bsqtgwjuf1kmv" path="res://Res/shooters/自由/钢琴.tscn" id="1_uqr8k"]
+[ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/跟随boss/心跳.tscn" id="2_q1brn"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="3_l8lys"]
+[ext_resource type="PackedScene" uid="uid://d1qcraswkctwa" path="res://Res/Bullet/绿全音符.tscn" id="4_fyc5o"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="5_3a70p"]
+
+[sub_resource type="Curve" id="Curve_hsppd"]
+_limits = [-300.0, 300.0, 0.0, 1.5]
+_data = [Vector2(0, -300), 0.0, 0.0, 0, 0, Vector2(1.49862, 300), 84.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ckmpx"]
+_limits = [0.0, 360.0, 0.0, 6.0]
+_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(6, 360), 60.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 180.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 20.0, 0, 1, Vector2(9, 180), 20.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="前奏1" type="Node2D"]
+
+[node name="钢琴" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(-242.272, -184.334)
+
+[node name="钢琴2" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(188.655, -180.946)
+show_time = 3.0
+
+[node name="钢琴3" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(19.6, -183.3)
+show_time = 6.0
+
+[node name="钢琴4" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(301.2, -184.4)
+show_time = 7.6
+
+[node name="钢琴5" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(-123.4, -184.4)
+show_time = 9.36
+
+[node name="钢琴6" parent="." instance=ExtResource("1_uqr8k")]
+position = Vector2(-351, -184.8)
+show_time = 10.6
+
+[node name="心跳" parent="." instance=ExtResource("2_q1brn")]
+end_time = 35.0
+
+[node name="心跳2" type="Node2D" parent="心跳"]
+script = ExtResource("3_l8lys")
+end_time = 20.0
+bullet_ps = ExtResource("4_fyc5o")
+bullet_lin_curve = SubResource("Curve_hsppd")
+once_num = 6
+once_ang_curve = SubResource("Curve_ckmpx")
+shoot_cd = 1.5
+shoot_num = 7
+ori_ang = 90.0
+ang_curve = SubResource("Curve_insau")
+metadata/_custom_type_script = ExtResource("3_l8lys")
+
+[node name="Sprite" type="Sprite2D" parent="心跳/心跳2"]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="心跳/心跳2" instance=ExtResource("5_3a70p")]
+
+[connection signal="ready" from="心跳/心跳2" to="心跳/心跳2" method="_on_ready"]
