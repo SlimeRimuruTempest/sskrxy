@@ -1,5 +1,5 @@
 shader_type canvas_item;
-
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform int blur_radius : hint_range(1, 32) = 8;
 uniform float Darkness : hint_range(0.0,1.0) = 0.1;
 uniform float R : hint_range(0.0,1.0) = 0;
@@ -24,6 +24,7 @@ void calculate_kernel(out float kernel[32], int radius, float sigma) {
 
 void fragment() {
     vec2 resolution = SCREEN_PIXEL_SIZE;
+    vec2 uv = SCREEN_UV;
 
     float kernel[32];
     calculate_kernel(kernel, blur_radius, blur_strength);
@@ -35,7 +36,7 @@ void fragment() {
         for (int y = -blur_radius; y <= blur_radius; y++) {
             float weight = kernel[abs(x)] * kernel[abs(y)];
             vec2 offset = vec2(float(x), float(y)) * resolution;
-            final_color += texture(TEXTURE, UV + offset).rgb * weight;
+            final_color += texture(SCREEN_TEXTURE, uv + offset).rgb * weight;
             total_weight += weight;
         }
     }
