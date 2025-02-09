@@ -8,6 +8,7 @@ atlas = ExtResource("2_y3ful")
 region = Rect2(427, 106, 72, 91)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks63p"]
+radius = 2.75041
 
 [node name="B1" instance=ExtResource("1_ks63p")]
 sprite_rot_off = 90.0

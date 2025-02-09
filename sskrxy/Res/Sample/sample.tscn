@@ -7,15 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://ckd03sorrkr4n" path="res://Res/shooters/follow_boss/loop.tscn" id="3_50ijf"]
 [ext_resource type="PackedScene" uid="uid://d4dv644shujeq" path="res://Res/shooters/follow_boss/心跳.tscn" id="3_rhpqf"]
 [ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="4_eg5cq"]
-[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/蛇形1.tscn" id="4_savq6"]
+[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/free/蛇形1.tscn" id="4_savq6"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="5_nawph"]
-[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/蛇形2.tscn" id="5_t2oe5"]
+[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/free/蛇形2.tscn" id="5_t2oe5"]
 [ext_resource type="PackedScene" uid="uid://b60yfnd1s2qvw" path="res://Res/shooters/follow_boss/心跳2.tscn" id="6_jg6ky"]
 [ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="8_savq6"]
-[ext_resource type="PackedScene" path="res://Res/Bullet/蓝二分音符.tscn" id="9_1py4d"]
-[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
-[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
-[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
+[ext_resource type="PackedScene" uid="uid://ejam5td0cbfy" path="res://Res/Bullet/蓝二分音符.tscn" id="9_1py4d"]
+[ext_resource type="PackedScene" uid="uid://ds0fnxiilrspi" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
+[ext_resource type="PackedScene" uid="uid://c6lhmn72ylmjn" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
+[ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="14_yr0h5"]
 [ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="15_50ijf"]
 [ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="16_yr0h5"]
@@ -581,7 +581,10 @@ z_index = 1
 [node name="主歌2" type="Node2D" parent="Root" index="8"]
 
 [node name="波与粒的境界" parent="Root/主歌2" index="0" instance=ExtResource("21_uc3bf")]
-position = Vector2(0, 200)
+position = Vector2(1.12622, 2.38548)
+show_time = 118.5
+
+[node name="loop3" type="Node2D" parent="Root" index="9"]
 
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("8_savq6")
