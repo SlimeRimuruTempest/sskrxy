@@ -1,57 +1,175 @@
-[gd_scene load_steps=19 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=50 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
-[ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/loop_shooter.tscn" id="2_fnby8"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="2_insau"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
-[ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/心跳.tscn" id="3_rhpqf"]
-[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/蛇形1.tscn" id="4_savq6"]
-[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/蛇形2.tscn" id="5_t2oe5"]
+[ext_resource type="PackedScene" uid="uid://cdb70bf0punpw" path="res://Res/shooters/跟随boss/loop.tscn" id="3_50ijf"]
+[ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/跟随boss/心跳.tscn" id="3_rhpqf"]
+[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/跟随boss/蛇形1.tscn" id="4_savq6"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="5_nawph"]
+[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/跟随boss/蛇形2.tscn" id="5_t2oe5"]
 [ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="8_savq6"]
-[ext_resource type="PackedScene" uid="uid://d1qcraswkctwa" path="res://Res/Bullet/绿全音符.tscn" id="8_t2oe5"]
-
-[sub_resource type="Curve" id="Curve_hsppd"]
-_limits = [-300.0, 300.0, 0.0, 1.5]
-_data = [Vector2(0, -300), 0.0, 0.0, 0, 0, Vector2(1.49862, 300), 84.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_ckmpx"]
-_limits = [0.0, 360.0, 0.0, 6.0]
-_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(6, 360), 60.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_insau"]
-_limits = [0.0, 180.0, 0.0, 9.0]
-_data = [Vector2(0, 0), 0.0, 20.0, 0, 1, Vector2(9, 180), 20.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_p4upm"]
-_limits = [0.0, 250.0, 0.0, 10.0]
-_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
-point_count = 1
+[ext_resource type="PackedScene" uid="uid://cs7mwdpsefx6a" path="res://Res/Bullet/蓝二分音符.tscn" id="9_1py4d"]
+[ext_resource type="PackedScene" uid="uid://brtuaklqhni26" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
+[ext_resource type="PackedScene" uid="uid://sbl1mvd3c64j" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
+[ext_resource type="PackedScene" uid="uid://dviqu4h0ee1w" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
+[ext_resource type="PackedScene" uid="uid://bsqtgwjuf1kmv" path="res://Res/shooters/自由/钢琴.tscn" id="12_1py4d"]
+[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="14_yr0h5"]
+[ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="15_50ijf"]
+[ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="16_yr0h5"]
+[ext_resource type="PackedScene" uid="uid://byigexai5jfki" path="res://Res/Bullet/花2.tscn" id="17_jft22"]
 
 [sub_resource type="Curve" id="Curve_fapwp"]
 _limits = [-45.0, 45.0, 0.0, 15.0]
 _data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
 point_count = 16
 
-[sub_resource type="Curve" id="Curve_24ijw"]
-_limits = [0.0, 180.0, 0.0, 5.0]
-_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(5, 150), 30.0, 0.0, 1, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_dusej"]
 _limits = [-45.0, 45.0, 0.0, 15.0]
 _data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
 point_count = 16
 
-[sub_resource type="Curve" id="Curve_savq6"]
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 300.0, 0.0, 1024.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
 
-[sub_resource type="Curve" id="Curve_t2oe5"]
+[sub_resource type="Curve" id="Curve_jft22"]
+_limits = [0.0, 30.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(2, 30), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_eg5cq"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hfgm2"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_hnvg0"]
+_limits = [0.0, 120.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 13.3333, 0, 1, Vector2(9, 120), 13.3333, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7hlpf"]
+
+[sub_resource type="Curve" id="Curve_1py4d"]
+_limits = [0.0, 120.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 80.0, 0, 1, Vector2(1.5, 120), 80.0, -60.0, 1, 1, Vector2(3, 30), -60.0, 40.0, 1, 1, Vector2(4.5, 90), 40.0, -30.0, 1, 1, Vector2(6, 45), -30.0, 40.0, 1, 1, Vector2(7.5, 105), 40.0, -30.0, 1, 1, Vector2(9, 60), -30.0, 0.0, 1, 0]
+point_count = 7
+
+[sub_resource type="Curve" id="Curve_nawph"]
+_limits = [0.0, 300.0, 0.0, 10.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_50ijf"]
+_limits = [0.0, 120.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(12, 120), 10.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yr0h5"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 37.5, 0, 1, Vector2(0.8, 30), 37.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5k170"]
+_limits = [0.0, 300.0, 0.0, 20.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_jg6ky"]
+_limits = [-360.0, 360.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 0), 0.0, 180.0, 1, 1, Vector2(3, 360), 180.0, -360026.0, 1, 1]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_uc3bf"]
+_limits = [-360.0, 1.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, -180.0, 1, 1, Vector2(3, -360), -180.0, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_wppxb"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_m5xrl"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_iuwxi"]
+_limits = [0.0, 25.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2, 25), 0.0, 0.0, 0, 0, Vector2(4, 0), 0.0, 0.0, 0, 0, Vector2(6, 25), 0.0, 0.0, 0, 0, Vector2(8, 0), 0.0, 0.0, 0, 0, Vector2(10, 25), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_jnjgj"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_cwhxq"]
+_limits = [0.0, 90.0, 0.0, 2.0]
+_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 45), 0.0, 0.0, 0, 0, Vector2(2, 75), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_tdcm0"]
+_limits = [-10.0, 10.0, 0.0, 42.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1.5, 5), 0.0, 0.0, 0, 0, Vector2(3, 10), 0.0, 0.0, 0, 0, Vector2(4.5, 5), 0.0, 0.0, 0, 0, Vector2(6, 0), 0.0, 0.0, 0, 0, Vector2(7.5, -5), 0.0, 0.0, 0, 0, Vector2(9, -10), 0.0, 0.0, 0, 0, Vector2(10.5, -5), 0.0, 0.0, 0, 0, Vector2(12, 0), 0.0, 0.0, 0, 0, Vector2(13.5, 5), 0.0, 0.0, 0, 0, Vector2(15, 10), 0.0, 0.0, 0, 0, Vector2(16.5, 5), 0.0, 0.0, 0, 0, Vector2(18, 0), 0.0, 0.0, 0, 0, Vector2(19.5, -5), 0.0, 0.0, 0, 0, Vector2(21, -10), 0.0, 0.0, 0, 0, Vector2(22.5, -5), 0.0, 0.0, 0, 0, Vector2(24, 0), 0.0, 0.0, 0, 0, Vector2(25.5, 5), 0.0, 0.0, 0, 0, Vector2(27, 10), 0.0, 0.0, 0, 0, Vector2(28.5, 5), 0.0, 0.0, 0, 0, Vector2(30, 0), 0.0, 0.0, 0, 0, Vector2(31.5, -5), 0.0, 0.0, 0, 0, Vector2(33, -10), 0.0, 0.0, 0, 0, Vector2(34.5, -5), 0.0, 0.0, 0, 0, Vector2(36, 0), 0.0, 0.0, 0, 0, Vector2(37.5, 5), 0.0, 0.0, 0, 0, Vector2(39, 10), 0.0, 0.0, 0, 0, Vector2(40.5, 5), 0.0, 0.0, 0, 0, Vector2(42, 0), 0.0, 0.0, 0, 0]
+point_count = 29
+
+[sub_resource type="Curve" id="Curve_oml01"]
+_limits = [0.0, 90.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0, Vector2(2, 60), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_mx7kp"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_d7r5f"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pw8sf"]
+_limits = [0.0, 200.0, 0.0, 5.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_rkann"]
+_limits = [-30.0, 150.0, 0.0, 5.0]
+_data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx7kp"]
+atlas = ExtResource("14_yr0h5")
+region = Rect2(299, 201, 43, 56)
+
+[sub_resource type="Curve" id="Curve_vxh70"]
+_limits = [0.0, 300.0, 0.0, 1.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_sr1em"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_o7i2n"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
 [node name="Player" parent="." index="2"]
+scale = Vector2(0.8, 0.8)
 wudi = true
 speed = 500.0
 slow_speed = 250.0
@@ -59,87 +177,263 @@ slow_speed = 250.0
 [node name="Root" parent="." index="3"]
 position = Vector2(970, 200)
 
-[node name="LoopShooter" parent="Root" index="0" instance=ExtResource("2_fnby8")]
+[node name="蛇形Shooter" parent="Root" index="0" instance=ExtResource("4_savq6")]
+start_time = 10.5
+end_time = 2.0
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+ori_ang = 60.0
 
-[node name="心跳" parent="Root" index="1" instance=ExtResource("3_rhpqf")]
+[node name="蛇形Shooter2" parent="Root" index="1" instance=ExtResource("5_t2oe5")]
+start_time = 10.5
+end_time = 2.0
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 3
+ori_ang = 60.0
+
+[node name="前奏1" type="Node2D" parent="Root" index="2"]
+
+[node name="钢琴" parent="Root/前奏1" index="0" instance=ExtResource("12_1py4d")]
+position = Vector2(-242.272, -184.334)
+
+[node name="钢琴2" parent="Root/前奏1" index="1" instance=ExtResource("12_1py4d")]
+position = Vector2(188.655, -180.946)
+show_time = 3.0
+
+[node name="钢琴3" parent="Root/前奏1" index="2" instance=ExtResource("12_1py4d")]
+position = Vector2(19.6, -183.3)
+show_time = 6.0
+
+[node name="钢琴4" parent="Root/前奏1" index="3" instance=ExtResource("12_1py4d")]
+position = Vector2(301.2, -184.4)
+show_time = 7.6
+
+[node name="钢琴5" parent="Root/前奏1" index="4" instance=ExtResource("12_1py4d")]
+position = Vector2(-123.4, -184.4)
+show_time = 9.36
+
+[node name="钢琴6" parent="Root/前奏1" index="5" instance=ExtResource("12_1py4d")]
+position = Vector2(-351, -184.8)
+show_time = 10.6
+
+[node name="心跳" parent="Root/前奏1" index="6" instance=ExtResource("3_rhpqf")]
 end_time = 35.0
 
-[node name="前奏" parent="Root/心跳" index="2" instance=ExtResource("2_h52jr")]
-end_time = 20.0
-bullet_ps = ExtResource("8_t2oe5")
-bullet_lin_curve = SubResource("Curve_hsppd")
-once_num = 6
-once_ang_curve = SubResource("Curve_ckmpx")
+[node name="前奏2" type="Node2D" parent="Root" index="3"]
+
+[node name="钢琴" parent="Root/前奏2" index="0" instance=ExtResource("12_1py4d")]
+position = Vector2(-187.75, -177.58)
+show_time = 12.4
+
+[node name="撒花1" parent="Root/前奏2" index="1" instance=ExtResource("2_h52jr")]
+position = Vector2(-158.327, -179.276)
+show_time = 12.4
+bullet_ps = ExtResource("11_yr0h5")
+bullet_lin_curve = SubResource("Curve_insau")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+once_ang_curve = SubResource("Curve_jft22")
+shoot_cd = 0.1
+shoot_num = 1
+ori_ang = 60.0
+
+[node name="钢琴2" parent="Root/前奏2" index="2" instance=ExtResource("12_1py4d")]
+position = Vector2(83.29, -178.79)
+show_time = 15.3
+
+[node name="撒花2" parent="Root/前奏2" index="3" instance=ExtResource("2_h52jr")]
+position = Vector2(139.682, -177.691)
+show_time = 15.3
+bullet_ps = ExtResource("9_nawph")
+bullet_lin_curve = SubResource("Curve_insau")
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 3
+once_ang_curve = SubResource("Curve_jft22")
+
+[node name="钢琴3" parent="Root/前奏2" index="4" instance=ExtResource("12_1py4d")]
+position = Vector2(239.38, -175.16)
+show_time = 18.3
+
+[node name="撒花3" parent="Root/前奏2" index="5" instance=ExtResource("2_h52jr")]
+position = Vector2(4.1618, -82.1011)
+show_time = 18.3
+bullet_ps = ExtResource("10_50ijf")
+bullet_lin_curve = SubResource("Curve_insau")
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 5
+once_ang_curve = SubResource("Curve_eg5cq")
+shoot_num = 1
+ori_ang = 45.0
+
+[node name="钢琴4" parent="Root/前奏2" index="6" instance=ExtResource("12_1py4d")]
+position = Vector2(353.12, -183.63)
+show_time = 19.48
+
+[node name="钢琴5" parent="Root/前奏2" index="7" instance=ExtResource("12_1py4d")]
+position = Vector2(-64.33, -181.21)
+show_time = 21.42
+
+[node name="撒花4" parent="Root/前奏2" index="8" instance=ExtResource("2_h52jr")]
+position = Vector2(59.09, -184.84)
+show_time = 21.42
+bullet_ps = ExtResource("10_50ijf")
+bullet_lin_curve = SubResource("Curve_insau")
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
+once_ang_curve = SubResource("Curve_jft22")
+shoot_cd = 0.1
+shoot_num = 1
+ori_ang = 60.0
+
+[node name="钢琴6" parent="Root/前奏2" index="9" instance=ExtResource("12_1py4d")]
+position = Vector2(-28.0299, -182.42)
+show_time = 22.5
+
+[node name="loop1" type="Node2D" parent="Root" index="4"]
+
+[node name="LoopShooter" type="Node2D" parent="Root/loop1" index="0"]
+script = ExtResource("2_insau")
+show_time = 24.0
+bullet_ps = ExtResource("3_50ijf")
+bullet_lin_curve = SubResource("Curve_hfgm2")
+bullet_ang_curve = SubResource("Curve_hnvg0")
+once_ang_curve = SubResource("Curve_7hlpf")
 shoot_cd = 1.5
 shoot_num = 7
-ori_ang = 90.0
-ang_curve = SubResource("Curve_insau")
-
-[node name="蛇形Shooter" parent="Root" index="2" instance=ExtResource("4_savq6")]
-start_time = 10.5
-end_time = 2.0
-once_num = 3
-ori_ang = 60.0
-
-[node name="蛇形Shooter2" parent="Root" index="3" instance=ExtResource("5_t2oe5")]
-start_time = 10.5
-end_time = 2.0
-once_num = 3
-ori_ang = 60.0
-
-[node name="右侧蛇1" parent="Root" index="4" instance=ExtResource("2_h52jr")]
-position = Vector2(323, 200)
-start_time = 10.5
-end_time = 2.0
-bullet_ps = ExtResource("3_3lyvt")
-bullet_lin_curve = SubResource("Curve_p4upm")
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = 3
-once_ang_curve = SubResource("Curve_24ijw")
-shoot_cd = 0.1
-shoot_num = 5
-ori_ang = 90.0
-
-[node name="右侧蛇2" parent="Root" index="5" instance=ExtResource("2_h52jr")]
-position = Vector2(323, 200)
-start_time = 10.5
-end_time = 2.0
-bullet_ps = ExtResource("3_3lyvt")
-bullet_lin_curve = SubResource("Curve_p4upm")
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = 3
-once_ang_curve = SubResource("Curve_24ijw")
-shoot_cd = 0.1
-shoot_num = 5
-ori_ang = 90.0
-
-[node name="左侧蛇1" parent="Root" index="6" instance=ExtResource("2_h52jr")]
-position = Vector2(-300, 200)
-start_time = 10.5
-end_time = 2.0
-bullet_ps = ExtResource("3_3lyvt")
-bullet_lin_curve = SubResource("Curve_p4upm")
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = 3
-once_ang_curve = SubResource("Curve_24ijw")
-shoot_cd = 0.1
-shoot_num = 5
 ori_ang = 30.0
+ang_curve = SubResource("Curve_1py4d")
+metadata/_custom_type_script = ExtResource("2_insau")
 
-[node name="左侧蛇2" parent="Root" index="7" instance=ExtResource("2_h52jr")]
-position = Vector2(-300, 200)
-start_time = 10.5
-end_time = 2.0
+[node name="Sprite" type="Sprite2D" parent="Root/loop1/LoopShooter" index="0"]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="Root/loop1/LoopShooter" index="1" instance=ExtResource("5_nawph")]
+
+[node name="4xloop" parent="Root/loop1" index="1" instance=ExtResource("2_h52jr")]
+show_time = 34.5
 bullet_ps = ExtResource("3_3lyvt")
-bullet_lin_curve = SubResource("Curve_p4upm")
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = 3
-once_ang_curve = SubResource("Curve_24ijw")
-shoot_cd = 0.1
-shoot_num = 5
+bullet_lin_curve = SubResource("Curve_nawph")
+once_num = 12
+once_ang_curve = SubResource("Curve_50ijf")
+shoot_cd = 0.2
+shoot_num = 4
 ori_ang = 30.0
-lin_curve = SubResource("Curve_savq6")
-ang_curve = SubResource("Curve_t2oe5")
+ang_curve = SubResource("Curve_yr0h5")
+
+[node name="前奏3" type="Node2D" parent="Root" index="5"]
+
+[node name="左和声" parent="Root/前奏3" index="0" instance=ExtResource("2_h52jr")]
+position = Vector2(-190, -195)
+show_time = 36.0
+bullet_ps = ExtResource("9_1py4d")
+bullet_lin_curve = SubResource("Curve_5k170")
+bullet_ang_curve = SubResource("Curve_jg6ky")
+shoot_cd = 0.4
+shoot_num = 15
+ori_ang = 90.0
+
+[node name="右和声" parent="Root/前奏3" index="1" instance=ExtResource("2_h52jr")]
+position = Vector2(190, -195)
+show_time = 36.0
+bullet_ps = ExtResource("9_1py4d")
+bullet_lin_curve = SubResource("Curve_5k170")
+bullet_ang_curve = SubResource("Curve_uc3bf")
+shoot_cd = 0.4
+shoot_num = 15
+ori_ang = 90.0
+
+[node name="鼓" parent="Root/前奏3" index="2" instance=ExtResource("2_h52jr")]
+show_time = 36.0
+bullet_ps = ExtResource("15_50ijf")
+bullet_lin_curve = SubResource("Curve_wppxb")
+once_num = 5
+once_ang_curve = SubResource("Curve_m5xrl")
+shoot_cd = 0.375
+shoot_num = 28
+ori_ang = 50.0
+ang_curve = SubResource("Curve_iuwxi")
+
+[node name="主歌1" type="Node2D" parent="Root" index="6"]
+
+[node name="底1" parent="Root/主歌1" index="0" instance=ExtResource("2_h52jr")]
+show_time = 47.5
+bullet_ps = ExtResource("16_yr0h5")
+bullet_lin_curve = SubResource("Curve_jnjgj")
+once_num = 3
+once_ang_curve = SubResource("Curve_cwhxq")
+shoot_cd = 0.75
+shoot_num = 28
+ori_ang = 52.5
+ang_curve = SubResource("Curve_tdcm0")
+
+[node name="底2" parent="Root/主歌1" index="1" instance=ExtResource("2_h52jr")]
+show_time = 47.5
+bullet_ps = ExtResource("17_jft22")
+bullet_lin_curve = SubResource("Curve_jnjgj")
+once_num = 3
+once_ang_curve = SubResource("Curve_oml01")
+shoot_cd = 0.75
+shoot_num = 28
+ori_ang = 52.5
+ang_curve = SubResource("Curve_tdcm0")
+
+[node name="钢琴1" type="Node2D" parent="Root/主歌1" index="2"]
+position = Vector2(-254.877, -89.3753)
+script = ExtResource("2_insau")
+show_time = 59.0
+start_time = 1.25
+end_time = 5.0
+bullet_ps = ExtResource("9_nawph")
+bullet_lin_curve = SubResource("Curve_mx7kp")
+once_num = 5
+once_ang_curve = SubResource("Curve_d7r5f")
+shoot_num = 1
+ori_ang = 30.0
+lin_curve = SubResource("Curve_pw8sf")
+ang_curve = SubResource("Curve_rkann")
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Root/主歌1/钢琴1" index="0"]
+z_index = 1
+texture = SubResource("AtlasTexture_mx7kp")
+
+[node name="DisappearAreaDetector" parent="Root/主歌1/钢琴1" index="1" instance=ExtResource("5_nawph")]
+
+[node name="钢琴2" type="Node2D" parent="Root/主歌1" index="3"]
+position = Vector2(254.214, -89.3753)
+script = ExtResource("2_insau")
+show_time = 59.0
+start_time = 2.0
+end_time = 5.0
+bullet_ps = ExtResource("17_jft22")
+bullet_lin_curve = SubResource("Curve_mx7kp")
+once_num = 5
+once_ang_curve = SubResource("Curve_d7r5f")
+shoot_num = 1
+ori_ang = 80.0
+lin_curve = SubResource("Curve_pw8sf")
+ang_curve = SubResource("Curve_rkann")
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Root/主歌1/钢琴2" index="0"]
+z_index = 1
+texture = SubResource("AtlasTexture_mx7kp")
+
+[node name="DisappearAreaDetector" parent="Root/主歌1/钢琴2" index="1" instance=ExtResource("5_nawph")]
+
+[node name="钢琴345" parent="Root/主歌1" index="4" instance=ExtResource("2_h52jr")]
+show_time = 62.5
+bullet_ps = ExtResource("11_yr0h5")
+bullet_lin_curve = SubResource("Curve_vxh70")
+bullet_ang_curve = SubResource("Curve_sr1em")
+once_num = 5
+once_ang_curve = SubResource("Curve_o7i2n")
+shoot_cd = 0.75
+shoot_num = 3
 
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("8_savq6")
+
+[connection signal="ready" from="Root/loop1/LoopShooter" to="Root/loop1/LoopShooter" method="_on_ready"]
+[connection signal="ready" from="Root/主歌1/钢琴1" to="Root/主歌1/钢琴1" method="_on_ready"]
+[connection signal="ready" from="Root/主歌1/钢琴2" to="Root/主歌1/钢琴2" method="_on_ready"]
