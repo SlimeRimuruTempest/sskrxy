@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs1d6mh8nxxw7" path="res://Scene/Chapter/LyricBook/lyric_book.gd" id="1_rvmrl"]
 [ext_resource type="Texture2D" uid="uid://ck44j1rj7q57d" path="res://Art/LyricBook/エルゴスム/QUI.png" id="2_ci50d"]
-[ext_resource type="Texture2D" uid="uid://ie774pcqw6ud" path="res://Art/LyricBook/エルゴスム/- QUI.png" id="3_rksui"]
+[ext_resource type="Texture2D" uid="uid://e2gcy50w4ekb" path="res://Art/LyricBook/エルゴスム/- QUI.jpg" id="3_rksui"]
 
 [sub_resource type="Animation" id="Animation_rksui"]
 length = 0.001

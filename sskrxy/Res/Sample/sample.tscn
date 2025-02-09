@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-[gd_scene load_steps=13 format=3 uid="uid://wv8wrc12p5g3"]
-=======
 [gd_scene load_steps=76 format=3 uid="uid://wv8wrc12p5g3"]
->>>>>>> 1570691 (弹幕)
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="2_insau"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/SpriteSheet/bullet1.png" id="4_3lyvt"]
-[ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_utjr0"]
-[ext_resource type="AudioStream" uid="uid://c36xbhfgrmykj" path="res://Audio/BGM/エゴ.mp3" id="6_b0w5h"]
-=======
 [ext_resource type="PackedScene" uid="uid://ckd03sorrkr4n" path="res://Res/shooters/follow_boss/loop.tscn" id="3_50ijf"]
 [ext_resource type="PackedScene" uid="uid://d4dv644shujeq" path="res://Res/shooters/follow_boss/心跳.tscn" id="3_rhpqf"]
 [ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="4_eg5cq"]
@@ -36,31 +28,212 @@
 [ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="21_uc3bf"]
 [ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="26_jnjgj"]
 [ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/follow_boss/loop_shooter.tscn" id="27_oml01"]
->>>>>>> 1570691 (弹幕)
 
-[sub_resource type="Curve" id="Curve_1py4d"]
-_limits = [0.0, 400.0, 0.0, 100.0]
-_data = [Vector2(0, 400), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_fapwp"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_dusej"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 300.0, 0.0, 1024.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
 point_count = 1
+
+[sub_resource type="Curve" id="Curve_jft22"]
+_limits = [0.0, 30.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(2, 30), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_eg5cq"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hfgm2"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_hnvg0"]
+_limits = [0.0, 120.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 13.3333, 0, 1, Vector2(9, 120), 13.3333, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_7hlpf"]
 
-[sub_resource type="Curve" id="Curve_rhpqf"]
-_limits = [0.0, 2880.0, 0.0, 24.0]
-_data = [Vector2(0, 0), 0.0, 60.0, 0, 1, Vector2(24, 1440), 60.0, 0.0, 1, 0]
-point_count = 2
+[sub_resource type="Curve" id="Curve_1py4d"]
+_limits = [0.0, 120.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 80.0, 0, 1, Vector2(1.5, 120), 80.0, -60.0, 1, 1, Vector2(3, 30), -60.0, 40.0, 1, 1, Vector2(4.5, 90), 40.0, -30.0, 1, 1, Vector2(6, 45), -30.0, 40.0, 1, 1, Vector2(7.5, 105), 40.0, -30.0, 1, 1, Vector2(9, 60), -30.0, 0.0, 1, 0]
+point_count = 7
 
 [sub_resource type="Curve" id="Curve_nawph"]
-_limits = [0.0, 1.0, 0.0, 100.0]
+_limits = [0.0, 300.0, 0.0, 10.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="Curve" id="Curve_50ijf"]
-_limits = [0.0, 1440.0, 0.0, 40.0]
-_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(40, 1440), 36.0, 0.0, 1, 0]
+_limits = [0.0, 120.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(12, 120), 10.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_utjr0"]
-atlas = ExtResource("4_3lyvt")
-region = Rect2(310, 274, 53, 67)
+[sub_resource type="Curve" id="Curve_yr0h5"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 37.5, 0, 1, Vector2(0.8, 30), 37.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5k170"]
+_limits = [0.0, 300.0, 0.0, 20.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_jg6ky"]
+_limits = [-360.0, 360.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 0), 0.0, 180.0, 1, 1, Vector2(3, 360), 180.0, -360026.0, 1, 1]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_uc3bf"]
+_limits = [-360.0, 1.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, -180.0, 1, 1, Vector2(3, -360), -180.0, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_wppxb"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_m5xrl"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_iuwxi"]
+_limits = [0.0, 25.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2, 25), 0.0, 0.0, 0, 0, Vector2(4, 0), 0.0, 0.0, 0, 0, Vector2(6, 25), 0.0, 0.0, 0, 0, Vector2(8, 0), 0.0, 0.0, 0, 0, Vector2(10, 25), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Curve" id="Curve_jnjgj"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_cwhxq"]
+_limits = [0.0, 90.0, 0.0, 2.0]
+_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 45), 0.0, 0.0, 0, 0, Vector2(2, 75), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_tdcm0"]
+_limits = [-10.0, 10.0, 0.0, 42.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1.5, 5), 0.0, 0.0, 0, 0, Vector2(3, 10), 0.0, 0.0, 0, 0, Vector2(4.5, 5), 0.0, 0.0, 0, 0, Vector2(6, 0), 0.0, 0.0, 0, 0, Vector2(7.5, -5), 0.0, 0.0, 0, 0, Vector2(9, -10), 0.0, 0.0, 0, 0, Vector2(10.5, -5), 0.0, 0.0, 0, 0, Vector2(12, 0), 0.0, 0.0, 0, 0, Vector2(13.5, 5), 0.0, 0.0, 0, 0, Vector2(15, 10), 0.0, 0.0, 0, 0, Vector2(16.5, 5), 0.0, 0.0, 0, 0, Vector2(18, 0), 0.0, 0.0, 0, 0, Vector2(19.5, -5), 0.0, 0.0, 0, 0, Vector2(21, -10), 0.0, 0.0, 0, 0, Vector2(22.5, -5), 0.0, 0.0, 0, 0, Vector2(24, 0), 0.0, 0.0, 0, 0, Vector2(25.5, 5), 0.0, 0.0, 0, 0, Vector2(27, 10), 0.0, 0.0, 0, 0, Vector2(28.5, 5), 0.0, 0.0, 0, 0, Vector2(30, 0), 0.0, 0.0, 0, 0, Vector2(31.5, -5), 0.0, 0.0, 0, 0, Vector2(33, -10), 0.0, 0.0, 0, 0, Vector2(34.5, -5), 0.0, 0.0, 0, 0, Vector2(36, 0), 0.0, 0.0, 0, 0, Vector2(37.5, 5), 0.0, 0.0, 0, 0, Vector2(39, 10), 0.0, 0.0, 0, 0, Vector2(40.5, 5), 0.0, 0.0, 0, 0, Vector2(42, 0), 0.0, 0.0, 0, 0]
+point_count = 29
+
+[sub_resource type="Curve" id="Curve_oml01"]
+_limits = [0.0, 90.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0, Vector2(2, 60), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_mx7kp"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_d7r5f"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_phiay"]
+_limits = [-200.0, 1.0, 0.0, 5.0]
+_data = [Vector2(1.94215, -200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx7kp"]
+atlas = ExtResource("14_yr0h5")
+region = Rect2(299, 201, 43, 56)
+
+[sub_resource type="Curve" id="Curve_pw8sf"]
+_limits = [0.0, 200.0, 0.0, 5.0]
+_data = [Vector2(1.1708, 200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_vxh70"]
+_limits = [0.0, 300.0, 0.0, 1.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_sr1em"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_o7i2n"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wvu5y"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_oyody"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_xfii8"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xmwxv"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_isx8j"]
+_limits = [0.0, 120.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 13.3333, 0, 1, Vector2(9, 120), 13.3333, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_rkann"]
+_limits = [0.0, 500.0, 0.0, 11.89]
+_data = [Vector2(0, 500), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_ue2nb"]
+_limits = [-90.0, 1.0, 0.0, 3.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(3, -90), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4o534"]
+_limits = [0.0, 500.0, 0.0, 1.0]
+_data = [Vector2(0, 500), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_yg6xg"]
+_limits = [0.0, 90.0, 0.0, 3.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(3, 90), 42.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_olmg8"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_emx6q"]
+_limits = [0.0, 20.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ief0i"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_p4upm"]
 _limits = [0.0, 250.0, 0.0, 10.0]
@@ -83,17 +256,6 @@ point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
-<<<<<<< HEAD
-[node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
-position = Vector2(-69, 221)
-bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt"), ExtResource("4_utjr0")])
-shoot_mode_2 = 1
-bullet_lin_curve = SubResource("Curve_1py4d")
-bullet_ang_curve = SubResource("Curve_7hlpf")
-once_num = 24
-once_ang_curve = SubResource("Curve_rhpqf")
-shoot_pos_offset = -800.0
-=======
 [node name="Player" parent="." index="2"]
 scale = Vector2(0.8, 0.8)
 wudi = true
@@ -172,17 +334,10 @@ bullet_lin_curve = SubResource("Curve_insau")
 bullet_ang_curve = SubResource("Curve_fapwp")
 once_num = 3
 once_ang_curve = SubResource("Curve_jft22")
->>>>>>> 1570691 (弹幕)
 shoot_cd = 0.1
-shoot_num = 600
-lock_rot = true
-lin_curve = SubResource("Curve_nawph")
-ang_curve = SubResource("Curve_50ijf")
+shoot_num = 1
+ori_ang = 75.0
 
-<<<<<<< HEAD
-[node name="Sprite" parent="Root/压力测试" index="0"]
-texture = SubResource("AtlasTexture_utjr0")
-=======
 [node name="钢琴2" parent="Root/前奏2" index="2" instance=ExtResource("4_eg5cq")]
 position = Vector2(83.29, -178.79)
 show_time = 15.3
@@ -650,14 +805,10 @@ ori_ang = 180.0
 visible = false
 position = Vector2(-416.795, -1412.44)
 show_time = 200.0
->>>>>>> 1570691 (弹幕)
 
 [node name="BGM" parent="." index="4"]
-stream = ExtResource("6_b0w5h")
+stream = ExtResource("8_savq6")
 
-<<<<<<< HEAD
-[editable path="Root/压力测试"]
-=======
 [node name="BGL" parent="." index="5"]
 texture = null
 
@@ -674,4 +825,3 @@ visible = false
 [connection signal="ready" from="Root/主歌2/钢琴1" to="Root/主歌2/钢琴1" method="_on_ready"]
 [connection signal="ready" from="Root/主歌2/钢琴2" to="Root/主歌2/钢琴2" method="_on_ready"]
 [connection signal="ready" from="Root/间奏2/蛇形Shooter5" to="Root/间奏2/蛇形Shooter5" method="_on_ready"]
->>>>>>> 1570691 (弹幕)
