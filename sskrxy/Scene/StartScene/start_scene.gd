@@ -7,7 +7,7 @@ extends Control
 var can_accept: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("space"):
 		if can_accept:
 			can_accept = false
 			GlobalCanvasLayer.change_scene(nts)

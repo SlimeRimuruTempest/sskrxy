@@ -1,11 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=13 format=3 uid="uid://b18163ipdt2ox"]
 
-[ext_resource type="Texture2D" uid="uid://dqyaf8pj63o8i" path="res://Art/Scene/L1/主3.PNG" id="1_awqdd"]
-[ext_resource type="Texture2D" uid="uid://chyyqys7xu6xa" path="res://Art/Scene/L1/主2.PNG" id="2_g82cb"]
-[ext_resource type="Texture2D" uid="uid://b80ntv7xrq57b" path="res://Art/Scene/L1/主1.PNG" id="3_8noda"]
+[ext_resource type="Texture2D" uid="uid://cidhrn43333cg" path="res://Art/Scene/L1/BGN.png" id="2_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
 [ext_resource type="Texture2D" uid="uid://dsbt6u58nbbis" path="res://Art/Scene/L1/Fg.png" id="5_8noda"]
+[ext_resource type="Script" uid="uid://dlfti5py2n7io" path="res://Scene/Level/pause_ui.gd" id="5_kblds"]
 [ext_resource type="Texture2D" uid="uid://bm40ii6ppvubd" path="res://Art/Scene/L1/Teach.png" id="6_w5tha"]
+[ext_resource type="Shader" uid="uid://dejval1hdjjji" path="res://Art/Shader/gblur.gdshader" id="8_kblds"]
+[ext_resource type="Texture2D" uid="uid://dw1dvhisudyc5" path="res://Art/Scene/L1/Pause.png" id="8_yy3y6"]
+[ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="9_6efwd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6efwd"]
+shader = ExtResource("8_kblds")
+shader_parameter/blur_radius = 16
+shader_parameter/Darkness = 0.0
+shader_parameter/R = 0.0
+shader_parameter/G = 0.0
+shader_parameter/B = 0.0
+shader_parameter/blur_strength = 10.0
+
+[sub_resource type="Animation" id="Animation_yy3y6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_nds4u"]
 resource_name = "show_teach"
@@ -24,21 +50,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_yy3y6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kblds"]
 _data = {
 &"RESET": SubResource("Animation_yy3y6"),
@@ -54,21 +65,9 @@ collision_layer = 4
 build_mode = 1
 polygon = PackedVector2Array(565.9, 0, 565.9, 1080, 1375.9, 1080, 1375.9, 0)
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-position = Vector2(565.9, 0)
-scale = Vector2(0.5625, 0.5625)
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
-texture = ExtResource("1_awqdd")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasGroup"]
-texture = ExtResource("2_g82cb")
-centered = false
-
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasGroup"]
-texture = ExtResource("3_8noda")
-centered = false
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_yy3y6")
 
 [node name="Player" parent="." instance=ExtResource("4_g82cb")]
 position = Vector2(960, 857)
@@ -78,27 +77,88 @@ position = Vector2(960, 200)
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 autoplay = true
+bus = &"BGM"
 
 [node name="BGL" type="Sprite2D" parent="."]
 texture = ExtResource("5_8noda")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 565.9, 1080)
+region_rect = Rect2(0, 0, 555, 1080)
 
 [node name="BGR" type="Sprite2D" parent="."]
-position = Vector2(1375.72, 0)
+position = Vector2(1365, 0)
 texture = ExtResource("5_8noda")
 centered = false
 region_enabled = true
-region_rect = Rect2(1375.72, 0, 544.28, 1080)
+region_rect = Rect2(1365, 0, 555, 1080)
 
-[node name="Teach" type="Sprite2D" parent="."]
+[node name="Layer3" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="PauseUI" type="Control" parent="Layer3"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_kblds")
+
+[node name="Blur" type="ColorRect" parent="Layer3/PauseUI"]
+material = SubResource("ShaderMaterial_6efwd")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PauseSprite" type="TextureRect" parent="Layer3/PauseUI"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("8_yy3y6")
+
+[node name="RestartButton" type="Button" parent="Layer3/PauseUI/PauseSprite"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 705.0
+offset_top = 442.0
+offset_right = 904.0
+offset_bottom = 640.0
+
+[node name="ContinueButton" type="Button" parent="Layer3/PauseUI/PauseSprite"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 443.0
+offset_right = 1216.0
+offset_bottom = 634.0
+
+[node name="Layer6" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="HealthBar" parent="Layer6" instance=ExtResource("9_6efwd")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_top = 20.0
+offset_right = 239.5
+offset_bottom = 93.0
+grow_horizontal = 2
+
+[node name="TeachSprite" type="Sprite2D" parent="Layer6"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("6_w5tha")
 centered = false
 
-[node name="TeachAnimationPlayer" type="AnimationPlayer" parent="Teach"]
+[node name="TeachAnimationPlayer" type="AnimationPlayer" parent="Layer6/TeachSprite"]
 libraries = {
 &"": SubResource("AnimationLibrary_kblds")
 }
 autoplay = "show_teach"
+
+[connection signal="health_updated" from="Player" to="Layer6/HealthBar" method="_on_player_health_updated"]
+[connection signal="pressed" from="Layer3/PauseUI/PauseSprite/RestartButton" to="Layer3/PauseUI" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Layer3/PauseUI/PauseSprite/ContinueButton" to="Layer3/PauseUI" method="_on_continue_button_pressed"]

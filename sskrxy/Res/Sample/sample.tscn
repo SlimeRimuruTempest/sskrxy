@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=13 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="4_3lyvt"]
 [ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_utjr0"]
+[ext_resource type="AudioStream" uid="uid://c36xbhfgrmykj" path="res://Audio/BGM/エゴ.mp3" id="6_b0w5h"]
 
 [sub_resource type="Curve" id="Curve_1py4d"]
 _limits = [0.0, 400.0, 0.0, 100.0]
@@ -44,13 +45,16 @@ bullet_ang_curve = SubResource("Curve_7hlpf")
 once_num = 24
 once_ang_curve = SubResource("Curve_rhpqf")
 shoot_pos_offset = -800.0
-shoot_cd = 0.05
-shoot_num = 1200
+shoot_cd = 0.1
+shoot_num = 600
 lock_rot = true
 lin_curve = SubResource("Curve_nawph")
 ang_curve = SubResource("Curve_50ijf")
 
 [node name="Sprite" parent="Root/压力测试" index="0"]
 texture = SubResource("AtlasTexture_utjr0")
+
+[node name="BGM" parent="." index="4"]
+stream = ExtResource("6_b0w5h")
 
 [editable path="Root/压力测试"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://6hmqde5av0ks"]
+[gd_scene load_steps=9 format=3 uid="uid://6hmqde5av0ks"]
 
 [ext_resource type="Script" uid="uid://ctfxqf8jy68j4" path="res://Scene/Player/player.gd" id="1_67a6e"]
 [ext_resource type="Texture2D" uid="uid://bj2lwyuirhh4q" path="res://Art/SpriteSheet/Player.png" id="2_yic5t"]
-[ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="3_uuj77"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuj77"]
 atlas = ExtResource("2_yic5t")
@@ -48,17 +47,3 @@ debug_color = Color(1, 0, 0, 0.419608)
 [node name="Point" type="Sprite2D" parent="."]
 visible = false
 texture = SubResource("GradientTexture2D_g0r71")
-
-[node name="PlayerUI" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" parent="PlayerUI" instance=ExtResource("3_uuj77")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
-offset_top = 20.0
-offset_right = 239.5
-offset_bottom = 93.0
-grow_horizontal = 2
-
-[connection signal="health_updated" from="." to="PlayerUI/HealthBar" method="_on_player_health_updated"]
