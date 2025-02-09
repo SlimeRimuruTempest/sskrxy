@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cw2vdrxxsxep7"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_y60al"]
-[ext_resource type="PackedScene" uid="uid://cdb70bf0punpw" path="res://Res/shooters/loop.tscn" id="2_prc2l"]
+[ext_resource type="PackedScene" uid="uid://ckd03sorrkr4n" path="res://Res/shooters/follow_boss/loop.tscn" id="2_prc2l"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_gjl3l"]
 
 [sub_resource type="Curve" id="Curve_hfgm2"]
@@ -22,7 +22,7 @@ point_count = 2
 [node name="LoopShooter" type="Node2D"]
 script = ExtResource("1_y60al")
 start_time = 24.0
-bullet_ps = ExtResource("2_prc2l")
+bullet_pool = Array[PackedScene]([ExtResource("2_prc2l")])
 bullet_lin_curve = SubResource("Curve_hfgm2")
 bullet_ang_curve = SubResource("Curve_hnvg0")
 once_ang_curve = SubResource("Curve_ief0i")
