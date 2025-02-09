@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://6hmqde5av0ks"]
+[gd_scene load_steps=10 format=3 uid="uid://6hmqde5av0ks"]
 
 [ext_resource type="Script" uid="uid://ctfxqf8jy68j4" path="res://Scene/Player/player.gd" id="1_67a6e"]
 [ext_resource type="Texture2D" uid="uid://bj2lwyuirhh4q" path="res://Art/SpriteSheet/Player.png" id="2_yic5t"]
+[ext_resource type="AudioStream" uid="uid://b5gc7ltt24yht" path="res://Audio/SFX/受击.wav" id="3_uuj77"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuj77"]
 atlas = ExtResource("2_yic5t")
@@ -38,6 +39,7 @@ tex_m = SubResource("AtlasTexture_g0r71")
 tex_r = SubResource("AtlasTexture_88wa8")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_g0r71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -47,3 +49,7 @@ debug_color = Color(1, 0, 0, 0.419608)
 [node name="Point" type="Sprite2D" parent="."]
 visible = false
 texture = SubResource("GradientTexture2D_g0r71")
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uuj77")
+bus = &"SFX"

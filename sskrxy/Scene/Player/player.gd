@@ -3,6 +3,7 @@ class_name PlayerBody
 
 @onready var player_sprite: Sprite2D = $PlayerSprite
 @onready var point: Sprite2D = $Point
+@onready var hit_sfx: AudioStreamPlayer = $HitSFX
 
 @export var wudi: bool = false
 
@@ -19,10 +20,7 @@ signal health_updated(current_health: float, max_health: float)
 
 var current_health: int:
 	set(v):
-		if current_health == 0 and v <= 0:
-			current_health = -1
-		else:
-			current_health = clamp(v, 0, max_health)
+		current_health = clamp(v, 0, max_health)
 		health_updated.emit(current_health, max_health)
 
 @export var speed: = 600.0
@@ -36,8 +34,10 @@ func get_speed():
 func get_damage(value: int):
 	if wudi:
 		return
+	hit_sfx.play()
 	current_health -= value
 	if current_health == 0:
+		wudi = true
 		await get_tree().create_timer(0.3).timeout
 		GlobalCanvasLayer.reload_current_scene()
 

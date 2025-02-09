@@ -12,9 +12,10 @@ func change_scene(p: PackedScene):
 	color_rect.show()
 	var tween: = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 1, 0.5).from(0)
-	tween.tween_callback(func():
-		get_tree().change_scene_to_packed(p)
-		)
+	await tween.finished
+	get_tree().change_scene_to_packed(p)
+	await get_tree().tree_changed
+	tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 0, 0.5).from(1)
 	await tween.finished
 	color_rect.hide()
@@ -23,9 +24,10 @@ func reload_current_scene():
 	color_rect.show()
 	var tween: = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 1, 0.5).from(0)
-	tween.tween_callback(func():
-		get_tree().reload_current_scene()
-		)
+	await tween.finished
+	get_tree().reload_current_scene()
+	await get_tree().tree_changed
+	tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 0, 0.5).from(1)
 	await tween.finished
 	color_rect.hide()

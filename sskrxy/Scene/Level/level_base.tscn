@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=14 format=3 uid="uid://b18163ipdt2ox"]
 
+[ext_resource type="Script" uid="uid://d0nqx65taq3w2" path="res://Scene/Level/bg.gd" id="2_kblds"]
 [ext_resource type="Texture2D" uid="uid://cidhrn43333cg" path="res://Art/Scene/L1/BGN.png" id="2_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
 [ext_resource type="Texture2D" uid="uid://dsbt6u58nbbis" path="res://Art/Scene/L1/Fg.png" id="5_8noda"]
@@ -68,6 +69,7 @@ polygon = PackedVector2Array(565.9, 0, 565.9, 1080, 1375.9, 1080, 1375.9, 0)
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("2_yy3y6")
+script = ExtResource("2_kblds")
 
 [node name="Player" parent="." instance=ExtResource("4_g82cb")]
 position = Vector2(960, 857)
@@ -79,24 +81,30 @@ position = Vector2(960, 200)
 autoplay = true
 bus = &"BGM"
 
-[node name="BGL" type="Sprite2D" parent="."]
+[node name="Layer2" type="CanvasLayer" parent="."]
+
+[node name="BGL" type="Sprite2D" parent="Layer2"]
 texture = ExtResource("5_8noda")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 555, 1080)
 
-[node name="BGR" type="Sprite2D" parent="."]
+[node name="BGR" type="Sprite2D" parent="Layer2"]
 position = Vector2(1365, 0)
 texture = ExtResource("5_8noda")
 centered = false
 region_enabled = true
 region_rect = Rect2(1365, 0, 555, 1080)
 
+[node name="TextEffectSprite" type="Sprite2D" parent="Layer2"]
+position = Vector2(960, 540)
+
 [node name="Layer3" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="PauseUI" type="Control" parent="Layer3"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,10 +143,10 @@ offset_top = 443.0
 offset_right = 1216.0
 offset_bottom = 634.0
 
-[node name="Layer6" type="CanvasLayer" parent="."]
-layer = 6
+[node name="Layer4" type="CanvasLayer" parent="."]
+layer = 4
 
-[node name="HealthBar" parent="Layer6" instance=ExtResource("9_6efwd")]
+[node name="HealthBar" parent="Layer4" instance=ExtResource("9_6efwd")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -148,17 +156,17 @@ offset_right = 239.5
 offset_bottom = 93.0
 grow_horizontal = 2
 
-[node name="TeachSprite" type="Sprite2D" parent="Layer6"]
+[node name="TeachSprite" type="Sprite2D" parent="Layer4"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("6_w5tha")
 centered = false
 
-[node name="TeachAnimationPlayer" type="AnimationPlayer" parent="Layer6/TeachSprite"]
+[node name="TeachAnimationPlayer" type="AnimationPlayer" parent="Layer4/TeachSprite"]
 libraries = {
 &"": SubResource("AnimationLibrary_kblds")
 }
 autoplay = "show_teach"
 
-[connection signal="health_updated" from="Player" to="Layer6/HealthBar" method="_on_player_health_updated"]
+[connection signal="health_updated" from="Player" to="Layer4/HealthBar" method="_on_player_health_updated"]
 [connection signal="pressed" from="Layer3/PauseUI/PauseSprite/RestartButton" to="Layer3/PauseUI" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Layer3/PauseUI/PauseSprite/ContinueButton" to="Layer3/PauseUI" method="_on_continue_button_pressed"]
