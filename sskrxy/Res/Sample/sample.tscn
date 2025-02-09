@@ -36,6 +36,7 @@ wudi = true
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(-69, 221)
+start_time = 2.0
 bullet_ps = ExtResource("3_3lyvt")
 bullet_lin_curve = SubResource("Curve_1py4d")
 bullet_ang_curve = SubResource("Curve_7hlpf")

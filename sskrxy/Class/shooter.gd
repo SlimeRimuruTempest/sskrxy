@@ -33,6 +33,8 @@ class_name Shooter
 ## 是否跟随老妈
 @export var bullet_follow_mum: bool = false
 
+var started: bool = false
+
 func shoot_once():
 	for i in once_num:
 		#var lin_off: = once_lin_curve.sample(i)
@@ -50,6 +52,7 @@ func shoot_once():
 
 func shoot():
 	await get_tree().create_timer(start_time).timeout
+	started = true
 	for i in shoot_num:
 		await shoot_once()
 		if shoot_cd > 0.0:
@@ -62,6 +65,14 @@ func delete():
 		if child is NodeSTG:
 			child.reparent(marker)
 	super()
+
+func _physics_process(delta: float) -> void:
+	if visible == false:
+		return
+	if not started:
+		return
+	tot_time += delta
+	global_position += get_movement(delta)
 
 func _on_ready() -> void:
 	hide()
