@@ -8,7 +8,6 @@ atlas = ExtResource("2_gupkt")
 region = Rect2(618, 6, 89, 88)
 
 [node name="绿球" instance=ExtResource("1_3yghe")]
-scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("AtlasTexture_tpng8")
