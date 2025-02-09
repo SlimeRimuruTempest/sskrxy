@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://detlvacflscfi"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_efm81"]
+[ext_resource type="PackedScene" uid="uid://b818ta5g3asv5" path="res://Res/shooters/沙漏外侧.tscn" id="2_6jrhj"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_26q70"]
+
+[sub_resource type="Curve" id="Curve_insau"]
+_limits = [0.0, 50.0, 0.0, 2.0]
+_data = [Vector2(1, 50), 0.0, 0.0, 0, 0, Vector2(1.001, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wf8m6"]
+_limits = [0.0, 180.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 180), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="沙漏外侧发射器" type="Node2D"]
+script = ExtResource("1_efm81")
+bullet_ps = ExtResource("2_6jrhj")
+bullet_lin_curve = SubResource("Curve_insau")
+once_num = 2
+once_ang_curve = SubResource("Curve_wf8m6")
+shoot_num = 1
+metadata/_custom_type_script = ExtResource("1_efm81")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_26q70")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
