@@ -1,47 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2igikx5pwley"]
+[gd_scene load_steps=4 format=3 uid="uid://c2igikx5pwley"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_huiin"]
-[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_hn1d7"]
-[ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="3_h7jda"]
+[ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="2_mihg7"]
 [ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="3_hn1d7"]
-[ext_resource type="PackedScene" uid="uid://byigexai5jfki" path="res://Res/Bullet/花2.tscn" id="4_dojvn"]
-
-[sub_resource type="Curve" id="Curve_6btln"]
-_limits = [0.0, 250.0, 0.0, 10.0]
-_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_fskjp"]
-_limits = [0.0, 90.0, 0.0, 2.0]
-_data = [Vector2(0, 15), 0.0, 0.0, 0, 0, Vector2(1, 45), 0.0, 0.0, 0, 0, Vector2(2, 75), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_07sdx"]
-_limits = [0.0, 90.0, 0.0, 2.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 0.0, 0.0, 0, 0, Vector2(2, 60), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [node name="Sample" instance=ExtResource("1_huiin")]
 
-[node name="主歌1" type="Node2D" parent="Root" index="0"]
-
-[node name="底1" parent="Root/主歌1" index="0" instance=ExtResource("2_hn1d7")]
-bullet_ps = ExtResource("3_h7jda")
-bullet_lin_curve = SubResource("Curve_6btln")
-once_num = 3
-once_ang_curve = SubResource("Curve_fskjp")
-shoot_cd = 1.5
-shoot_num = 28
-ori_ang = 52.5
-
-[node name="底2" parent="Root/主歌1" index="1" instance=ExtResource("2_hn1d7")]
-bullet_ps = ExtResource("4_dojvn")
-bullet_lin_curve = SubResource("Curve_6btln")
-once_num = 3
-once_ang_curve = SubResource("Curve_07sdx")
-shoot_cd = 1.5
-shoot_num = 28
-ori_ang = 52.5
+[node name="钢琴" parent="Root" index="0" instance=ExtResource("2_mihg7")]
 
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("3_hn1d7")

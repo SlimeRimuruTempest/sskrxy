@@ -1,20 +1,20 @@
-[gd_scene load_steps=50 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=55 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="2_insau"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
-[ext_resource type="PackedScene" uid="uid://cdb70bf0punpw" path="res://Res/shooters/跟随boss/loop.tscn" id="3_50ijf"]
-[ext_resource type="PackedScene" uid="uid://drmjbhwxqd6fu" path="res://Res/shooters/跟随boss/心跳.tscn" id="3_rhpqf"]
-[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/跟随boss/蛇形1.tscn" id="4_savq6"]
+[ext_resource type="PackedScene" path="res://Res/shooters/follow_boss/loop.tscn" id="3_50ijf"]
+[ext_resource type="PackedScene" path="res://Res/shooters/follow_boss/心跳.tscn" id="3_rhpqf"]
+[ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="4_eg5cq"]
+[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/蛇形1.tscn" id="4_savq6"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="5_nawph"]
-[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/跟随boss/蛇形2.tscn" id="5_t2oe5"]
+[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/蛇形2.tscn" id="5_t2oe5"]
 [ext_resource type="AudioStream" uid="uid://re8yo276gvw" path="res://music/エゴ.mp3" id="8_savq6"]
-[ext_resource type="PackedScene" uid="uid://cs7mwdpsefx6a" path="res://Res/Bullet/蓝二分音符.tscn" id="9_1py4d"]
-[ext_resource type="PackedScene" uid="uid://brtuaklqhni26" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
-[ext_resource type="PackedScene" uid="uid://sbl1mvd3c64j" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
-[ext_resource type="PackedScene" uid="uid://dviqu4h0ee1w" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
-[ext_resource type="PackedScene" uid="uid://bsqtgwjuf1kmv" path="res://Res/shooters/自由/钢琴.tscn" id="12_1py4d"]
+[ext_resource type="PackedScene" path="res://Res/Bullet/蓝二分音符.tscn" id="9_1py4d"]
+[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
+[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
+[ext_resource type="PackedScene" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="14_yr0h5"]
 [ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="15_50ijf"]
 [ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="16_yr0h5"]
@@ -133,8 +133,8 @@ _data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Curve" id="Curve_d7r5f"]
-_limits = [0.0, 60.0, 0.0, 4.0]
-_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+_limits = [0.0, 180.0, 0.0, 4.0]
+_data = [Vector2(0, 110), 0.0, 15.0, 0, 1, Vector2(4, 170), 15.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_pw8sf"]
@@ -166,6 +166,31 @@ _limits = [0.0, 60.0, 0.0, 4.0]
 _data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_wvu5y"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_oyody"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_xfii8"]
+_limits = [0.0, 30.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 7.5, 0, 1, Vector2(4, 30), 7.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xmwxv"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_isx8j"]
+_limits = [0.0, 60.0, 0.0, 9.0]
+_data = [Vector2(0, 0), 0.0, 6.66667, 0, 1, Vector2(9, 60), 6.66667, 0.0, 1, 0]
+point_count = 2
+
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
 [node name="Player" parent="." index="2"]
@@ -193,26 +218,26 @@ ori_ang = 60.0
 
 [node name="前奏1" type="Node2D" parent="Root" index="2"]
 
-[node name="钢琴" parent="Root/前奏1" index="0" instance=ExtResource("12_1py4d")]
-position = Vector2(-242.272, -184.334)
+[node name="钢琴" parent="Root/前奏1" index="0" instance=ExtResource("4_eg5cq")]
+position = Vector2(-61.8806, -180.085)
 
-[node name="钢琴2" parent="Root/前奏1" index="1" instance=ExtResource("12_1py4d")]
+[node name="钢琴1" parent="Root/前奏1" index="1" instance=ExtResource("4_eg5cq")]
 position = Vector2(188.655, -180.946)
 show_time = 3.0
 
-[node name="钢琴3" parent="Root/前奏1" index="2" instance=ExtResource("12_1py4d")]
+[node name="钢琴2" parent="Root/前奏1" index="2" instance=ExtResource("4_eg5cq")]
 position = Vector2(19.6, -183.3)
 show_time = 6.0
 
-[node name="钢琴4" parent="Root/前奏1" index="3" instance=ExtResource("12_1py4d")]
+[node name="钢琴3" parent="Root/前奏1" index="3" instance=ExtResource("4_eg5cq")]
 position = Vector2(301.2, -184.4)
 show_time = 7.6
 
-[node name="钢琴5" parent="Root/前奏1" index="4" instance=ExtResource("12_1py4d")]
+[node name="钢琴4" parent="Root/前奏1" index="4" instance=ExtResource("4_eg5cq")]
 position = Vector2(-123.4, -184.4)
 show_time = 9.36
 
-[node name="钢琴6" parent="Root/前奏1" index="5" instance=ExtResource("12_1py4d")]
+[node name="钢琴5" parent="Root/前奏1" index="5" instance=ExtResource("4_eg5cq")]
 position = Vector2(-351, -184.8)
 show_time = 10.6
 
@@ -221,8 +246,8 @@ end_time = 35.0
 
 [node name="前奏2" type="Node2D" parent="Root" index="3"]
 
-[node name="钢琴" parent="Root/前奏2" index="0" instance=ExtResource("12_1py4d")]
-position = Vector2(-187.75, -177.58)
+[node name="钢琴" parent="Root/前奏2" index="0" instance=ExtResource("4_eg5cq")]
+position = Vector2(-294.78, -183.28)
 show_time = 12.4
 
 [node name="撒花1" parent="Root/前奏2" index="1" instance=ExtResource("2_h52jr")]
@@ -237,7 +262,7 @@ shoot_cd = 0.1
 shoot_num = 1
 ori_ang = 60.0
 
-[node name="钢琴2" parent="Root/前奏2" index="2" instance=ExtResource("12_1py4d")]
+[node name="钢琴2" parent="Root/前奏2" index="2" instance=ExtResource("4_eg5cq")]
 position = Vector2(83.29, -178.79)
 show_time = 15.3
 
@@ -250,8 +275,8 @@ bullet_ang_curve = SubResource("Curve_dusej")
 once_num = 3
 once_ang_curve = SubResource("Curve_jft22")
 
-[node name="钢琴3" parent="Root/前奏2" index="4" instance=ExtResource("12_1py4d")]
-position = Vector2(239.38, -175.16)
+[node name="钢琴3" parent="Root/前奏2" index="4" instance=ExtResource("4_eg5cq")]
+position = Vector2(-189.51, -183.28)
 show_time = 18.3
 
 [node name="撒花3" parent="Root/前奏2" index="5" instance=ExtResource("2_h52jr")]
@@ -265,11 +290,11 @@ once_ang_curve = SubResource("Curve_eg5cq")
 shoot_num = 1
 ori_ang = 45.0
 
-[node name="钢琴4" parent="Root/前奏2" index="6" instance=ExtResource("12_1py4d")]
-position = Vector2(353.12, -183.63)
+[node name="钢琴4" parent="Root/前奏2" index="6" instance=ExtResource("4_eg5cq")]
+position = Vector2(-246.38, -185.7)
 show_time = 19.48
 
-[node name="钢琴5" parent="Root/前奏2" index="7" instance=ExtResource("12_1py4d")]
+[node name="钢琴5" parent="Root/前奏2" index="7" instance=ExtResource("4_eg5cq")]
 position = Vector2(-64.33, -181.21)
 show_time = 21.42
 
@@ -285,7 +310,7 @@ shoot_cd = 0.1
 shoot_num = 1
 ori_ang = 60.0
 
-[node name="钢琴6" parent="Root/前奏2" index="9" instance=ExtResource("12_1py4d")]
+[node name="钢琴6" parent="Root/前奏2" index="9" instance=ExtResource("4_eg5cq")]
 position = Vector2(-28.0299, -182.42)
 show_time = 22.5
 
@@ -378,7 +403,7 @@ ori_ang = 52.5
 ang_curve = SubResource("Curve_tdcm0")
 
 [node name="钢琴1" type="Node2D" parent="Root/主歌1" index="2"]
-position = Vector2(-254.877, -89.3753)
+position = Vector2(-428.505, -244.459)
 script = ExtResource("2_insau")
 show_time = 59.0
 start_time = 1.25
@@ -388,7 +413,6 @@ bullet_lin_curve = SubResource("Curve_mx7kp")
 once_num = 5
 once_ang_curve = SubResource("Curve_d7r5f")
 shoot_num = 1
-ori_ang = 30.0
 lin_curve = SubResource("Curve_pw8sf")
 ang_curve = SubResource("Curve_rkann")
 metadata/_custom_type_script = ExtResource("2_insau")
@@ -400,17 +424,16 @@ texture = SubResource("AtlasTexture_mx7kp")
 [node name="DisappearAreaDetector" parent="Root/主歌1/钢琴1" index="1" instance=ExtResource("5_nawph")]
 
 [node name="钢琴2" type="Node2D" parent="Root/主歌1" index="3"]
-position = Vector2(254.214, -89.3753)
+position = Vector2(423.335, -229.818)
 script = ExtResource("2_insau")
 show_time = 59.0
 start_time = 2.0
 end_time = 5.0
-bullet_ps = ExtResource("17_jft22")
+bullet_ps = ExtResource("11_yr0h5")
 bullet_lin_curve = SubResource("Curve_mx7kp")
 once_num = 5
 once_ang_curve = SubResource("Curve_d7r5f")
 shoot_num = 1
-ori_ang = 80.0
 lin_curve = SubResource("Curve_pw8sf")
 ang_curve = SubResource("Curve_rkann")
 metadata/_custom_type_script = ExtResource("2_insau")
@@ -430,6 +453,29 @@ once_num = 5
 once_ang_curve = SubResource("Curve_o7i2n")
 shoot_cd = 0.75
 shoot_num = 3
+ori_ang = 60.0
+
+[node name="钢琴68" parent="Root/主歌1" index="5" instance=ExtResource("2_h52jr")]
+show_time = 64.0
+bullet_ps = ExtResource("10_50ijf")
+bullet_lin_curve = SubResource("Curve_wvu5y")
+bullet_ang_curve = SubResource("Curve_oyody")
+once_num = 5
+once_ang_curve = SubResource("Curve_xfii8")
+shoot_cd = 1.5
+shoot_num = 2
+ori_ang = 80.0
+
+[node name="钢琴79" parent="Root/主歌1" index="6" instance=ExtResource("2_h52jr")]
+show_time = 64.75
+bullet_ps = ExtResource("10_50ijf")
+bullet_lin_curve = SubResource("Curve_wvu5y")
+bullet_ang_curve = SubResource("Curve_xmwxv")
+once_num = 7
+once_ang_curve = SubResource("Curve_isx8j")
+shoot_cd = 1.5
+shoot_num = 2
+ori_ang = 60.0
 
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("8_savq6")
