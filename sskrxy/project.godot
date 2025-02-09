@@ -13,6 +13,7 @@ config_version=5
 config/name="sskrxy"
 run/main_scene="uid://dkb2h8gnjfae8"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/show_image=false
 config/icon="uid://dfc6gduij5axo"
 
 [autoload]

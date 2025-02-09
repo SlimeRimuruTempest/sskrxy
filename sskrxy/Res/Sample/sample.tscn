@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=12 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="4_3lyvt"]
+[ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_utjr0"]
 
 [sub_resource type="Curve" id="Curve_1py4d"]
 _limits = [0.0, 400.0, 0.0, 100.0]
@@ -36,7 +37,8 @@ wudi = true
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(-69, 221)
-bullet_ps = ExtResource("3_3lyvt")
+bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt"), ExtResource("4_utjr0")])
+shoot_mode_2 = 1
 bullet_lin_curve = SubResource("Curve_1py4d")
 bullet_ang_curve = SubResource("Curve_7hlpf")
 once_num = 24
