@@ -11,3 +11,6 @@ region = Rect2(172, 2, 81, 61)
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_snvmj")
+
+[node name="CollisionShape2D" parent="BulletArea" index="0"]
+position = Vector2(0, 0)

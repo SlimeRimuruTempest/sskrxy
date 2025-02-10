@@ -66,7 +66,7 @@ func shoot_once():
 			ShootMode2.EVERY_BULLET:
 				bullet_ps = get_bullet()
 		#var lin_off: = once_lin_curve.sample(i)
-wd		var bullet: NodeSTG = bullet_ps.instantiate()
+		var bullet: NodeSTG = bullet_ps.instantiate()
 		var ang_off: = once_ang_curve.sample(i)
 		if bullet_follow_mum:
 			add_child(bullet)

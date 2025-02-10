@@ -10,4 +10,5 @@ region = Rect2(527, 106, 72, 91)
 [node name="B1" instance=ExtResource("1_m310e")]
 
 [node name="Sprite" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_a2rlw")
