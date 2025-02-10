@@ -43,7 +43,6 @@ _data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(10, 360), 36.0, 0.0, 1, 0]
 point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
-game_len = 10.0
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(0, 176)
@@ -67,7 +66,7 @@ position = Vector2(97, 192)
 lin_curve = SubResource("Curve_savq6")
 ang_curve = SubResource("Curve_t2oe5")
 
-[node name="BGM" parent="." index="5"]
+[node name="BGM" parent="." index="4"]
 stream = ExtResource("6_b0w5h")
 
 [editable path="Root/压力测试"]

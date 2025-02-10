@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://c18e3puhqgtpl"]
+[gd_scene load_steps=15 format=3 uid="uid://byjufwo0cvak0"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_6ckmd"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="1_16aqa"]
 [ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="2_httj2"]
-[ext_resource type="PackedScene" uid="uid://b818ta5g3asv5" path="res://Res/shooters/free/沙漏外侧.tscn" id="3_6ckmd"]
+[ext_resource type="PackedScene" uid="uid://b818ta5g3asv5" path="res://Res/shooters/沙漏外侧.tscn" id="3_6ckmd"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_dbrbx"]
-[ext_resource type="PackedScene" uid="uid://c7qm5jcs55rw1" path="res://Res/shooters/free/沙漏内侧1.tscn" id="4_dbrbx"]
-[ext_resource type="PackedScene" uid="uid://wlvgch1228qb" path="res://Res/shooters/free/沙漏内侧2.tscn" id="5_18kvg"]
-[ext_resource type="PackedScene" uid="uid://g3g3ypbsd1vl" path="res://Res/shooters/free/沙漏内侧3.tscn" id="6_d5qcj"]
+[ext_resource type="PackedScene" uid="uid://c7qm5jcs55rw1" path="res://Res/shooters/沙漏内侧1.tscn" id="4_dbrbx"]
+[ext_resource type="PackedScene" uid="uid://wlvgch1228qb" path="res://Res/shooters/沙漏内侧2.tscn" id="5_18kvg"]
+[ext_resource type="PackedScene" uid="uid://g3g3ypbsd1vl" path="res://Res/shooters/沙漏内侧3.tscn" id="6_d5qcj"]
 
 [sub_resource type="Curve" id="Curve_yr0h5"]
 _limits = [0.0, 360.0, 0.0, 10.0]

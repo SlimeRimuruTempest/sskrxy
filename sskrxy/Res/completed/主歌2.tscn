@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="1_ujn7k"]
 [ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="2_temr2"]
-[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="3_8gnpi"]
+[ext_resource type="Script" path="res://Class/shooter.gd" id="3_8gnpi"]
 [ext_resource type="PackedScene" uid="uid://ds0fnxiilrspi" path="res://Res/Bullet/花瓣1.tscn" id="4_x30hv"]
 [ext_resource type="PackedScene" uid="uid://c6lhmn72ylmjn" path="res://Res/Bullet/花瓣2.tscn" id="5_bsc0w"]
 [ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="6_sious"]
 [ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="7_qb2mc"]
-[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="8_32ith"]
+[ext_resource type="PackedScene" path="res://Class/disappear_area_detector.tscn" id="8_32ith"]
 [ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="9_vfryr"]
 
 [sub_resource type="Curve" id="Curve_mx7kp"]
@@ -49,7 +49,7 @@ _limits = [0.0, 90.0, 0.0, 4.0]
 _data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khewa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtn4"]
 atlas = ExtResource("9_vfryr")
 region = Rect2(418, 6, 89, 88)
 
@@ -138,7 +138,7 @@ metadata/_custom_type_script = ExtResource("3_8gnpi")
 visible = false
 z_index = 1
 scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_khewa")
+texture = SubResource("AtlasTexture_trtn4")
 
 [node name="DisappearAreaDetector" parent="钢琴345" instance=ExtResource("8_32ith")]
 
@@ -160,7 +160,7 @@ metadata/_custom_type_script = ExtResource("3_8gnpi")
 visible = false
 z_index = 1
 scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_khewa")
+texture = SubResource("AtlasTexture_trtn4")
 
 [node name="DisappearAreaDetector" parent="钢琴6789" instance=ExtResource("8_32ith")]
 
