@@ -1,11 +1,14 @@
 extends Node2D
 
+@export var game_len: float = 60
 
-# Called when the node enters the scene tree for the first time.
+var nts: PackedScene = preload("res://Scene/StartScene/start_scene.tscn")
+
+@onready var game_timer: Timer = $GameTimer
+
 func _ready() -> void:
-	pass # Replace with function body.
+	game_timer.start(game_len)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_game_timer_timeout() -> void:
+	GlobalManager.game_mode = 1
+	GlobalCanvasLayer.change_scene(nts)

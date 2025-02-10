@@ -32,7 +32,7 @@ atlas = ExtResource("4_3lyvt")
 region = Rect2(310, 274, 53, 67)
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
-game_len = 5.0
+game_len = 10.0
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(0, 176)

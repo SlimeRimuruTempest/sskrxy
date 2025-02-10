@@ -1,5 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://b18163ipdt2ox"]
 
+[ext_resource type="Script" uid="uid://chbtmsgiwqjhy" path="res://Scene/Level/level_base.gd" id="1_xw516"]
 [ext_resource type="Script" uid="uid://d0nqx65taq3w2" path="res://Scene/Level/bg.gd" id="2_kblds"]
 [ext_resource type="Texture2D" uid="uid://cidhrn43333cg" path="res://Art/Scene/L1/BGN.png" id="2_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://6hmqde5av0ks" path="res://Scene/Player/player.tscn" id="4_g82cb"]
@@ -11,23 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dw1dvhisudyc5" path="res://Art/Scene/L1/Pause.png" id="8_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="9_6efwd"]
 [ext_resource type="Texture2D" uid="uid://na30atklps7u" path="res://Art/Scene/L1/Over.png" id="9_qomqd"]
-
-[sub_resource type="GDScript" id="GDScript_qomqd"]
-script/source = "extends Node2D
-
-@export var game_len: float = 60
-
-var nts: PackedScene = preload(\"res://Scene/StartScene/start_scene.tscn\")
-
-@onready var game_timer: Timer = $GameTimer
-
-func _ready() -> void:
-	game_timer.start(game_len)
-
-func _on_game_timer_timeout() -> void:
-	GlobalManager.game_mode = 1
-	GlobalCanvasLayer.change_scene(nts)
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6efwd"]
 shader = ExtResource("8_kblds")
@@ -77,7 +61,7 @@ _data = {
 }
 
 [node name="LevelBase" type="Node2D"]
-script = SubResource("GDScript_qomqd")
+script = ExtResource("1_xw516")
 
 [node name="GameTimer" type="Timer" parent="."]
 
