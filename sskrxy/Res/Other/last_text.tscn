@@ -12,6 +12,5 @@ texture = SubResource("AtlasTexture_o2aa0")
 script = ExtResource("2_o2aa0")
 
 [node name="Timer" type="Timer" parent="."]
-one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
