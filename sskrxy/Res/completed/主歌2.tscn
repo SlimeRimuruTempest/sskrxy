@@ -1,0 +1,170 @@
+[gd_scene load_steps=22 format=3 uid="uid://cnjbfoekhvyo0"]
+
+[ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="1_ujn7k"]
+[ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="2_temr2"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="3_8gnpi"]
+[ext_resource type="PackedScene" uid="uid://ds0fnxiilrspi" path="res://Res/Bullet/花瓣1.tscn" id="4_x30hv"]
+[ext_resource type="PackedScene" uid="uid://c6lhmn72ylmjn" path="res://Res/Bullet/花瓣2.tscn" id="5_bsc0w"]
+[ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="6_sious"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="7_qb2mc"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="8_32ith"]
+[ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="9_vfryr"]
+
+[sub_resource type="Curve" id="Curve_mx7kp"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_d7r5f"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_phiay"]
+_limits = [-200.0, 1.0, 0.0, 5.0]
+_data = [Vector2(1.94215, -200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx7kp"]
+atlas = ExtResource("7_qb2mc")
+region = Rect2(299, 201, 43, 56)
+
+[sub_resource type="Curve" id="Curve_pw8sf"]
+_limits = [0.0, 200.0, 0.0, 5.0]
+_data = [Vector2(1.1708, 200), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_vxh70"]
+_limits = [0.0, 300.0, 0.0, 1.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_sr1em"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, 45), 0.0, -90.0, 0, 1, Vector2(1, -45), -90.0, 90.0, 1, 1, Vector2(2, 45), 90.0, -90.0, 1, 1, Vector2(3, -45), -90.0, 90.0, 1, 1, Vector2(4, 45), 90.0, -90.0, 1, 1, Vector2(5, -45), -90.0, 90.0, 1, 1, Vector2(6, 45), 90.0, -90.0, 1, 1, Vector2(7, -45), -90.0, 90.0, 1, 1, Vector2(8, 45), 90.0, -90.0, 1, 1, Vector2(9, -45), -90.0, 90.0, 1, 1, Vector2(10, 45), 90.0, -90.0, 1, 1, Vector2(11, -45), -90.0, 90.0, 1, 1, Vector2(12, 45), 90.0, -90.0, 1, 1, Vector2(13, -45), -90.0, 90.0, 1, 1, Vector2(14, 45), 90.0, -90.0, 1, 1, Vector2(15, -45), -90.0, 90.0, 1, 1]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_o7i2n"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khewa"]
+atlas = ExtResource("9_vfryr")
+region = Rect2(418, 6, 89, 88)
+
+[sub_resource type="Curve" id="Curve_wvu5y"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_oyody"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_xfii8"]
+_limits = [0.0, 60.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="主歌2" type="Node2D"]
+
+[node name="波与粒的境界" parent="." instance=ExtResource("1_ujn7k")]
+show_time = 117.5
+bullet_pool = Array[PackedScene]([ExtResource("2_temr2")])
+shoot_cd = 0.2
+shoot_num = 50
+
+[node name="钢琴1" type="Node2D" parent="."]
+rotation = 3.14159
+script = ExtResource("3_8gnpi")
+show_time = 129.5
+end_time = 5.0
+bullet_pool = Array[PackedScene]([ExtResource("4_x30hv"), ExtResource("5_bsc0w"), ExtResource("6_sious")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_mx7kp")
+once_num = 5
+once_ang_curve = SubResource("Curve_d7r5f")
+shoot_num = 1
+ori_ang = 90.0
+lin_curve = SubResource("Curve_phiay")
+metadata/_custom_type_script = ExtResource("3_8gnpi")
+
+[node name="Sprite" type="Sprite2D" parent="钢琴1"]
+visible = false
+z_index = 1
+texture = SubResource("AtlasTexture_mx7kp")
+
+[node name="DisappearAreaDetector" parent="钢琴1" instance=ExtResource("8_32ith")]
+
+[node name="钢琴2" type="Node2D" parent="."]
+rotation = 3.14159
+script = ExtResource("3_8gnpi")
+show_time = 130.5
+end_time = 5.0
+bullet_pool = Array[PackedScene]([ExtResource("4_x30hv"), ExtResource("5_bsc0w"), ExtResource("6_sious")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_mx7kp")
+once_num = 5
+once_ang_curve = SubResource("Curve_d7r5f")
+shoot_num = 1
+ori_ang = 90.0
+lin_curve = SubResource("Curve_pw8sf")
+metadata/_custom_type_script = ExtResource("3_8gnpi")
+
+[node name="Sprite" type="Sprite2D" parent="钢琴2"]
+visible = false
+z_index = 1
+texture = SubResource("AtlasTexture_mx7kp")
+
+[node name="DisappearAreaDetector" parent="钢琴2" instance=ExtResource("8_32ith")]
+
+[node name="钢琴345" type="Node2D" parent="."]
+script = ExtResource("3_8gnpi")
+show_time = 132.0
+bullet_pool = Array[PackedScene]([ExtResource("4_x30hv"), ExtResource("5_bsc0w"), ExtResource("6_sious")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_vxh70")
+bullet_ang_curve = SubResource("Curve_sr1em")
+once_num = 5
+once_ang_curve = SubResource("Curve_o7i2n")
+shoot_cd = 0.75
+shoot_num = 3
+ori_ang = 60.0
+metadata/_custom_type_script = ExtResource("3_8gnpi")
+
+[node name="Sprite" type="Sprite2D" parent="钢琴345"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_khewa")
+
+[node name="DisappearAreaDetector" parent="钢琴345" instance=ExtResource("8_32ith")]
+
+[node name="钢琴6789" type="Node2D" parent="."]
+script = ExtResource("3_8gnpi")
+show_time = 135.0
+bullet_pool = Array[PackedScene]([ExtResource("4_x30hv"), ExtResource("5_bsc0w"), ExtResource("6_sious")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_wvu5y")
+bullet_ang_curve = SubResource("Curve_oyody")
+once_num = 5
+once_ang_curve = SubResource("Curve_xfii8")
+shoot_cd = 0.75
+shoot_num = 4
+ori_ang = 80.0
+metadata/_custom_type_script = ExtResource("3_8gnpi")
+
+[node name="Sprite" type="Sprite2D" parent="钢琴6789"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_khewa")
+
+[node name="DisappearAreaDetector" parent="钢琴6789" instance=ExtResource("8_32ith")]
+
+[connection signal="ready" from="钢琴1" to="钢琴1" method="_on_ready"]
+[connection signal="ready" from="钢琴2" to="钢琴2" method="_on_ready"]
+[connection signal="ready" from="钢琴345" to="钢琴345" method="_on_ready"]
+[connection signal="ready" from="钢琴6789" to="钢琴6789" method="_on_ready"]

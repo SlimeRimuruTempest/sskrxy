@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://cno53fj16ng3q"]
 
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_jdegk"]
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_1kxq4"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="2_1kxq4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kxq4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdegk"]
 atlas = ExtResource("2_1kxq4")
-region = Rect2(105, 266, 43, 97)
+region = Rect2(105, 165, 43, 97)
 
 [node name="黄四分" instance=ExtResource("1_jdegk")]
 
-[node name="Sprite2D" parent="." index="0"]
-texture = SubResource("AtlasTexture_1kxq4")
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_jdegk")
 
 [node name="CollisionShape2D" parent="BulletArea" index="0"]
-position = Vector2(0.0679703, 6.12059)
+position = Vector2(0, 9)

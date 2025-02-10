@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://g3g3ypbsd1vl"]
+[gd_scene load_steps=7 format=3 uid="uid://dmnf6ahsllf75"]
 
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_oxt0j"]
 [ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="2_soa76"]

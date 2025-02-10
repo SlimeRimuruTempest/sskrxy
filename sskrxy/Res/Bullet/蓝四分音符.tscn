@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ejam5td0cbfy"]
+
+[ext_resource type="PackedScene" uid="uid://cw4iwi04ci61y" path="res://Res/Bullet/蓝八分音符.tscn" id="1_nfau8"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="2_4imq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyagl"]
+atlas = ExtResource("2_4imq7")
+region = Rect2(190, 165, 43, 97)
+
+[node name="蓝四分音符" instance=ExtResource("1_nfau8")]
+
+[node name="Sprite" parent="." index="0"]
+texture = SubResource("AtlasTexture_vyagl")
+
+[node name="CollisionShape2D" parent="BulletArea" index="0"]
+position = Vector2(-2.38419e-07, 9.6)

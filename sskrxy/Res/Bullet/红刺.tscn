@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://deiycpgblrflm"]
 
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_m310e"]
-[ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/Scene/C1/bullet2.png" id="2_a2rlw"]
+[ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="2_m310e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4qlg"]
-atlas = ExtResource("2_a2rlw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2rlw"]
+atlas = ExtResource("2_m310e")
 region = Rect2(527, 106, 72, 91)
 
 [node name="B1" instance=ExtResource("1_m310e")]
 
-[node name="Sprite2D" parent="." index="0"]
-texture = SubResource("AtlasTexture_t4qlg")
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_a2rlw")

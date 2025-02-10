@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbhr0gn3ud7k3"]
 
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_psa3s"]
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_je5xo"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="2_psa3s"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jgisr"]
-atlas = ExtResource("2_je5xo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_je5xo"]
+atlas = ExtResource("2_psa3s")
 region = Rect2(300, 139, 93, 42)
 
 [node name="花瓣3" instance=ExtResource("1_psa3s")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite" parent="." index="0"]
 scale = Vector2(0.6, 0.6)
-texture = SubResource("AtlasTexture_jgisr")
+texture = SubResource("AtlasTexture_je5xo")
 
 [node name="CollisionShape2D" parent="BulletArea" index="0"]
-position = Vector2(-15.1463, -0.0401535)
+position = Vector2(-7, 0)

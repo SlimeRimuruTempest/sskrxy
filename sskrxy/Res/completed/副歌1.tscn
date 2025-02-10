@@ -1,0 +1,106 @@
+[gd_scene load_steps=17 format=3 uid="uid://cgqsjb6o33b7w"]
+
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="1_ou0wp"]
+[ext_resource type="PackedScene" uid="uid://cp8ekedfj1kqm" path="res://Res/shooters/loop/副歌loop.tscn" id="2_hdnvj"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="3_vjad8"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="4_87ls0"]
+[ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="5_u74px"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="6_w1ygt"]
+[ext_resource type="PackedScene" uid="uid://byigexai5jfki" path="res://Res/Bullet/花2.tscn" id="7_d0etd"]
+[ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="8_33ngg"]
+
+[sub_resource type="Curve" id="Curve_ojgjm"]
+_limits = [0.0, 150.0, 0.0, 1.0]
+_data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_i8nd3"]
+_limits = [30.0, 150.0, 0.0, 12.0]
+_data = [Vector2(0, 30), 0.0, 10.0, 0, 1, Vector2(12, 150), 10.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_nawph"]
+_limits = [0.0, 300.0, 0.0, 10.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_50ijf"]
+_limits = [0.0, 120.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 10.0, 0, 1, Vector2(12, 120), 10.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khewa"]
+atlas = ExtResource("5_u74px")
+region = Rect2(418, 6, 89, 88)
+
+[sub_resource type="Curve" id="Curve_fofff"]
+_limits = [0.0, 400.0, 0.0, 66.02]
+_data = [Vector2(0, 400), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_7pqf0"]
+_limits = [0.0, 360.0, 1.0, 6.0]
+_data = [Vector2(1, 0), 0.0, 72.0, 0, 1, Vector2(6, 360), 72.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4405c"]
+_limits = [0.0, 1800.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 180.0, 0, 1, Vector2(10, 1800), 180.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="副歌1" type="Node2D"]
+
+[node name="副歌loop发射器" parent="." instance=ExtResource("1_ou0wp")]
+show_time = 83.5
+bullet_pool = Array[PackedScene]([ExtResource("2_hdnvj")])
+bullet_lin_curve = SubResource("Curve_ojgjm")
+shoot_cd = 1.5
+shoot_num = 7
+ang_curve = SubResource("Curve_i8nd3")
+
+[node name="4xloop" type="Node2D" parent="副歌loop发射器"]
+script = ExtResource("3_vjad8")
+show_time = 92.5
+start_time = 0.2
+bullet_pool = Array[PackedScene]([ExtResource("4_87ls0")])
+bullet_lin_curve = SubResource("Curve_nawph")
+once_num = 12
+once_ang_curve = SubResource("Curve_50ijf")
+shoot_cd = 0.2
+shoot_num = 4
+ori_ang = 30.0
+metadata/_custom_type_script = ExtResource("3_vjad8")
+
+[node name="Sprite" type="Sprite2D" parent="副歌loop发射器/4xloop"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_khewa")
+
+[node name="DisappearAreaDetector" parent="副歌loop发射器/4xloop" instance=ExtResource("6_w1ygt")]
+
+[node name="后半" parent="." instance=ExtResource("1_ou0wp")]
+position = Vector2(-250, 130)
+show_time = 95.0
+bullet_pool = Array[PackedScene]([ExtResource("7_d0etd"), ExtResource("8_33ngg")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_fofff")
+once_num = 6
+once_ang_curve = SubResource("Curve_7pqf0")
+shoot_cd = 0.5
+shoot_num = 20
+ang_curve = SubResource("Curve_4405c")
+
+[node name="后半2" parent="." instance=ExtResource("1_ou0wp")]
+position = Vector2(250, 130)
+show_time = 95.0
+bullet_pool = Array[PackedScene]([ExtResource("7_d0etd"), ExtResource("8_33ngg")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_fofff")
+once_num = 6
+once_ang_curve = SubResource("Curve_7pqf0")
+shoot_cd = 0.5
+shoot_num = 20
+ang_curve = SubResource("Curve_4405c")
+
+[connection signal="ready" from="副歌loop发射器/4xloop" to="副歌loop发射器/4xloop" method="_on_ready"]

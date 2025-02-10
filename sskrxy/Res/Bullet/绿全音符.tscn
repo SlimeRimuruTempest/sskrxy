@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1qcraswkctwa"]
 
 [ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="1_35gsh"]
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="2_8uwcf"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="2_35gsh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1432"]
-atlas = ExtResource("2_8uwcf")
-region = Rect2(2, 2, 81, 61)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uwcf"]
+atlas = ExtResource("2_35gsh")
+region = Rect2(87, 2, 81, 61)
 
-[node name="WhloeTone_Green" instance=ExtResource("1_35gsh")]
-scale = Vector2(2.5, 2.5)
+[node name="黄全" instance=ExtResource("1_35gsh")]
 
-[node name="Sprite2D" parent="." index="0"]
-texture = SubResource("AtlasTexture_m1432")
+[node name="Sprite" parent="." index="0"]
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_8uwcf")

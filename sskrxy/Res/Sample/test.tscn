@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="6_wq111"]
 [ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/free/蛇形2.tscn" id="7_kkq8v"]
 [ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="8_i1iyn"]
-[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/Scene/C1/bullet1.png" id="9_nmc42"]
+[ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="9_nmc42"]
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="9_vkdjo"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="10_da30q"]
 [ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="11_kkq8v"]
 [ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="12_i1iyn"]
-[ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/follow_boss/loop_shooter.tscn" id="13_vkdjo"]
+[ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/loop/loop_shooter.tscn" id="13_vkdjo"]
 
 [sub_resource type="Curve" id="Curve_ptx10"]
 _limits = [0.0, 250.0, 0.0, 10.0]
@@ -247,6 +247,8 @@ ori_ang = 60.0
 [node name="波与粒的境界2" parent="Root" index="6" instance=ExtResource("11_kkq8v")]
 position = Vector2(1.12622, 2.38548)
 bullet_pool = Array[PackedScene]([ExtResource("12_i1iyn")])
+shoot_cd = 0.2
+shoot_num = 50
 
 [node name="loop4" type="Node2D" parent="Root" index="7"]
 
@@ -258,10 +260,10 @@ shoot_num = 8
 [node name="BGM" parent="." index="4"]
 stream = ExtResource("3_mihg7")
 
-[node name="BGL" parent="." index="5"]
+[node name="BGL" parent="Layer2" index="0"]
 texture = null
 
-[node name="BGR" parent="." index="6"]
+[node name="BGR" parent="Layer2" index="1"]
 texture = null
 
 [connection signal="ready" from="Root/间奏3/蛇形Shooter5" to="Root/间奏3/蛇形Shooter5" method="_on_ready"]

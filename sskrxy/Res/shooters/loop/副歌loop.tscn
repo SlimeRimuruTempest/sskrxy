@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp8ekedfj1kqm"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_nwhuw"]
+[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="2_wpfq5"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_k7pva"]
+
+[sub_resource type="Curve" id="Curve_ojgjm"]
+_limits = [0.0, 300.0, 0.0, 1.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_i8nd3"]
+_limits = [0.0, 360.0, 0.0, 12.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(12, 360), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="副歌loop" type="Node2D"]
+script = ExtResource("1_nwhuw")
+bullet_pool = Array[PackedScene]([ExtResource("2_wpfq5")])
+bullet_lin_curve = SubResource("Curve_ojgjm")
+once_num = 12
+once_ang_curve = SubResource("Curve_i8nd3")
+shoot_cd = 0.2
+shoot_num = 5
+ori_ang = 90.0
+metadata/_custom_type_script = ExtResource("1_nwhuw")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="." instance=ExtResource("3_k7pva")]
+
+[connection signal="ready" from="." to="." method="_on_ready"]

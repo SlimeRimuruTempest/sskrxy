@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bctxa7ogyjky"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_vlkcn"]
+[ext_resource type="PackedScene" uid="uid://x3jyhn5m10eb" path="res://Res/shooters/loop/红loop.tscn" id="2_p5yr8"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="3_jxw2o"]
+
+[sub_resource type="Curve" id="Curve_olmg8"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_emx6q"]
+_limits = [0.0, 20.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ief0i"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="loop2" type="Node2D"]
+
+[node name="LoopShooter" type="Node2D" parent="."]
+script = ExtResource("1_vlkcn")
+show_time = 71.7
+bullet_pool = Array[PackedScene]([ExtResource("2_p5yr8")])
+bullet_lin_curve = SubResource("Curve_olmg8")
+bullet_ang_curve = SubResource("Curve_emx6q")
+once_ang_curve = SubResource("Curve_ief0i")
+shoot_cd = 1.5
+shoot_num = 8
+metadata/_custom_type_script = ExtResource("1_vlkcn")
+
+[node name="Sprite" type="Sprite2D" parent="LoopShooter"]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="LoopShooter" instance=ExtResource("3_jxw2o")]
+
+[connection signal="ready" from="LoopShooter" to="LoopShooter" method="_on_ready"]
