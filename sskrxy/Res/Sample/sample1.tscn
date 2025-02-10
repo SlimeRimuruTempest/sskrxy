@@ -47,13 +47,9 @@ region = Rect2(369, 96, 117, 211)
 
 [sub_resource type="Curve" id="Curve_by0v0"]
 _limits = [0.0, 200.0, 0.0, 400.0]
-_data = [Vector2(10, 100), 0.0, 0.0, 0, 0, Vector2(10.001, 0), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [sub_resource type="Curve" id="Curve_t2oe5"]
 _limits = [0.0, 360.0, 0.0, 400.0]
-_data = [Vector2(0, 0), 0.0, 72.0, 0, 1, Vector2(5, 360), 72.0, -72.0, 1, 1, Vector2(10, 0), -72.0, 0.0, 1, 0]
-point_count = 3
 
 [sub_resource type="Curve" id="Curve_huxls"]
 _limits = [0.0, 2500.0, 0.0, 25.0]
@@ -347,6 +343,9 @@ point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
+[node name="BG" parent="." index="2"]
+position = Vector2(983, 540)
+
 [node name="Boss" type="Node2D" parent="." index="3"]
 position = Vector2(970, 200)
 script = ExtResource("2_ief0i")
@@ -354,12 +353,13 @@ sl = SubResource("AtlasTexture_ndar1")
 sm = SubResource("AtlasTexture_r60e3")
 sr = SubResource("AtlasTexture_qlbr4")
 lock_rot = true
+ori_ang = 90.0
 lin_curve = SubResource("Curve_by0v0")
 ang_curve = SubResource("Curve_t2oe5")
 metadata/_custom_type_script = ExtResource("4_4405c")
 
 [node name="Sprite" type="Sprite2D" parent="Boss" index="0"]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_r60e3")
 
 [node name="心跳" type="Node2D" parent="Boss" index="1"]
