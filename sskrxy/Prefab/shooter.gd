@@ -40,6 +40,7 @@ enum ShootMode2 { EVERY_MOMENT, EVERY_BULLET }
 
 ## 是否跟随老妈
 @export var bullet_follow_mum: bool = false
+@export var bullet_dir_follow_mum: bool = false
 
 var pool_id: int = 0:
 	set(v):
@@ -65,7 +66,7 @@ func shoot_once():
 			ShootMode2.EVERY_BULLET:
 				bullet_ps = get_bullet()
 		#var lin_off: = once_lin_curve.sample(i)
-		var bullet: = bullet_ps.instantiate()
+		var bullet: NodeSTG = bullet_ps.instantiate()
 		var ang_off: = once_ang_curve.sample(i)
 		if bullet_follow_mum:
 			add_child(bullet)
@@ -73,9 +74,18 @@ func shoot_once():
 			marker.add_child(bullet)
 		var pos_offset: Vector2 = get_dir(ang + ang_off) * shoot_pos_offset
 		bullet.global_position = self.global_position + pos_offset
-		bullet.ori_ang = ang + ang_off
+		bullet.mum_ang_off = ang_off
+		bullet.ori_ang = ang + bullet.mum_ang_off
 		bullet.lin_curve = bullet_lin_curve
 		bullet.ang_curve = bullet_ang_curve
+
+func _physics_process(delta: float) -> void:
+	super(delta)
+	if bullet_follow_mum and bullet_dir_follow_mum:
+		for cb in get_children():
+			if cb is NodeSTG:
+				cb.ori_ang = ang + cb.mum_ang_off
+
 
 func shoot():
 	await get_tree().create_timer(start_time, false).timeout

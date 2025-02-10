@@ -1,6 +1,6 @@
 extends Control
 
-@export var nts: PackedScene
+@export_file("*tscn") var nts: String
 
 @onready var start_game: Sprite2D = $StartGame
 @onready var start_sfx: AudioStreamPlayer = $StartSFX
@@ -13,7 +13,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("space"):
 		if can_accept:
 			can_accept = false
-			GlobalCanvasLayer.change_scene(nts)
+			GlobalCanvasLayer.change_scene_to_file(nts)
 
 func _ready() -> void:
 	if GlobalManager.game_mode == 1:
@@ -34,7 +34,7 @@ func _on_start_button_pressed() -> void:
 		can_accept = false
 		start_sfx.play()
 		await get_tree().create_timer(1.0, false).timeout
-		GlobalCanvasLayer.change_scene(nts)
+		GlobalCanvasLayer.change_scene_to_file(nts)
 
 
 func _on_thank_button_pressed() -> void:

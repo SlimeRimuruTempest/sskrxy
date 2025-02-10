@@ -2,7 +2,7 @@ extends Node2D
 
 @export var game_len: float = 60
 
-var nts: PackedScene = preload("res://Scene/StartScene/start_scene.tscn")
+@export_file("*tscn") var nts: String
 
 @onready var game_timer: Timer = $GameTimer
 
@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func _on_game_timer_timeout() -> void:
 	GlobalManager.game_mode = 1
-	GlobalCanvasLayer.change_scene(nts)
+	GlobalCanvasLayer.change_scene_to_file(nts)

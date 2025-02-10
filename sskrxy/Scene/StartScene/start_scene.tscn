@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkb2h8gnjfae8"]
+[gd_scene load_steps=14 format=3 uid="uid://dkb2h8gnjfae8"]
 
 [ext_resource type="Script" uid="uid://c17mfb3r5dlpt" path="res://Scene/StartScene/start_scene.gd" id="1_63fgh"]
 [ext_resource type="Texture2D" uid="uid://dhi7u1r6cl0c" path="res://Art/Scene/StartScene/BG1.png" id="1_o3q03"]
 [ext_resource type="Texture2D" uid="uid://d0ombw4xgegap" path="res://Art/Scene/StartScene/BG2.png" id="2_63fgh"]
-[ext_resource type="PackedScene" uid="uid://ewp2hrkovssq" path="res://Scene/Chapter/chapter1.tscn" id="2_p5kcj"]
 [ext_resource type="Texture2D" uid="uid://72s0uynhkx82" path="res://Art/Scene/StartScene/BG3.png" id="3_c762k"]
 [ext_resource type="Texture2D" uid="uid://buct3842si3uc" path="res://Art/Scene/StartScene/PL.png" id="5_o05gn"]
 [ext_resource type="Texture2D" uid="uid://c8t3qsx1ak1jo" path="res://Art/Scene/StartScene/PR.png" id="6_cea66"]
@@ -203,7 +202,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_63fgh")
-nts = ExtResource("2_p5kcj")
+nts = "uid://ewp2hrkovssq"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
