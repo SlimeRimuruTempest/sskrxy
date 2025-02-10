@@ -1,5 +1,7 @@
 extends Control
 
+@onready var pause_sfx: AudioStreamPlayer = $PauseSFX
+
 func _ready() -> void:
 	hide()
 
@@ -11,6 +13,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			game_pause()
 
 func game_pause():
+	pause_sfx.play(0.26)
 	show()
 	get_tree().paused = true
 

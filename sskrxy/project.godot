@@ -19,7 +19,7 @@ config/icon="uid://dfc6gduij5axo"
 [autoload]
 
 GlobalCanvasLayer="*res://Scene/Global/global_canvas_layer.tscn"
-GlobalManager="*res://Class/global_manager.tscn"
+GlobalManager="*res://Scene/Global/global_manager.tscn"
 
 [debug]
 

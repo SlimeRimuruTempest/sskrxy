@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://rspc6iao21u6"]
+[gd_scene load_steps=9 format=3 uid="uid://rspc6iao21u6"]
 
 [ext_resource type="Script" uid="uid://bs1d6mh8nxxw7" path="res://Scene/Chapter/LyricBook/lyric_book.gd" id="1_rvmrl"]
 [ext_resource type="Texture2D" uid="uid://ck44j1rj7q57d" path="res://Art/LyricBook/エルゴスム/QUI.png" id="2_ci50d"]
 [ext_resource type="Texture2D" uid="uid://ie774pcqw6ud" path="res://Art/LyricBook/エルゴスム/- QUI.png" id="3_rksui"]
+[ext_resource type="AudioStream" uid="uid://br6yasyb1py5m" path="res://Audio/SFX/点击纸片.wav" id="4_wejwv"]
+[ext_resource type="AudioStream" uid="uid://cv1qle3wqw40d" path="res://Audio/SFX/关闭纸片.wav" id="5_bqymp"]
 
 [sub_resource type="Animation" id="Animation_rksui"]
 length = 0.001
@@ -80,6 +82,16 @@ mouse_filter = 0
 texture = ExtResource("3_rksui")
 expand_mode = 5
 stretch_mode = 5
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wejwv")
+volume_db = 14.0
+bus = &"SFX"
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bqymp")
+volume_db = 20.0
+bus = &"SFX"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="gui_input" from="CanvasLayer/PanelContainer" to="." method="_on_panel_container_gui_input"]

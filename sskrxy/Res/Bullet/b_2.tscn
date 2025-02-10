@@ -11,5 +11,5 @@ region = Rect2(527, 106, 72, 91)
 sprite_rot_off = 90.0
 
 [node name="Sprite" parent="." index="0"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_73uhh")

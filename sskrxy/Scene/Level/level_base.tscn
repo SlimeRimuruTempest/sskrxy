@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=15 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Script" uid="uid://d0nqx65taq3w2" path="res://Scene/Level/bg.gd" id="2_kblds"]
 [ext_resource type="Texture2D" uid="uid://cidhrn43333cg" path="res://Art/Scene/L1/BGN.png" id="2_yy3y6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbt6u58nbbis" path="res://Art/Scene/L1/Fg.png" id="5_8noda"]
 [ext_resource type="Script" uid="uid://dlfti5py2n7io" path="res://Scene/Level/pause_ui.gd" id="5_kblds"]
 [ext_resource type="Texture2D" uid="uid://bm40ii6ppvubd" path="res://Art/Scene/L1/Teach.png" id="6_w5tha"]
+[ext_resource type="AudioStream" uid="uid://cchox3pci52xf" path="res://Audio/SFX/暂停.wav" id="8_6efwd"]
 [ext_resource type="Shader" uid="uid://dejval1hdjjji" path="res://Art/Shader/gblur.gdshader" id="8_kblds"]
 [ext_resource type="Texture2D" uid="uid://dw1dvhisudyc5" path="res://Art/Scene/L1/Pause.png" id="8_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="9_6efwd"]
@@ -111,6 +112,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("5_kblds")
 
 [node name="Blur" type="ColorRect" parent="Layer3/PauseUI"]
@@ -118,11 +120,13 @@ material = SubResource("ShaderMaterial_6efwd")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="PauseSprite" type="TextureRect" parent="Layer3/PauseUI"]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 texture = ExtResource("8_yy3y6")
 
 [node name="RestartButton" type="Button" parent="Layer3/PauseUI/PauseSprite"]
@@ -142,6 +146,10 @@ offset_left = 1024.0
 offset_top = 443.0
 offset_right = 1216.0
 offset_bottom = 634.0
+
+[node name="PauseSFX" type="AudioStreamPlayer" parent="Layer3/PauseUI"]
+stream = ExtResource("8_6efwd")
+bus = &"SFX"
 
 [node name="Layer4" type="CanvasLayer" parent="."]
 layer = 4

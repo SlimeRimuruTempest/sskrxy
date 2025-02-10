@@ -3,6 +3,7 @@ extends Control
 @export var nts: PackedScene
 
 @onready var start_game: Sprite2D = $StartGame
+@onready var start_sfx: AudioStreamPlayer = $StartSFX
 
 var can_accept: bool = false
 
@@ -25,4 +26,6 @@ func _ready() -> void:
 func _on_start_button_pressed() -> void:
 	if can_accept:
 		can_accept = false
+		start_sfx.play()
+		await get_tree().create_timer(1.0).timeout
 		GlobalCanvasLayer.change_scene(nts)

@@ -1,23 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp1vxmv6j378j"]
+[gd_scene load_steps=6 format=3 uid="uid://cp1vxmv6j378j"]
 
 [ext_resource type="Script" uid="uid://b5yxdejjvvdfo" path="res://Scene/Global/global_canvas_layer.gd" id="1_l0ljs"]
+[ext_resource type="AudioStream" uid="uid://d4aniiq1w2k8w" path="res://Audio/SFX/点击1(1).wav" id="2_g4hus"]
+[ext_resource type="AudioStream" uid="uid://37cje16kh7jl" path="res://Audio/SFX/点击2(1).wav" id="3_vjrk2"]
+[ext_resource type="AudioStream" uid="uid://c8v5nagt6fkp2" path="res://Audio/SFX/点击3(1).wav" id="4_633qm"]
+[ext_resource type="AudioStream" uid="uid://cnlivvtyowcb1" path="res://Audio/SFX/点击4(1).wav" id="5_1b2wg"]
 
-[node name="GlobalCanvasLayer" type="CanvasLayer"]
+[node name="GlobalCanvasLayer" type="Node"]
 process_mode = 3
-layer = 10
 script = ExtResource("1_l0ljs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer-1" type="CanvasLayer" parent="."]
+layer = -1
 
-[node name="MouseDisabled" type="ColorRect" parent="."]
+[node name="BGRect" type="ColorRect" parent="CanvasLayer-1"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="CanvasLayer10" type="CanvasLayer" parent="."]
+
+[node name="FrontColorRect" type="ColorRect" parent="CanvasLayer10"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MouseDisabled" type="ColorRect" parent="CanvasLayer10"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ClickSFXRoot" type="Node" parent="."]
+
+[node name="点击1(1)" type="AudioStreamPlayer" parent="ClickSFXRoot"]
+stream = ExtResource("2_g4hus")
+
+[node name="点击2(1)" type="AudioStreamPlayer" parent="ClickSFXRoot"]
+stream = ExtResource("3_vjrk2")
+
+[node name="点击3(1)" type="AudioStreamPlayer" parent="ClickSFXRoot"]
+stream = ExtResource("4_633qm")
+
+[node name="点击4(1)" type="AudioStreamPlayer" parent="ClickSFXRoot"]
+stream = ExtResource("5_1b2wg")
+
+[connection signal="gui_input" from="CanvasLayer-1/BGRect" to="." method="_on_bg_rect_gui_input"]
+[connection signal="gui_input" from="CanvasLayer10/MouseDisabled" to="." method="_on_mouse_disabled_gui_input"]

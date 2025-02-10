@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ewp2hrkovssq"]
+[gd_scene load_steps=40 format=3 uid="uid://ewp2hrkovssq"]
 
 [ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_a2fqw"]
 [ext_resource type="Script" uid="uid://bckim3syuok7i" path="res://Scene/Chapter/chapter_1.gd" id="1_lnugw"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dnl3w8dec7dj3" path="res://Art/LyricBook/エルゴスム/トーチカ.png" id="11_6j0po"]
 [ext_resource type="Texture2D" uid="uid://dgnjtmrecdj07" path="res://Art/LyricBook/エルゴスム/- サーカトーヴォ.png" id="11_kuk0f"]
 [ext_resource type="Texture2D" uid="uid://dytyix8u0prjx" path="res://Art/Scene/C1/Dialogue/D10.png" id="11_v1t0q"]
+[ext_resource type="AudioStream" uid="uid://bef122ggdfedy" path="res://Audio/BGM/エゴ bgm.mp3" id="12_wf4ge"]
 [ext_resource type="Texture2D" uid="uid://7i22aj64awbu" path="res://Art/LyricBook/エルゴスム/- スマートを模索する.png" id="13_6cm64"]
 [ext_resource type="Texture2D" uid="uid://c7nfgeyot6svo" path="res://Art/LyricBook/エルゴスム/レプリカ.png" id="13_kuk0f"]
 [ext_resource type="Texture2D" uid="uid://su5h5lkjmfsg" path="res://Art/LyricBook/エルゴスム/- トーチカ.png" id="15_8mex3"]
@@ -139,6 +140,11 @@ animations = [{
 script = ExtResource("1_lnugw")
 dialogue_tex = Array[Texture2D]([ExtResource("2_wf4ge"), ExtResource("3_0ukwh"), ExtResource("4_wrgwr"), ExtResource("5_elaay"), ExtResource("6_6yi7t"), ExtResource("7_0hvb1"), ExtResource("8_jeb21"), ExtResource("9_ytnsm"), ExtResource("10_so0ql")])
 nts = ExtResource("2_5bhq5")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wf4ge")
+autoplay = true
+bus = &"BGM"
 
 [node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_a2fqw")
