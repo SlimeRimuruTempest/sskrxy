@@ -1,29 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://etr7ldym2e43"]
+[gd_scene load_steps=6 format=3 uid="uid://etr7ldym2e43"]
 
 [ext_resource type="Script" uid="uid://ddm7vf808nhjm" path="res://Res/Other/boss.gd" id="1_ahmox"]
 [ext_resource type="Script" uid="uid://b5h1qqcaiuqka" path="res://Prefab/node_stg.gd" id="1_wyhur"]
-[ext_resource type="Texture2D" uid="uid://bgt7vdrx1hi5e" path="res://Art/SpriteSheet/第一关boss.png" id="2_qhl5a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ndar1"]
-atlas = ExtResource("2_qhl5a")
-region = Rect2(606, 97, 117, 211)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r60e3"]
-atlas = ExtResource("2_qhl5a")
-region = Rect2(165, 96, 105, 216)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlbr4"]
-atlas = ExtResource("2_qhl5a")
-region = Rect2(369, 96, 117, 211)
+[ext_resource type="Texture2D" uid="uid://h6jteotn0l44" path="res://Art/SpriteSheet/Boss/bossl.tres" id="2_r60e3"]
+[ext_resource type="Texture2D" uid="uid://3pv8g6u5s3qy" path="res://Art/SpriteSheet/Boss/bossm.tres" id="3_qlbr4"]
+[ext_resource type="Texture2D" uid="uid://dgsbq1wbrja0l" path="res://Art/SpriteSheet/Boss/bossr.tres" id="4_kle4l"]
 
 [node name="Boss" type="Node2D"]
 z_index = 2
 script = ExtResource("1_ahmox")
-sl = SubResource("AtlasTexture_ndar1")
-sm = SubResource("AtlasTexture_r60e3")
-sr = SubResource("AtlasTexture_qlbr4")
+sl = ExtResource("2_r60e3")
+sm = ExtResource("3_qlbr4")
+sr = ExtResource("4_kle4l")
 lock_rot = true
 metadata/_custom_type_script = ExtResource("1_wyhur")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_r60e3")
+texture = ExtResource("3_qlbr4")
