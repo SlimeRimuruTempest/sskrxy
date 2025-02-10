@@ -602,39 +602,39 @@ ori_ang = null
 
 [node name="蛇形Shooter2" parent="Root/Boss2" index="3" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = 3
-ori_ang = 60.0
 show_time = null
 start_time = 10.5
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = 3
 shoot_pos_offset = null
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 60.0
 
 [node name="蛇形Shooter" parent="Root/Boss2" index="4" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = 3
-ori_ang = 60.0
 show_time = null
 start_time = 10.5
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = 3
 shoot_pos_offset = null
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 60.0
 
 [node name="loop1" type="Node2D" parent="Root/Boss2" index="5"]
 visible = false
@@ -849,8 +849,6 @@ visible = false
 
 [node name="波与粒的境界" parent="Root/Boss2/主歌2" index="0" instance=ExtResource("21_uc3bf")]
 visible = false
-shoot_cd = 0.2
-shoot_num = 50
 show_time = 117.5
 start_time = null
 end_time = null
@@ -858,6 +856,8 @@ bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 shoot_mode_1 = null
 shoot_mode_2 = null
 shoot_pos_offset = null
+shoot_cd = 0.2
+shoot_num = 50
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
@@ -1286,481 +1286,481 @@ lin_curve = SubResource("Curve_e10o6")
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇1" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 153.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇1" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 153.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇4" type="Node2D" parent="Root/Boss2" index="19"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇4" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 155.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇4" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 155.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇3" type="Node2D" parent="Root/Boss2" index="20"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇3" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 159.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇3" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 159.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇2" type="Node2D" parent="Root/Boss2" index="21"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇2" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 160.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇2" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 160.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇5" type="Node2D" parent="Root/Boss2" index="22"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇5" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 161.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇5" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 161.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇6" type="Node2D" parent="Root/Boss2" index="23"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇6" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 163.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇6" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 163.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇7" type="Node2D" parent="Root/Boss2" index="24"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇7" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 164.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇7" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 164.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇8" type="Node2D" parent="Root/Boss2" index="25"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇8" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 167.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇8" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 167.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇9" type="Node2D" parent="Root/Boss2" index="26"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇9" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 170.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇9" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 170.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇10" type="Node2D" parent="Root/Boss2" index="27"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇10" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 172.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇10" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 172.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇11" type="Node2D" parent="Root/Boss2" index="28"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇11" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 173.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇11" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 173.5
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="钢琴蛇12" type="Node2D" parent="Root/Boss2" index="29"]
 
 [node name="蛇形Shooter3" parent="Root/Boss2/钢琴蛇12" index="0" instance=ExtResource("5_t2oe5")]
 visible = false
-bullet_ang_curve = SubResource("Curve_dusej")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 175.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_dusej")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="蛇形Shooter4" parent="Root/Boss2/钢琴蛇12" index="1" instance=ExtResource("4_savq6")]
 visible = false
-bullet_ang_curve = SubResource("Curve_fapwp")
-once_num = null
-shoot_num = 6
-ori_ang = 90.0
 show_time = 175.0
 start_time = null
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
 shoot_mode_1 = null
 shoot_mode_2 = null
+bullet_ang_curve = SubResource("Curve_fapwp")
+once_num = null
 shoot_pos_offset = null
+shoot_num = 6
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 90.0
 
 [node name="高潮" parent="Root/Boss2" index="30" instance=ExtResource("2_h52jr")]
 position = Vector2(0, -333.333)
@@ -2269,60 +2269,60 @@ z_index = 1
 
 [node name="蛇形Shooter2" parent="Root/间奏2" index="1" instance=ExtResource("5_t2oe5")]
 position = Vector2(-517.367, 398.403)
-once_num = null
-shoot_cd = 0.2
-shoot_num = 100
-ori_ang = null
 show_time = 152.5
 start_time = null
 end_time = null
 bullet_pool = Array[PackedScene]([ExtResource("9_nawph"), ExtResource("10_50ijf"), ExtResource("11_yr0h5")])
 shoot_mode_1 = 1
 shoot_mode_2 = null
+once_num = null
 shoot_pos_offset = null
+shoot_cd = 0.2
+shoot_num = 100
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = null
 
 [node name="蛇形Shooter3" parent="Root/间奏2" index="2" instance=ExtResource("4_savq6")]
 position = Vector2(494.43, 213.36)
-once_num = null
-shoot_cd = 0.2
-shoot_num = 100
-ori_ang = 180.0
 show_time = 152.5
 start_time = null
 end_time = null
 bullet_pool = Array[PackedScene]([ExtResource("9_nawph"), ExtResource("10_50ijf"), ExtResource("11_yr0h5")])
 shoot_mode_1 = 1
 shoot_mode_2 = null
+once_num = null
 shoot_pos_offset = null
+shoot_cd = 0.2
+shoot_num = 100
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 180.0
 
 [node name="蛇形Shooter4" parent="Root/间奏2" index="3" instance=ExtResource("5_t2oe5")]
 position = Vector2(494.43, 213.36)
-once_num = null
-shoot_cd = 0.2
-shoot_num = 100
-ori_ang = 180.0
 show_time = 152.5
 start_time = null
 end_time = null
 bullet_pool = Array[PackedScene]([ExtResource("9_nawph"), ExtResource("10_50ijf"), ExtResource("11_yr0h5")])
 shoot_mode_1 = 1
 shoot_mode_2 = null
+once_num = null
 shoot_pos_offset = null
+shoot_cd = 0.2
+shoot_num = 100
 bullet_follow_mum = null
 bullet_dir_follow_mum = null
 sprite_rot_off = null
 lock_rot = null
 lock_root_rot = null
+ori_ang = 180.0
 
 [node name="副歌2" type="Node2D" parent="Root" index="7"]
 
