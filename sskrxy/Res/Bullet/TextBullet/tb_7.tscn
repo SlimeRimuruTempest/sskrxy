@@ -8,6 +8,7 @@ atlas = ExtResource("2_inhak")
 region = Rect2(0, 1124, 1668, 173)
 
 [node name="TB7" instance=ExtResource("1_6qkxs")]
+disposable = false
 
 [node name="Sprite" parent="." index="0"]
 texture = SubResource("AtlasTexture_gr8pf")

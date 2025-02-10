@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform vec4 blink_color: source_color;
-uniform float blink_value: hint_range(0.0, 2.0);
+uniform float blink_value;
 
 void fragment() {
 	vec4 color = texture(TEXTURE, UV);
