@@ -8,6 +8,7 @@ atlas = ExtResource("2_7e1ai")
 region = Rect2(0, 2377, 1668, 173)
 
 [node name="TB14" instance=ExtResource("1_cc3fn")]
+scale = Vector2(0.75, 0.75)
 disposable = false
 
 [node name="Sprite" parent="." index="0"]

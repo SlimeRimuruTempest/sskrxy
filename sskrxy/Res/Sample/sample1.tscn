@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://b508oi4uys5pi"]
+[gd_scene load_steps=117 format=3 uid="uid://b508oi4uys5pi"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Prefab/shooter.tscn" id="2_h52jr"]
@@ -20,18 +20,21 @@
 [ext_resource type="PackedScene" uid="uid://ds0fnxiilrspi" path="res://Res/Bullet/花瓣1.tscn" id="9_nawph"]
 [ext_resource type="PackedScene" uid="uid://c6lhmn72ylmjn" path="res://Res/Bullet/花瓣2.tscn" id="10_50ijf"]
 [ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="11_yr0h5"]
-[ext_resource type="PackedScene" uid="uid://byqd6jebf7w8t" path="res://Res/completed/前奏3.tscn" id="13_7fs3h"]
 [ext_resource type="Texture2D" uid="uid://c3j6njmfavdip" path="res://Art/Scene/C1/bullet1.png" id="14_yr0h5"]
 [ext_resource type="PackedScene" uid="uid://cvsu3pvcitx63" path="res://Res/Bullet/花1.tscn" id="16_yr0h5"]
 [ext_resource type="PackedScene" uid="uid://byigexai5jfki" path="res://Res/Bullet/花2.tscn" id="17_jft22"]
-[ext_resource type="PackedScene" uid="uid://bctxa7ogyjky" path="res://Res/completed/loop_2.tscn" id="20_ojgjm"]
 [ext_resource type="PackedScene" uid="uid://bptfyjnaqw0nq" path="res://Res/shooters/follow_boss/波与粒的境界.tscn" id="21_uc3bf"]
+[ext_resource type="PackedScene" uid="uid://x3jyhn5m10eb" path="res://Res/shooters/loop/红loop.tscn" id="24_2b1yv"]
 [ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="24_tdcm0"]
 [ext_resource type="PackedScene" uid="uid://cp8ekedfj1kqm" path="res://Res/shooters/loop/副歌loop.tscn" id="25_hnvg0"]
+[ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="26_4405c"]
 [ext_resource type="PackedScene" uid="uid://deiycpgblrflm" path="res://Res/Bullet/红刺.tscn" id="26_jnjgj"]
 [ext_resource type="PackedScene" uid="uid://cj3gc1gai7lta" path="res://Res/Bullet/蓝全.tscn" id="27_hfgm2"]
 [ext_resource type="PackedScene" uid="uid://wbjopwsc2ouk" path="res://Res/Bullet/蓝二分音符.tscn" id="28_hnvg0"]
 [ext_resource type="PackedScene" uid="uid://cw2vdrxxsxep7" path="res://Res/shooters/loop/loop_shooter.tscn" id="28_ojgjm"]
+[ext_resource type="PackedScene" uid="uid://csvjsrfe8ey7v" path="res://Res/Bullet/红四分.tscn" id="30_2b1yv"]
+[ext_resource type="PackedScene" uid="uid://cno53fj16ng3q" path="res://Res/Bullet/黄四分.tscn" id="31_duk4a"]
+[ext_resource type="PackedScene" uid="uid://dnmp27ed0hghc" path="res://Res/Bullet/TextBullet/副歌2/tb_1.tscn" id="34_duk4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndar1"]
 atlas = ExtResource("3_i8nd3")
@@ -47,9 +50,50 @@ region = Rect2(369, 96, 117, 211)
 
 [sub_resource type="Curve" id="Curve_by0v0"]
 _limits = [0.0, 200.0, 0.0, 400.0]
+_data = [Vector2(24, 0), 0.0, 0.0, 0, 0, Vector2(24.001, 80), 0.0, 0.0, 0, 0, Vector2(36, 80), 0.0, 0.0, 0, 0, Vector2(38, 125), 0.0, 0.0, 0, 0, Vector2(47, 125), 0.0, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="Curve" id="Curve_t2oe5"]
 _limits = [0.0, 360.0, 0.0, 400.0]
+_data = [Vector2(24, 0), 0.0, 25.7143, 0, 1, Vector2(38, 360), 25.7143, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_2b1yv"]
+resource_name = "loop1移动"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(970, 200), Vector2(970, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_duk4a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(970, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crrwj"]
+_data = {
+&"RESET": SubResource("Animation_duk4a"),
+&"loop1移动": SubResource("Animation_2b1yv")
+}
 
 [sub_resource type="Curve" id="Curve_huxls"]
 _limits = [0.0, 2500.0, 0.0, 25.0]
@@ -82,7 +126,7 @@ point_count = 16
 
 [sub_resource type="Curve" id="Curve_hfgm2"]
 _limits = [0.0, 100.0, 0.0, 10.0]
-_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+_data = [Vector2(10, 100), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Curve" id="Curve_hnvg0"]
@@ -263,6 +307,21 @@ _limits = [0.0, 60.0, 0.0, 4.0]
 _data = [Vector2(0, 0), 0.0, 15.0, 0, 1, Vector2(4, 60), 15.0, 0.0, 1, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_olmg8"]
+_limits = [0.0, 100.0, 0.0, 10.0]
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_emx6q"]
+_limits = [0.0, 20.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ief0i"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_vcsmv"]
 _limits = [0.0, 100.0, 0.0, 10.0]
 _data = [Vector2(0, 100), 0.0, 0.0, 0, 0]
@@ -278,10 +337,49 @@ _limits = [0.0, 30.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 30), 42.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_ief0i"]
+[sub_resource type="Curve" id="Curve_6dlw0"]
 _limits = [-180.0, 1.0, 0.0, 10.5]
 _data = [Vector2(0, 0), 0.0, -17.1429, 0, 1, Vector2(10.5, -180), -17.1429, 0.0, 1, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_wppxb"]
+_limits = [0.0, 350.0, 0.0, 1.0]
+_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_m5xrl"]
+_limits = [0.0, 90.0, 0.0, 4.0]
+_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_iuwxi"]
+_limits = [0.0, 25.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2, 25), 0.0, 0.0, 0, 0, Vector2(4, 0), 0.0, 0.0, 0, 0, Vector2(6, 25), 0.0, 0.0, 0, 0, Vector2(8, 0), 0.0, 0.0, 0, 0, Vector2(10, 25), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crrwj"]
+atlas = ExtResource("24_tdcm0")
+region = Rect2(418, 6, 89, 88)
+
+[sub_resource type="Curve" id="Curve_5k170"]
+_limits = [0.0, 300.0, 0.0, 20.0]
+_data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_jg6ky"]
+_limits = [-360.0, 360.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 1, Vector2(1, 0), 0.0, 180.0, 1, 1, Vector2(3, 360), 180.0, -360026.0, 1, 1]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_d3idy"]
+_limits = [-45.0, 180.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, -45.0, 0, 0, Vector2(1, 180), 45.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_uc3bf"]
+_limits = [-360.0, 1.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, -180.0, 1, 1, Vector2(3, -360), -180.0, 0.0, 1, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_fofff"]
 _limits = [0.0, 400.0, 0.0, 66.02]
@@ -359,10 +457,17 @@ ang_curve = SubResource("Curve_t2oe5")
 metadata/_custom_type_script = ExtResource("4_4405c")
 
 [node name="Sprite" type="Sprite2D" parent="Boss" index="0"]
+position = Vector2(1, 0)
 scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_r60e3")
 
-[node name="心跳" type="Node2D" parent="Boss" index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_crrwj")
+}
+
+[node name="心跳" type="Node2D" parent="Boss" index="2"]
+visible = false
 script = ExtResource("2_insau")
 end_time = 35.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
@@ -382,11 +487,13 @@ texture = SubResource("AtlasTexture_vamaj")
 
 [node name="DisappearAreaDetector" parent="Boss/心跳" index="1" instance=ExtResource("5_nawph")]
 
-[node name="心跳2" parent="Boss" index="2" instance=ExtResource("6_jg6ky")]
+[node name="心跳2" parent="Boss" index="3" instance=ExtResource("6_jg6ky")]
+visible = false
 bullet_pool = Array[PackedScene]([ExtResource("8_t2oe5")])
 bullet_follow_mum = true
 
-[node name="蛇形Shooter2" parent="Boss" index="3" instance=ExtResource("5_t2oe5")]
+[node name="蛇形Shooter2" parent="Boss" index="4" instance=ExtResource("5_t2oe5")]
+visible = false
 start_time = 10.5
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
@@ -394,7 +501,8 @@ bullet_ang_curve = SubResource("Curve_dusej")
 once_num = 3
 ori_ang = 60.0
 
-[node name="蛇形Shooter" parent="Boss" index="4" instance=ExtResource("4_savq6")]
+[node name="蛇形Shooter" parent="Boss" index="5" instance=ExtResource("4_savq6")]
+visible = false
 start_time = 10.5
 end_time = 2.0
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
@@ -402,7 +510,8 @@ bullet_ang_curve = SubResource("Curve_fapwp")
 once_num = 3
 ori_ang = 60.0
 
-[node name="loop1" type="Node2D" parent="Boss" index="5"]
+[node name="loop1" type="Node2D" parent="Boss" index="6"]
+visible = false
 
 [node name="LoopShooter" type="Node2D" parent="Boss/loop1" index="0"]
 script = ExtResource("2_insau")
@@ -445,7 +554,8 @@ texture = SubResource("AtlasTexture_khewa")
 
 [node name="DisappearAreaDetector" parent="Boss/loop1/4xloop" index="1" instance=ExtResource("5_nawph")]
 
-[node name="副歌loop发射器" parent="Boss" index="6" instance=ExtResource("2_h52jr")]
+[node name="副歌loop发射器" parent="Boss" index="7" instance=ExtResource("2_h52jr")]
+visible = false
 show_time = 83.5
 bullet_pool = Array[PackedScene]([ExtResource("25_hnvg0")])
 bullet_lin_curve = SubResource("Curve_ojgjm")
@@ -454,6 +564,7 @@ shoot_num = 7
 ang_curve = SubResource("Curve_i8nd3")
 
 [node name="4xloop" type="Node2D" parent="Boss/副歌loop发射器" index="2"]
+visible = false
 script = ExtResource("2_insau")
 show_time = 92.5
 start_time = 0.2
@@ -474,7 +585,8 @@ texture = SubResource("AtlasTexture_khewa")
 
 [node name="DisappearAreaDetector" parent="Boss/副歌loop发射器/4xloop" index="1" instance=ExtResource("5_nawph")]
 
-[node name="间奏loop" parent="Boss" index="7" instance=ExtResource("2_h52jr")]
+[node name="间奏loop" parent="Boss" index="8" instance=ExtResource("2_h52jr")]
+visible = false
 show_time = 106.5
 bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 bullet_lin_curve = SubResource("Curve_duk4a")
@@ -484,7 +596,8 @@ shoot_cd = 0.2
 shoot_num = 5
 ori_ang = 50.0
 
-[node name="间奏loop2" parent="Boss" index="8" instance=ExtResource("2_h52jr")]
+[node name="间奏loop2" parent="Boss" index="9" instance=ExtResource("2_h52jr")]
+visible = false
 show_time = 109.5
 bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 bullet_lin_curve = SubResource("Curve_duk4a")
@@ -494,7 +607,8 @@ shoot_cd = 0.2
 shoot_num = 5
 ori_ang = 50.0
 
-[node name="间奏loop3" parent="Boss" index="9" instance=ExtResource("2_h52jr")]
+[node name="间奏loop3" parent="Boss" index="10" instance=ExtResource("2_h52jr")]
+visible = false
 show_time = 112.0
 bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 bullet_lin_curve = SubResource("Curve_duk4a")
@@ -504,7 +618,8 @@ shoot_cd = 0.2
 shoot_num = 5
 ori_ang = 50.0
 
-[node name="间奏loop4" parent="Boss" index="10" instance=ExtResource("2_h52jr")]
+[node name="间奏loop4" parent="Boss" index="11" instance=ExtResource("2_h52jr")]
+visible = false
 show_time = 114.5
 bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 bullet_lin_curve = SubResource("Curve_duk4a")
@@ -514,16 +629,19 @@ shoot_cd = 0.2
 shoot_num = 5
 ori_ang = 50.0
 
-[node name="主歌2" type="Node2D" parent="Boss" index="11"]
+[node name="主歌2" type="Node2D" parent="Boss" index="12"]
+visible = false
 position = Vector2(-0.344971, -1.66205)
 
 [node name="波与粒的境界" parent="Boss/主歌2" index="0" instance=ExtResource("21_uc3bf")]
+visible = false
 show_time = 117.5
 bullet_pool = Array[PackedScene]([ExtResource("26_jnjgj")])
 shoot_cd = 0.2
 shoot_num = 50
 
 [node name="钢琴1" type="Node2D" parent="Boss/主歌2" index="1"]
+visible = false
 rotation = 3.14159
 script = ExtResource("2_insau")
 show_time = 129.5
@@ -544,8 +662,10 @@ z_index = 1
 texture = SubResource("AtlasTexture_mx7kp")
 
 [node name="DisappearAreaDetector" parent="Boss/主歌2/钢琴1" index="1" instance=ExtResource("5_nawph")]
+visible = false
 
 [node name="钢琴2" type="Node2D" parent="Boss/主歌2" index="2"]
+visible = false
 rotation = 3.14159
 script = ExtResource("2_insau")
 show_time = 130.5
@@ -568,6 +688,7 @@ texture = SubResource("AtlasTexture_mx7kp")
 [node name="DisappearAreaDetector" parent="Boss/主歌2/钢琴2" index="1" instance=ExtResource("5_nawph")]
 
 [node name="钢琴345" type="Node2D" parent="Boss/主歌2" index="3"]
+visible = false
 script = ExtResource("2_insau")
 show_time = 132.0
 bullet_pool = Array[PackedScene]([ExtResource("9_nawph"), ExtResource("10_50ijf"), ExtResource("11_yr0h5")])
@@ -611,7 +732,8 @@ texture = SubResource("AtlasTexture_trtn4")
 
 [node name="DisappearAreaDetector" parent="Boss/主歌2/钢琴6789" index="1" instance=ExtResource("5_nawph")]
 
-[node name="主歌1" type="Node2D" parent="Boss" index="12"]
+[node name="主歌1" type="Node2D" parent="Boss" index="13"]
+visible = false
 position = Vector2(-0.344971, -1.66205)
 
 [node name="底1" parent="Boss/主歌1" index="0" instance=ExtResource("2_h52jr")]
@@ -706,13 +828,35 @@ shoot_cd = 0.75
 shoot_num = 4
 ori_ang = 80.0
 
-[node name="loop2" parent="Boss" index="13" instance=ExtResource("20_ojgjm")]
+[node name="loop2" type="Node2D" parent="Boss" index="14"]
+visible = false
 position = Vector2(-0.344971, -1.66205)
 
-[node name="loop3" type="Node2D" parent="Boss" index="14"]
+[node name="LoopShooter" type="Node2D" parent="Boss/loop2" index="0"]
+visible = false
+script = ExtResource("2_insau")
+show_time = 71.7
+bullet_pool = Array[PackedScene]([ExtResource("24_2b1yv")])
+bullet_lin_curve = SubResource("Curve_olmg8")
+bullet_ang_curve = SubResource("Curve_emx6q")
+once_ang_curve = SubResource("Curve_ief0i")
+shoot_cd = 1.5
+shoot_num = 8
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Boss/loop2/LoopShooter" index="0"]
+visible = false
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="Boss/loop2/LoopShooter" index="1" instance=ExtResource("5_nawph")]
+visible = false
+
+[node name="loop3" type="Node2D" parent="Boss" index="15"]
+visible = false
 position = Vector2(-0.344971, -1.66205)
 
 [node name="LoopShooter" type="Node2D" parent="Boss/loop3" index="0"]
+visible = false
 script = ExtResource("2_insau")
 show_time = 140.5
 bullet_pool = Array[PackedScene]([ExtResource("3_50ijf")])
@@ -722,7 +866,7 @@ once_ang_curve = SubResource("Curve_2kdgo")
 shoot_cd = 1.5
 shoot_num = 8
 ori_ang = 180.0
-ang_curve = SubResource("Curve_ief0i")
+ang_curve = SubResource("Curve_6dlw0")
 metadata/_custom_type_script = ExtResource("2_insau")
 
 [node name="Sprite" type="Sprite2D" parent="Boss/loop3/LoopShooter" index="0"]
@@ -732,11 +876,37 @@ texture = ExtResource("14_yr0h5")
 
 [node name="DisappearAreaDetector" parent="Boss/loop3/LoopShooter" index="1" instance=ExtResource("5_nawph")]
 
-[node name="副歌2" type="Node2D" parent="Boss" index="15"]
+[node name="副歌2" type="Node2D" parent="Boss" index="16"]
+visible = false
 position = Vector2(-0.344971, -1.66205)
 
 [node name="LoopShooter" parent="Boss/副歌2" index="0" instance=ExtResource("28_ojgjm")]
+visible = false
 show_time = 176.5
+
+[node name="鼓" type="Node2D" parent="Boss" index="17"]
+visible = false
+script = ExtResource("2_insau")
+show_time = 36.0
+start_time = 0.2
+bullet_pool = Array[PackedScene]([ExtResource("26_4405c")])
+bullet_lin_curve = SubResource("Curve_wppxb")
+once_num = 5
+once_ang_curve = SubResource("Curve_m5xrl")
+shoot_cd = 0.375
+shoot_num = 28
+ori_ang = 50.0
+ang_curve = SubResource("Curve_iuwxi")
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Boss/鼓" index="0"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_crrwj")
+
+[node name="DisappearAreaDetector" parent="Boss/鼓" index="1" instance=ExtResource("5_nawph")]
+visible = false
 
 [node name="Player" parent="." index="4"]
 scale = Vector2(0.8, 0.8)
@@ -840,7 +1010,55 @@ position = Vector2(-96.3738, -185.074)
 show_time = 18.3
 bullet_pool = Array[PackedScene]([ExtResource("6_eg5cq")])
 
-[node name="前奏3" parent="Root" index="2" instance=ExtResource("13_7fs3h")]
+[node name="前奏3" type="Node2D" parent="Root" index="2"]
+
+[node name="左和声" type="Node2D" parent="Root/前奏3" index="0"]
+position = Vector2(-190, -195)
+script = ExtResource("2_insau")
+show_time = 36.0
+start_time = 0.2
+bullet_pool = Array[PackedScene]([ExtResource("9_1py4d"), ExtResource("30_2b1yv"), ExtResource("31_duk4a")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_5k170")
+bullet_ang_curve = SubResource("Curve_jg6ky")
+once_num = 2
+once_ang_curve = SubResource("Curve_d3idy")
+shoot_cd = 0.4
+shoot_num = 15
+ori_ang = 90.0
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Root/前奏3/左和声" index="0"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_crrwj")
+
+[node name="DisappearAreaDetector" parent="Root/前奏3/左和声" index="1" instance=ExtResource("5_nawph")]
+
+[node name="右和声" type="Node2D" parent="Root/前奏3" index="1"]
+visible = false
+position = Vector2(190, -195)
+script = ExtResource("2_insau")
+show_time = 36.0
+start_time = 0.2
+bullet_pool = Array[PackedScene]([ExtResource("9_1py4d"), ExtResource("30_2b1yv"), ExtResource("31_duk4a")])
+shoot_mode_1 = 1
+bullet_lin_curve = SubResource("Curve_5k170")
+bullet_ang_curve = SubResource("Curve_uc3bf")
+once_num = 2
+once_ang_curve = SubResource("Curve_d3idy")
+shoot_cd = 0.4
+shoot_num = 15
+ori_ang = 90.0
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Root/前奏3/右和声" index="0"]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_crrwj")
+
+[node name="DisappearAreaDetector" parent="Root/前奏3/右和声" index="1" instance=ExtResource("5_nawph")]
 
 [node name="副歌1" type="Node2D" parent="Root" index="3"]
 
@@ -874,6 +1092,8 @@ metadata/_custom_type_script = ExtResource("2_insau")
 z_index = 1
 
 [node name="DisappearAreaDetector" parent="Root/副歌1/后半2" index="1" instance=ExtResource("5_nawph")]
+
+[node name="歌词（待补充）" type="Node2D" parent="Root/副歌1" index="2"]
 
 [node name="间奏1" type="Node2D" parent="Root" index="4"]
 
@@ -979,6 +1199,12 @@ shoot_cd = 0.2
 shoot_num = 100
 ori_ang = 0.0
 
+[node name="副歌2" type="Node2D" parent="Root" index="6"]
+
+[node name="歌词1" parent="Root/副歌2" index="0" instance=ExtResource("2_h52jr")]
+position = Vector2(2.90088, -255.345)
+bullet_pool = Array[PackedScene]([ExtResource("34_duk4a")])
+
 [node name="BGM" parent="." index="6"]
 stream = ExtResource("8_savq6")
 
@@ -991,6 +1217,9 @@ texture = null
 [node name="Layer3" parent="." index="8"]
 visible = false
 
+[node name="TB1" parent="." index="10" instance=ExtResource("34_duk4a")]
+position = Vector2(979, 496)
+
 [connection signal="ready" from="Boss/心跳" to="Boss/心跳" method="_on_ready"]
 [connection signal="ready" from="Boss/loop1/LoopShooter" to="Boss/loop1/LoopShooter" method="_on_ready"]
 [connection signal="ready" from="Boss/loop1/4xloop" to="Boss/loop1/4xloop" method="_on_ready"]
@@ -1001,7 +1230,11 @@ visible = false
 [connection signal="ready" from="Boss/主歌2/钢琴6789" to="Boss/主歌2/钢琴6789" method="_on_ready"]
 [connection signal="ready" from="Boss/主歌1/钢琴1" to="Boss/主歌1/钢琴1" method="_on_ready"]
 [connection signal="ready" from="Boss/主歌1/钢琴2" to="Boss/主歌1/钢琴2" method="_on_ready"]
+[connection signal="ready" from="Boss/loop2/LoopShooter" to="Boss/loop2/LoopShooter" method="_on_ready"]
 [connection signal="ready" from="Boss/loop3/LoopShooter" to="Boss/loop3/LoopShooter" method="_on_ready"]
+[connection signal="ready" from="Boss/鼓" to="Boss/鼓" method="_on_ready"]
+[connection signal="ready" from="Root/前奏3/左和声" to="Root/前奏3/左和声" method="_on_ready"]
+[connection signal="ready" from="Root/前奏3/右和声" to="Root/前奏3/右和声" method="_on_ready"]
 [connection signal="ready" from="Root/副歌1/后半2" to="Root/副歌1/后半2" method="_on_ready"]
 [connection signal="ready" from="Root/间奏2/蛇形Shooter" to="Root/间奏2/蛇形Shooter" method="_on_ready"]
 [connection signal="ready" from="Root/间奏2/蛇形Shooter5" to="Root/间奏2/蛇形Shooter5" method="_on_ready"]
