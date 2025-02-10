@@ -40,7 +40,6 @@ func reload_current_scene():
 func set_mouse_disabled(v: bool):
 	mouse_disabled.visible = v
 
-
 func _on_bg_rect_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("mouse_left"):
 		var click_sfx: AudioStreamPlayer = click_sfx_root.get_children().pick_random()

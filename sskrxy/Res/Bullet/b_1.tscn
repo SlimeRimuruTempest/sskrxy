@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjskd8r8fqyyq"]
 
-[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Class/bullet.tscn" id="1_ks63p"]
+[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Prefab/bullet.tscn" id="1_ks63p"]
 [ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/SpriteSheet/bullet2.png" id="2_y3ful"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ks63p"]

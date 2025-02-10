@@ -1,11 +1,24 @@
-[gd_scene load_steps=13 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=26 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
-[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Class/shooter.tscn" id="2_h52jr"]
-[ext_resource type="PackedScene" uid="uid://bjskd8r8fqyyq" path="res://Res/Bullet/b_1.tscn" id="3_3lyvt"]
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Prefab/shooter.tscn" id="2_h52jr"]
+[ext_resource type="PackedScene" uid="uid://dnmp27ed0hghc" path="res://Res/Bullet/TextBullet/tb_1.tscn" id="3_eg5cq"]
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/SpriteSheet/bullet1.png" id="4_3lyvt"]
-[ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_utjr0"]
+[ext_resource type="PackedScene" uid="uid://dvq11vp8g53b2" path="res://Res/Bullet/TextBullet/tb_2.tscn" id="4_5k170"]
+[ext_resource type="PackedScene" uid="uid://bmd0ibw3l4ty3" path="res://Res/Bullet/TextBullet/tb_3.tscn" id="5_jg6ky"]
 [ext_resource type="AudioStream" uid="uid://c36xbhfgrmykj" path="res://Audio/BGM/エゴ.mp3" id="6_b0w5h"]
+[ext_resource type="PackedScene" uid="uid://epai3oy233y8" path="res://Res/Bullet/TextBullet/tb_4.tscn" id="6_uc3bf"]
+[ext_resource type="PackedScene" uid="uid://du2l3pqwsnn63" path="res://Res/Bullet/TextBullet/tb_5.tscn" id="7_wppxb"]
+[ext_resource type="PackedScene" uid="uid://kl570u70qdor" path="res://Res/Bullet/TextBullet/tb_6.tscn" id="8_m5xrl"]
+[ext_resource type="PackedScene" uid="uid://b3icuugs4gd1g" path="res://Res/Bullet/TextBullet/tb_7.tscn" id="9_iuwxi"]
+[ext_resource type="PackedScene" uid="uid://by7uj7dlur4du" path="res://Res/Bullet/TextBullet/tb_8.tscn" id="10_cwhxq"]
+[ext_resource type="PackedScene" uid="uid://bqyuu8ws0f4rx" path="res://Res/Bullet/TextBullet/tb_9.tscn" id="11_jnjgj"]
+[ext_resource type="PackedScene" uid="uid://ptfyrmgi2lti" path="res://Res/Bullet/TextBullet/tb_10.tscn" id="12_oml01"]
+[ext_resource type="PackedScene" uid="uid://db4nsvo8adlu5" path="res://Res/Bullet/TextBullet/tb_11.tscn" id="13_tdcm0"]
+[ext_resource type="PackedScene" uid="uid://cs1u8d6uy8kxa" path="res://Res/Bullet/TextBullet/tb_12.tscn" id="14_d7r5f"]
+[ext_resource type="PackedScene" uid="uid://cwus78ldgq63k" path="res://Res/Bullet/TextBullet/tb_13.tscn" id="15_pw8sf"]
+[ext_resource type="PackedScene" uid="uid://coy64d05j0jks" path="res://Res/Bullet/TextBullet/tb_14.tscn" id="16_mx7kp"]
+[ext_resource type="PackedScene" uid="uid://dvnxop5yx0c2r" path="res://Res/Bullet/TextBullet/tb_15.tscn" id="17_rkann"]
 
 [sub_resource type="Curve" id="Curve_1py4d"]
 _limits = [0.0, 400.0, 0.0, 100.0]
@@ -35,13 +48,13 @@ region = Rect2(310, 274, 53, 67)
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(0, 176)
-bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt"), ExtResource("4_utjr0")])
+bullet_pool = Array[PackedScene]([ExtResource("3_eg5cq"), ExtResource("4_5k170"), ExtResource("5_jg6ky"), ExtResource("6_uc3bf"), ExtResource("7_wppxb"), ExtResource("8_m5xrl"), ExtResource("9_iuwxi"), ExtResource("10_cwhxq"), ExtResource("11_jnjgj"), ExtResource("12_oml01"), ExtResource("13_tdcm0"), ExtResource("14_d7r5f"), ExtResource("15_pw8sf"), ExtResource("16_mx7kp"), ExtResource("17_rkann")])
 shoot_mode_2 = 1
 bullet_lin_curve = SubResource("Curve_1py4d")
 bullet_ang_curve = SubResource("Curve_7hlpf")
 once_num = 6
 once_ang_curve = SubResource("Curve_rhpqf")
-shoot_cd = 0.05
+shoot_cd = 2.0
 shoot_num = 600
 lock_rot = true
 lin_curve = SubResource("Curve_nawph")
