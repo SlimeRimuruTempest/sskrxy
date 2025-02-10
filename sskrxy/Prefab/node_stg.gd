@@ -8,6 +8,8 @@ class_name NodeSTG
 @export var sprite_rot_off: float = 0.0
 ## 是否锁住sprite旋转
 @export var lock_rot: bool = false
+## 是否锁住根旋转
+@export var lock_root_rot: bool = true
 
 ## 以多少度角为0度角
 @export var ori_ang: float
@@ -43,7 +45,8 @@ func _physics_process(delta: float) -> void:
 		return
 	tot_time += delta
 	global_position += get_movement(delta)
-	global_rotation_degrees = ang
+	if not lock_root_rot:
+		global_rotation_degrees = ang
 
 func delete():
 	queue_free()
