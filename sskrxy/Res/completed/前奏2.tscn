@@ -1,29 +1,174 @@
-[gd_scene load_steps=2 format=3 uid="uid://1db5ibvmok7t"]
+[gd_scene load_steps=3 format=3 uid="uid://1db5ibvmok7t"]
 
-[ext_resource type="PackedScene" uid="uid://bsqtgwjuf1kmv" path="res://Res/shooters/自由/钢琴.tscn" id="1_fvxfr"]
+[ext_resource type="PackedScene" uid="uid://cuu5mw8frjdfv" path="res://Res/shooters/free/钢琴.tscn" id="1_swhp6"]
+[ext_resource type="PackedScene" uid="uid://cw4iwi04ci61y" path="res://Res/Bullet/蓝八分音符.tscn" id="2_488gr"]
 
 [node name="前奏2" type="Node2D"]
 
-[node name="钢琴" parent="." instance=ExtResource("1_fvxfr")]
-position = Vector2(-187.75, -177.58)
+[node name="钢琴" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(-294.78, -183.28)
 show_time = 12.4
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 
-[node name="钢琴2" parent="." instance=ExtResource("1_fvxfr")]
+[node name="钢琴2" parent="." instance=ExtResource("1_swhp6")]
 position = Vector2(83.29, -178.79)
 show_time = 15.3
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 
-[node name="钢琴3" parent="." instance=ExtResource("1_fvxfr")]
-position = Vector2(239.38, -175.16)
+[node name="钢琴3" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(-189.51, -183.28)
 show_time = 18.3
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 
-[node name="钢琴4" parent="." instance=ExtResource("1_fvxfr")]
-position = Vector2(353.12, -183.63)
+[node name="钢琴4" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(-246.38, -185.7)
 show_time = 19.48
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 
-[node name="钢琴5" parent="." instance=ExtResource("1_fvxfr")]
+[node name="钢琴5" parent="." instance=ExtResource("1_swhp6")]
 position = Vector2(-64.33, -181.21)
 show_time = 21.42
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 
-[node name="钢琴6" parent="." instance=ExtResource("1_fvxfr")]
+[node name="钢琴6" parent="." instance=ExtResource("1_swhp6")]
 position = Vector2(-28.0299, -182.42)
 show_time = 22.5
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴7" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(26.9828, -182.86)
+show_time = 12.4
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴8" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(-161.545, -186.1)
+show_time = 22.5
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴9" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(271.047, -183.021)
+show_time = 21.42
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴10" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(333.653, -186.1)
+show_time = 22.5
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴11" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(365.982, -186.1)
+show_time = 15.3
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="钢琴12" parent="." instance=ExtResource("1_swhp6")]
+position = Vector2(-96.3738, -185.074)
+show_time = 18.3
+start_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_488gr")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null

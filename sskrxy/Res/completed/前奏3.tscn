@@ -1,12 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://byqd6jebf7w8t"]
+[gd_scene load_steps=12 format=3 uid="uid://byqd6jebf7w8t"]
 
-[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Class/shooter.gd" id="1_jjq63"]
-[ext_resource type="PackedScene" uid="uid://ejam5td0cbfy" path="res://Res/Bullet/蓝四分音符.tscn" id="2_we1j2"]
-[ext_resource type="PackedScene" uid="uid://csvjsrfe8ey7v" path="res://Res/Bullet/红四分.tscn" id="3_htg6w"]
-[ext_resource type="PackedScene" uid="uid://cno53fj16ng3q" path="res://Res/Bullet/黄四分.tscn" id="4_hoi8f"]
-[ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="5_lg0ov"]
-[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Class/disappear_area_detector.tscn" id="6_i5hjv"]
-[ext_resource type="PackedScene" uid="uid://cd5su0g1cimkc" path="res://Res/Bullet/绿球.tscn" id="7_xh6at"]
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Prefab/shooter.gd" id="1_grqax"]
+[ext_resource type="PackedScene" uid="uid://ejam5td0cbfy" path="res://Res/Bullet/蓝四分音符.tscn" id="2_jjq63"]
+[ext_resource type="PackedScene" uid="uid://csvjsrfe8ey7v" path="res://Res/Bullet/红四分.tscn" id="3_we1j2"]
+[ext_resource type="PackedScene" uid="uid://cno53fj16ng3q" path="res://Res/Bullet/黄四分.tscn" id="4_htg6w"]
+[ext_resource type="Texture2D" uid="uid://c3fjsbkhbxjb1" path="res://Art/Scene/C1/bullet2.png" id="5_hoi8f"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Prefab/disappear_area_detector.tscn" id="6_lg0ov"]
 
 [sub_resource type="Curve" id="Curve_5k170"]
 _limits = [0.0, 300.0, 0.0, 20.0]
@@ -23,8 +22,8 @@ _limits = [-45.0, 180.0, 0.0, 2.0]
 _data = [Vector2(0, 0), 0.0, -45.0, 0, 0, Vector2(1, 180), 45.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khewa"]
-atlas = ExtResource("5_lg0ov")
+[sub_resource type="AtlasTexture" id="AtlasTexture_crrwj"]
+atlas = ExtResource("5_hoi8f")
 region = Rect2(418, 6, 89, 88)
 
 [sub_resource type="Curve" id="Curve_uc3bf"]
@@ -32,93 +31,71 @@ _limits = [-360.0, 1.0, 0.0, 10.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, -180.0, 1, 1, Vector2(3, -360), -180.0, 0.0, 1, 0]
 point_count = 3
 
-[sub_resource type="Curve" id="Curve_wppxb"]
-_limits = [0.0, 350.0, 0.0, 1.0]
-_data = [Vector2(0, 350), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_m5xrl"]
-_limits = [0.0, 90.0, 0.0, 4.0]
-_data = [Vector2(0, 0), 0.0, 22.5, 0, 1, Vector2(4, 90), 22.5, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_iuwxi"]
-_limits = [0.0, 25.0, 0.0, 10.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(2, 25), 0.0, 0.0, 0, 0, Vector2(4, 0), 0.0, 0.0, 0, 0, Vector2(6, 25), 0.0, 0.0, 0, 0, Vector2(8, 0), 0.0, 0.0, 0, 0, Vector2(10, 25), 0.0, 0.0, 0, 0]
-point_count = 6
-
 [node name="前奏3" type="Node2D"]
 
 [node name="左和声" type="Node2D" parent="."]
 position = Vector2(-190, -195)
-script = ExtResource("1_jjq63")
+script = ExtResource("1_grqax")
 show_time = 36.0
 start_time = 0.2
-bullet_pool = Array[PackedScene]([ExtResource("2_we1j2"), ExtResource("3_htg6w"), ExtResource("4_hoi8f")])
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_jjq63"), ExtResource("3_we1j2"), ExtResource("4_htg6w")])
 shoot_mode_1 = 1
+shoot_mode_2 = null
 bullet_lin_curve = SubResource("Curve_5k170")
 bullet_ang_curve = SubResource("Curve_jg6ky")
 once_num = 2
 once_ang_curve = SubResource("Curve_d3idy")
+shoot_pos_offset = null
 shoot_cd = 0.4
 shoot_num = 15
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 ori_ang = 90.0
-metadata/_custom_type_script = ExtResource("1_jjq63")
+metadata/_custom_type_script = ExtResource("1_grqax")
 
 [node name="Sprite" type="Sprite2D" parent="左和声"]
 visible = false
 z_index = 1
 scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_khewa")
+texture = SubResource("AtlasTexture_crrwj")
 
-[node name="DisappearAreaDetector" parent="左和声" instance=ExtResource("6_i5hjv")]
+[node name="DisappearAreaDetector" parent="左和声" instance=ExtResource("6_lg0ov")]
 
 [node name="右和声" type="Node2D" parent="."]
 visible = false
 position = Vector2(190, -195)
-script = ExtResource("1_jjq63")
+script = ExtResource("1_grqax")
 show_time = 36.0
 start_time = 0.2
-bullet_pool = Array[PackedScene]([ExtResource("2_we1j2"), ExtResource("3_htg6w"), ExtResource("4_hoi8f")])
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_jjq63"), ExtResource("3_we1j2"), ExtResource("4_htg6w")])
 shoot_mode_1 = 1
+shoot_mode_2 = null
 bullet_lin_curve = SubResource("Curve_5k170")
 bullet_ang_curve = SubResource("Curve_uc3bf")
 once_num = 2
 once_ang_curve = SubResource("Curve_d3idy")
+shoot_pos_offset = null
 shoot_cd = 0.4
 shoot_num = 15
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
 ori_ang = 90.0
-metadata/_custom_type_script = ExtResource("1_jjq63")
+metadata/_custom_type_script = ExtResource("1_grqax")
 
 [node name="Sprite" type="Sprite2D" parent="右和声"]
 z_index = 1
 scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_khewa")
+texture = SubResource("AtlasTexture_crrwj")
 
-[node name="DisappearAreaDetector" parent="右和声" instance=ExtResource("6_i5hjv")]
-
-[node name="鼓" type="Node2D" parent="."]
-script = ExtResource("1_jjq63")
-show_time = 36.0
-start_time = 0.2
-bullet_pool = Array[PackedScene]([ExtResource("7_xh6at")])
-bullet_lin_curve = SubResource("Curve_wppxb")
-once_num = 5
-once_ang_curve = SubResource("Curve_m5xrl")
-shoot_cd = 0.375
-shoot_num = 28
-ori_ang = 50.0
-ang_curve = SubResource("Curve_iuwxi")
-metadata/_custom_type_script = ExtResource("1_jjq63")
-
-[node name="Sprite" type="Sprite2D" parent="鼓"]
-visible = false
-z_index = 1
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_khewa")
-
-[node name="DisappearAreaDetector" parent="鼓" instance=ExtResource("6_i5hjv")]
+[node name="DisappearAreaDetector" parent="右和声" instance=ExtResource("6_lg0ov")]
 
 [connection signal="ready" from="左和声" to="左和声" method="_on_ready"]
 [connection signal="ready" from="右和声" to="右和声" method="_on_ready"]
-[connection signal="ready" from="鼓" to="鼓" method="_on_ready"]

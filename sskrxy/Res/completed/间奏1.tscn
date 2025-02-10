@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjg8yqby7snxv"]
+
+[ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Prefab/shooter.tscn" id="1_mkxi3"]
+[ext_resource type="PackedScene" uid="uid://ejam5td0cbfy" path="res://Res/Bullet/蓝四分音符.tscn" id="2_s8unr"]
+[ext_resource type="PackedScene" uid="uid://cw4iwi04ci61y" path="res://Res/Bullet/蓝八分音符.tscn" id="3_gde8v"]
+[ext_resource type="PackedScene" uid="uid://cj3gc1gai7lta" path="res://Res/Bullet/蓝全.tscn" id="4_h5t2i"]
+[ext_resource type="PackedScene" uid="uid://wbjopwsc2ouk" path="res://Res/Bullet/蓝二分音符.tscn" id="5_ap2b7"]
+
+[sub_resource type="Curve" id="Curve_2ll4j"]
+_limits = [0.0, 400.0, 0.0, 300.0]
+_data = [Vector2(0, 400), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="间奏1" type="Node2D"]
+
+[node name="间奏音符1" parent="." instance=ExtResource("1_mkxi3")]
+position = Vector2(-451.93, -67.19)
+show_time = 106.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_s8unr"), ExtResource("3_gde8v"), ExtResource("4_h5t2i"), ExtResource("5_ap2b7")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+bullet_lin_curve = SubResource("Curve_2ll4j")
+once_num = null
+shoot_pos_offset = null
+shoot_cd = 0.25
+shoot_num = 30
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+ori_ang = 45.0
+
+[node name="间奏音符2" parent="." instance=ExtResource("1_mkxi3")]
+position = Vector2(451.93, -67.19)
+show_time = 106.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_s8unr"), ExtResource("3_gde8v"), ExtResource("4_h5t2i"), ExtResource("5_ap2b7")])
+shoot_mode_1 = null
+shoot_mode_2 = null
+bullet_lin_curve = SubResource("Curve_2ll4j")
+once_num = null
+shoot_pos_offset = null
+shoot_cd = 0.3
+shoot_num = 25
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+ori_ang = 135.0

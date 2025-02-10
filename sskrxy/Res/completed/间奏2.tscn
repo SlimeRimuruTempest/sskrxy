@@ -1,0 +1,120 @@
+[gd_scene load_steps=13 format=3 uid="uid://cb4ddjr783pa1"]
+
+[ext_resource type="Script" uid="uid://cyaf1fu3hrfyi" path="res://Prefab/shooter.gd" id="1_mfcx8"]
+[ext_resource type="PackedScene" uid="uid://ds0fnxiilrspi" path="res://Res/Bullet/花瓣1.tscn" id="2_hluhe"]
+[ext_resource type="PackedScene" uid="uid://c6lhmn72ylmjn" path="res://Res/Bullet/花瓣2.tscn" id="3_gv5dn"]
+[ext_resource type="PackedScene" uid="uid://dbhr0gn3ud7k3" path="res://Res/Bullet/花瓣3.tscn" id="4_42455"]
+[ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Prefab/disappear_area_detector.tscn" id="5_0cuos"]
+[ext_resource type="PackedScene" uid="uid://bqa77uvigvuc0" path="res://Res/shooters/free/蛇形2.tscn" id="6_echdr"]
+[ext_resource type="PackedScene" uid="uid://dokl7matsrdje" path="res://Res/shooters/free/蛇形1.tscn" id="7_rxeuf"]
+
+[sub_resource type="Curve" id="Curve_p4upm"]
+_limits = [0.0, 250.0, 0.0, 10.0]
+_data = [Vector2(0, 250), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_vxtts"]
+_limits = [-45.0, 45.0, 0.0, 15.0]
+_data = [Vector2(0, -45), 0.0, 90.0, 0, 1, Vector2(1, 45), 90.0, -90.0, 1, 1, Vector2(2, -45), -90.0, 90.0, 1, 1, Vector2(3, 45), 90.0, -90.0, 1, 1, Vector2(4, -45), -90.0, 90.0, 1, 1, Vector2(5, 45), 90.0, -90.0, 1, 1, Vector2(6, -45), -90.0, 90.0, 1, 1, Vector2(7, 45), 90.0, -90.0, 1, 1, Vector2(8, -45), -90.0, 90.0, 1, 1, Vector2(9, 45), 90.0, -90.0, 1, 1, Vector2(10, -45), -90.0, 90.0, 1, 1, Vector2(11, 45), 90.0, -90.0, 1, 1, Vector2(12, -45), -90.0, 90.0, 1, 1, Vector2(13, 45), 90.0, -90.0, 1, 1, Vector2(14, -45), -90.0, 90.0, 1, 1, Vector2(15, 45), 90.0, 0.0, 1, 0]
+point_count = 16
+
+[sub_resource type="Curve" id="Curve_crrwj"]
+_limits = [0.0, 180.0, 0.0, 5.0]
+_data = [Vector2(0, 0), 0.0, 30.0, 0, 1, Vector2(5, 150), 30.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vamaj"]
+
+[sub_resource type="Curve" id="Curve_7fs3h"]
+
+[node name="间奏2" type="Node2D"]
+
+[node name="蛇形Shooter" type="Node2D" parent="."]
+position = Vector2(-517.367, 398.403)
+script = ExtResource("1_mfcx8")
+show_time = 152.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_hluhe"), ExtResource("3_gv5dn"), ExtResource("4_42455")])
+shoot_mode_1 = 1
+shoot_mode_2 = null
+bullet_lin_curve = SubResource("Curve_p4upm")
+bullet_ang_curve = SubResource("Curve_vxtts")
+once_num = null
+once_ang_curve = SubResource("Curve_crrwj")
+shoot_pos_offset = null
+shoot_cd = 0.2
+shoot_num = 100
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+ori_ang = null
+lin_curve = SubResource("Curve_vamaj")
+ang_curve = SubResource("Curve_7fs3h")
+metadata/_custom_type_script = ExtResource("1_mfcx8")
+
+[node name="Sprite" type="Sprite2D" parent="蛇形Shooter"]
+z_index = 1
+
+[node name="DisappearAreaDetector" parent="蛇形Shooter" instance=ExtResource("5_0cuos")]
+
+[node name="蛇形Shooter2" parent="." instance=ExtResource("6_echdr")]
+position = Vector2(-517.367, 398.403)
+once_num = null
+shoot_cd = 0.2
+shoot_num = 100
+ori_ang = null
+show_time = 152.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_hluhe"), ExtResource("3_gv5dn"), ExtResource("4_42455")])
+shoot_mode_1 = 1
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="蛇形Shooter3" parent="." instance=ExtResource("7_rxeuf")]
+position = Vector2(494.43, 213.36)
+once_num = null
+shoot_cd = 0.2
+shoot_num = 100
+ori_ang = 180.0
+show_time = 152.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_hluhe"), ExtResource("3_gv5dn"), ExtResource("4_42455")])
+shoot_mode_1 = 1
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[node name="蛇形Shooter4" parent="." instance=ExtResource("6_echdr")]
+position = Vector2(494.43, 213.36)
+once_num = null
+shoot_cd = 0.2
+shoot_num = 100
+ori_ang = 180.0
+show_time = 152.5
+start_time = null
+end_time = null
+bullet_pool = Array[PackedScene]([ExtResource("2_hluhe"), ExtResource("3_gv5dn"), ExtResource("4_42455")])
+shoot_mode_1 = 1
+shoot_mode_2 = null
+shoot_pos_offset = null
+bullet_follow_mum = null
+bullet_dir_follow_mum = null
+sprite_rot_off = null
+lock_rot = null
+lock_root_rot = null
+
+[connection signal="ready" from="蛇形Shooter" to="蛇形Shooter" method="_on_ready"]
