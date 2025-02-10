@@ -11,7 +11,7 @@ var book_cnt: int = 0
 @export var dialogue_tex: Array[Texture2D]
 @export var dialogue_voice: Array[AudioStream]
 
-var nts: PackedScene = preload("res://Res/Sample/sample.tscn")
+var nts: PackedScene = preload("res://Res/Sample/sample1.tscn")
 
 func _ready() -> void:
 	dialogue_sprite.modulate.a = 0

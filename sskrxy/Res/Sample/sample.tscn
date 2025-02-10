@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=21 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Prefab/shooter.tscn" id="2_h52jr"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/SpriteSheet/bullet1.png" id="4_3lyvt"]
 [ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_rhpqf"]
 [ext_resource type="AudioStream" uid="uid://c36xbhfgrmykj" path="res://Audio/BGM/エゴ.mp3" id="6_b0w5h"]
-[ext_resource type="PackedScene" uid="uid://etr7ldym2e43" path="res://Res/Other/boss.tscn" id="6_rhpqf"]
+[ext_resource type="Script" uid="uid://ddm7vf808nhjm" path="res://Res/Other/boss.gd" id="6_t2oe5"]
+[ext_resource type="Texture2D" uid="uid://bgt7vdrx1hi5e" path="res://Art/SpriteSheet/第一关boss.PNG" id="7_hsppd"]
+[ext_resource type="Script" uid="uid://b5h1qqcaiuqka" path="res://Prefab/node_stg.gd" id="8_ckmpx"]
 
 [sub_resource type="Curve" id="Curve_1py4d"]
 _limits = [0.0, 400.0, 0.0, 100.0]
@@ -32,15 +34,27 @@ point_count = 2
 atlas = ExtResource("4_3lyvt")
 region = Rect2(310, 274, 53, 67)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndar1"]
+atlas = ExtResource("7_hsppd")
+region = Rect2(606, 97, 117, 211)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r60e3"]
+atlas = ExtResource("7_hsppd")
+region = Rect2(165, 96, 105, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlbr4"]
+atlas = ExtResource("7_hsppd")
+region = Rect2(369, 96, 117, 211)
+
 [sub_resource type="Curve" id="Curve_savq6"]
 _limits = [0.0, 80.0, 0.0, 1.0]
 _data = [Vector2(0, 80), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="Curve" id="Curve_t2oe5"]
-_limits = [0.0, 360.0, 0.0, 10.0]
-_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(10, 360), 36.0, 0.0, 1, 0]
-point_count = 2
+_limits = [0.0, 360.0, 0.0, 400.0]
+_data = [Vector2(0, 0), 0.0, 72.0, 0, 1, Vector2(5, 360), 72.0, -72.0, 1, 1, Vector2(10, 0), -72.0, 0.0, 1, 0]
+point_count = 3
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
@@ -61,12 +75,21 @@ ang_curve = SubResource("Curve_50ijf")
 [node name="Sprite" parent="Root/压力测试" index="0"]
 texture = SubResource("AtlasTexture_utjr0")
 
-[node name="Boss" parent="Root" index="1" instance=ExtResource("6_rhpqf")]
+[node name="Boss" type="Node2D" parent="Root" index="1"]
 position = Vector2(97, 192)
+script = ExtResource("6_t2oe5")
+sl = SubResource("AtlasTexture_ndar1")
+sm = SubResource("AtlasTexture_r60e3")
+sr = SubResource("AtlasTexture_qlbr4")
+lock_rot = true
 lin_curve = SubResource("Curve_savq6")
 ang_curve = SubResource("Curve_t2oe5")
+metadata/_custom_type_script = ExtResource("8_ckmpx")
 
-[node name="BGM" parent="." index="4"]
+[node name="Sprite" type="Sprite2D" parent="Root/Boss" index="0"]
+texture = SubResource("AtlasTexture_r60e3")
+
+[node name="BGM" parent="." index="5"]
 stream = ExtResource("6_b0w5h")
 
 [editable path="Root/压力测试"]

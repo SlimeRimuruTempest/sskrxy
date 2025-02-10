@@ -46,14 +46,14 @@ atlas = ExtResource("3_i8nd3")
 region = Rect2(369, 96, 117, 211)
 
 [sub_resource type="Curve" id="Curve_by0v0"]
-_limits = [0.0, 80.0, 0.0, 1.0]
-_data = [Vector2(0, 80), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_6dlw0"]
-_limits = [0.0, 360.0, 0.0, 10.0]
-_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(10, 360), 36.0, 0.0, 1, 0]
+_limits = [0.0, 200.0, 0.0, 400.0]
+_data = [Vector2(10, 100), 0.0, 0.0, 0, 0, Vector2(10.001, 0), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_t2oe5"]
+_limits = [0.0, 360.0, 0.0, 400.0]
+_data = [Vector2(0, 0), 0.0, 72.0, 0, 1, Vector2(5, 360), 72.0, -72.0, 1, 1, Vector2(10, 0), -72.0, 0.0, 1, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_huxls"]
 _limits = [0.0, 2500.0, 0.0, 25.0]
@@ -101,16 +101,6 @@ _limits = [0.0, 120.0, 0.0, 9.0]
 _data = [Vector2(0, 0), 0.0, 80.0, 0, 1, Vector2(1.5, 120), 80.0, -60.0, 1, 1, Vector2(3, 30), -60.0, 40.0, 1, 1, Vector2(4.5, 90), 40.0, -30.0, 1, 1, Vector2(6, 45), -30.0, 40.0, 1, 1, Vector2(7.5, 105), 40.0, -30.0, 1, 1, Vector2(9, 60), -30.0, 0.0, 1, 0]
 point_count = 7
 
-[sub_resource type="Curve" id="Curve_ojgjm"]
-_limits = [0.0, 150.0, 0.0, 1.0]
-_data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_i8nd3"]
-_limits = [30.0, 150.0, 0.0, 12.0]
-_data = [Vector2(0, 30), 0.0, 10.0, 0, 1, Vector2(12, 150), 10.0, 0.0, 1, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_nawph"]
 _limits = [0.0, 300.0, 0.0, 10.0]
 _data = [Vector2(0, 300), 0.0, 0.0, 0, 0]
@@ -124,6 +114,16 @@ point_count = 2
 [sub_resource type="AtlasTexture" id="AtlasTexture_khewa"]
 atlas = ExtResource("24_tdcm0")
 region = Rect2(418, 6, 89, 88)
+
+[sub_resource type="Curve" id="Curve_ojgjm"]
+_limits = [0.0, 150.0, 0.0, 1.0]
+_data = [Vector2(0, 150), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_i8nd3"]
+_limits = [30.0, 150.0, 0.0, 12.0]
+_data = [Vector2(0, 30), 0.0, 10.0, 0, 1, Vector2(12, 150), 10.0, 0.0, 1, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_duk4a"]
 _limits = [0.0, 200.0, 0.0, 44.34]
@@ -355,7 +355,7 @@ sm = SubResource("AtlasTexture_r60e3")
 sr = SubResource("AtlasTexture_qlbr4")
 lock_rot = true
 lin_curve = SubResource("Curve_by0v0")
-ang_curve = SubResource("Curve_6dlw0")
+ang_curve = SubResource("Curve_t2oe5")
 metadata/_custom_type_script = ExtResource("4_4405c")
 
 [node name="Sprite" type="Sprite2D" parent="Boss" index="0"]
@@ -423,6 +423,27 @@ z_index = 1
 texture = ExtResource("14_yr0h5")
 
 [node name="DisappearAreaDetector" parent="Boss/loop1/LoopShooter" index="1" instance=ExtResource("5_nawph")]
+
+[node name="4xloop" type="Node2D" parent="Boss/loop1" index="1"]
+script = ExtResource("2_insau")
+show_time = 92.5
+start_time = 0.2
+bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt")])
+bullet_lin_curve = SubResource("Curve_nawph")
+once_num = 12
+once_ang_curve = SubResource("Curve_50ijf")
+shoot_cd = 0.2
+shoot_num = 4
+ori_ang = 30.0
+metadata/_custom_type_script = ExtResource("2_insau")
+
+[node name="Sprite" type="Sprite2D" parent="Boss/loop1/4xloop" index="0"]
+visible = false
+z_index = 1
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_khewa")
+
+[node name="DisappearAreaDetector" parent="Boss/loop1/4xloop" index="1" instance=ExtResource("5_nawph")]
 
 [node name="副歌loop发射器" parent="Boss" index="6" instance=ExtResource("2_h52jr")]
 show_time = 83.5
@@ -972,6 +993,7 @@ visible = false
 
 [connection signal="ready" from="Boss/心跳" to="Boss/心跳" method="_on_ready"]
 [connection signal="ready" from="Boss/loop1/LoopShooter" to="Boss/loop1/LoopShooter" method="_on_ready"]
+[connection signal="ready" from="Boss/loop1/4xloop" to="Boss/loop1/4xloop" method="_on_ready"]
 [connection signal="ready" from="Boss/副歌loop发射器/4xloop" to="Boss/副歌loop发射器/4xloop" method="_on_ready"]
 [connection signal="ready" from="Boss/主歌2/钢琴1" to="Boss/主歌2/钢琴1" method="_on_ready"]
 [connection signal="ready" from="Boss/主歌2/钢琴2" to="Boss/主歌2/钢琴2" method="_on_ready"]
