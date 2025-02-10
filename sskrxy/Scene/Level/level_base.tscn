@@ -124,6 +124,7 @@ stream = ExtResource("8_6efwd")
 bus = &"SFX"
 
 [node name="Blur" type="ColorRect" parent="Layer3/PauseUI"]
+visible = false
 material = SubResource("ShaderMaterial_6efwd")
 layout_mode = 0
 offset_right = 1920.0
@@ -131,6 +132,7 @@ offset_bottom = 1080.0
 mouse_filter = 2
 
 [node name="PauseSprite" type="TextureRect" parent="Layer3/PauseUI"]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -156,6 +158,7 @@ offset_right = 1216.0
 offset_bottom = 634.0
 
 [node name="GameOverSprite" type="TextureRect" parent="Layer3/PauseUI"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

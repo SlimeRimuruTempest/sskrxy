@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wv8wrc12p5g3"]
+[gd_scene load_steps=16 format=3 uid="uid://wv8wrc12p5g3"]
 
 [ext_resource type="PackedScene" uid="uid://b18163ipdt2ox" path="res://Scene/Level/level_base.tscn" id="1_8ypvr"]
 [ext_resource type="PackedScene" uid="uid://bs7idtpfatvw7" path="res://Prefab/shooter.tscn" id="2_h52jr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/SpriteSheet/bullet1.png" id="4_3lyvt"]
 [ext_resource type="PackedScene" uid="uid://c3ph5be25uiah" path="res://Res/Bullet/b_2.tscn" id="4_rhpqf"]
 [ext_resource type="AudioStream" uid="uid://c36xbhfgrmykj" path="res://Audio/BGM/エゴ.mp3" id="6_b0w5h"]
+[ext_resource type="PackedScene" uid="uid://etr7ldym2e43" path="res://Res/Other/boss.tscn" id="6_rhpqf"]
 
 [sub_resource type="Curve" id="Curve_1py4d"]
 _limits = [0.0, 400.0, 0.0, 100.0]
@@ -31,6 +32,16 @@ point_count = 2
 atlas = ExtResource("4_3lyvt")
 region = Rect2(310, 274, 53, 67)
 
+[sub_resource type="Curve" id="Curve_savq6"]
+_limits = [0.0, 80.0, 0.0, 1.0]
+_data = [Vector2(0, 80), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_t2oe5"]
+_limits = [0.0, 360.0, 0.0, 10.0]
+_data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(10, 360), 36.0, 0.0, 1, 0]
+point_count = 2
+
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 game_len = 10.0
 
@@ -50,6 +61,11 @@ ang_curve = SubResource("Curve_50ijf")
 
 [node name="Sprite" parent="Root/压力测试" index="0"]
 texture = SubResource("AtlasTexture_utjr0")
+
+[node name="Boss" parent="Root" index="1" instance=ExtResource("6_rhpqf")]
+position = Vector2(97, 192)
+lin_curve = SubResource("Curve_savq6")
+ang_curve = SubResource("Curve_t2oe5")
 
 [node name="BGM" parent="." index="5"]
 stream = ExtResource("6_b0w5h")
