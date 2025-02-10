@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://3pv8g6u5s3qy"]
+
+[ext_resource type="Texture2D" uid="uid://bgt7vdrx1hi5e" path="res://Art/SpriteSheet/第一关boss.png" id="1_7fbka"]
+
+[resource]
+atlas = ExtResource("1_7fbka")
+region = Rect2(165, 96, 105, 216)
