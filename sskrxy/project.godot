@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="sskrxy"
+config/name="東方夕雁錄"
 run/main_scene="uid://dkb2h8gnjfae8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
@@ -19,7 +19,7 @@ config/icon="uid://dfc6gduij5axo"
 [autoload]
 
 GlobalCanvasLayer="*res://Scene/Global/global_canvas_layer.tscn"
-GlobalManager="*res://Class/global_manager.tscn"
+GlobalManager="*res://Scene/Global/global_manager.tscn"
 
 [debug]
 
@@ -43,7 +43,7 @@ project/assembly_name="sskrxy"
 folder_colors={
 "res://Art/": "orange",
 "res://Audio/": "red",
-"res://Class/": "teal",
+"res://Prefab/": "teal",
 "res://Res/": "yellow",
 "res://Scene/": "blue"
 }

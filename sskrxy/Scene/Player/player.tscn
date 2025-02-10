@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://6hmqde5av0ks"]
+[gd_scene load_steps=15 format=3 uid="uid://6hmqde5av0ks"]
 
 [ext_resource type="Script" uid="uid://ctfxqf8jy68j4" path="res://Scene/Player/player.gd" id="1_67a6e"]
 [ext_resource type="Texture2D" uid="uid://bj2lwyuirhh4q" path="res://Art/SpriteSheet/Player.png" id="2_yic5t"]
+[ext_resource type="Shader" uid="uid://dqrpqert7g7bs" path="res://Art/Shader/blink.gdshader" id="3_g0r71"]
 [ext_resource type="AudioStream" uid="uid://b5gc7ltt24yht" path="res://Audio/SFX/受击.wav" id="3_uuj77"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuj77"]
@@ -15,6 +16,11 @@ region = Rect2(0, 0, 71, 171)
 [sub_resource type="AtlasTexture" id="AtlasTexture_88wa8"]
 atlas = ExtResource("2_yic5t")
 region = Rect2(240, 1, 80, 168)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_88wa8"]
+shader = ExtResource("3_g0r71")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_value = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1qst"]
 
@@ -30,6 +36,44 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="Animation" id="Animation_g0r71"]
+resource_name = "Hit"
+length = 3.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:material:shader_parameter/blink_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2.0, 0.0, 2.0, 0.0, 2.0, 0.0, 2.0, 0.0, 2.0, 0.0, 2.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_88wa8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:material:shader_parameter/blink_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88wa8"]
+_data = {
+&"Hit": SubResource("Animation_g0r71"),
+&"RESET": SubResource("Animation_88wa8")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 motion_mode = 1
@@ -39,6 +83,7 @@ tex_m = SubResource("AtlasTexture_g0r71")
 tex_r = SubResource("AtlasTexture_88wa8")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_88wa8")
 scale = Vector2(0.6, 0.6)
 texture = SubResource("AtlasTexture_g0r71")
 
@@ -53,3 +98,8 @@ texture = SubResource("GradientTexture2D_g0r71")
 [node name="HitSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_uuj77")
 bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_88wa8")
+}

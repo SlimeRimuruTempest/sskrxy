@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dx2glpjjrtrcg"]
 
-[ext_resource type="Script" uid="uid://26daaknnwdb5" path="res://Class/global_manager.gd" id="1_tud6w"]
+[ext_resource type="Script" uid="uid://26daaknnwdb5" path="res://Scene/Global/global_manager.gd" id="1_tud6w"]
 
 [node name="GlobalManager" type="Node"]
 process_mode = 3

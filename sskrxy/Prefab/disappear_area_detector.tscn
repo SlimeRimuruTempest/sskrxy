@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cui2h4b6424kg"]
 
-[ext_resource type="Script" uid="uid://byqnpmumtru8n" path="res://Class/disappear_area_detector.gd" id="1_r8oot"]
+[ext_resource type="Script" uid="uid://byqnpmumtru8n" path="res://Prefab/disappear_area_detector.gd" id="1_r8oot"]
 
 [node name="DisappearDetector" type="Node2D"]
 script = ExtResource("1_r8oot")

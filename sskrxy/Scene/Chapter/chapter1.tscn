@@ -1,8 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://ewp2hrkovssq"]
+[gd_scene load_steps=49 format=3 uid="uid://ewp2hrkovssq"]
 
 [ext_resource type="Texture2D" uid="uid://433gtkpfs01e" path="res://Art/Scene/C1/c1.png" id="1_a2fqw"]
 [ext_resource type="Script" uid="uid://bckim3syuok7i" path="res://Scene/Chapter/chapter_1.gd" id="1_lnugw"]
-[ext_resource type="PackedScene" uid="uid://wv8wrc12p5g3" path="res://Res/Sample/sample.tscn" id="2_5bhq5"]
 [ext_resource type="PackedScene" uid="uid://rspc6iao21u6" path="res://Scene/Chapter/LyricBook/lyric_book.tscn" id="2_uwbfd"]
 [ext_resource type="Texture2D" uid="uid://kyv5ocj51dlo" path="res://Art/Scene/C1/Dialogue/D1.png" id="2_wf4ge"]
 [ext_resource type="Texture2D" uid="uid://dsdtggqah6saa" path="res://Art/Scene/C1/Dialogue/D2.png" id="3_0ukwh"]
@@ -24,13 +23,24 @@
 [ext_resource type="Texture2D" uid="uid://dnl3w8dec7dj3" path="res://Art/LyricBook/エルゴスム/トーチカ.png" id="11_6j0po"]
 [ext_resource type="Texture2D" uid="uid://dgnjtmrecdj07" path="res://Art/LyricBook/エルゴスム/- サーカトーヴォ.png" id="11_kuk0f"]
 [ext_resource type="Texture2D" uid="uid://dytyix8u0prjx" path="res://Art/Scene/C1/Dialogue/D10.png" id="11_v1t0q"]
+[ext_resource type="AudioStream" uid="uid://dime8h0nap1em" path="res://Audio/Voice/この世界のうたは、もう消えそうだ​..wav" id="11_x7dj5"]
+[ext_resource type="AudioStream" uid="uid://cmt0k62yacdi6" path="res://Audio/Voice/今更どうやって歌い続ければいいのでしょう.wav" id="12_rsyhj"]
+[ext_resource type="AudioStream" uid="uid://bef122ggdfedy" path="res://Audio/BGM/エゴ bgm.mp3" id="12_wf4ge"]
 [ext_resource type="Texture2D" uid="uid://7i22aj64awbu" path="res://Art/LyricBook/エルゴスム/- スマートを模索する.png" id="13_6cm64"]
+[ext_resource type="AudioStream" uid="uid://ojby4wunp6hh" path="res://Audio/Voice/返事の無い返事を待つのが嫌だから.wav" id="13_cjpxh"]
 [ext_resource type="Texture2D" uid="uid://c7nfgeyot6svo" path="res://Art/LyricBook/エルゴスム/レプリカ.png" id="13_kuk0f"]
+[ext_resource type="AudioStream" uid="uid://cekbtox035rqf" path="res://Audio/Voice/くだらない質問投げつけていたの..wav" id="14_v8fem"]
+[ext_resource type="AudioStream" uid="uid://b0ul76j1iete7" path="res://Audio/Voice/マスター…行かないで…​.wav" id="15_4okjs"]
 [ext_resource type="Texture2D" uid="uid://su5h5lkjmfsg" path="res://Art/LyricBook/エルゴスム/- トーチカ.png" id="15_8mex3"]
 [ext_resource type="Texture2D" uid="uid://cth77b8trberf" path="res://Art/LyricBook/エルゴスム/或る街のギギ.png" id="15_n3b6e"]
+[ext_resource type="AudioStream" uid="uid://d00kp3wxf8nbw" path="res://Audio/Voice/全ては戻れなかった。夢も消えちゃった。それなのに、目が覚めないの.wav" id="16_kc1sy"]
 [ext_resource type="Texture2D" uid="uid://dnegaug736uce" path="res://Art/LyricBook/エルゴスム/- レプリカ.png" id="17_0ukwh"]
+[ext_resource type="AudioStream" uid="uid://cucoxwk4uqyqh" path="res://Audio/Voice/その答えはわかっているのに….wav" id="17_wgxhh"]
 [ext_resource type="Texture2D" uid="uid://uuqjcw40o120" path="res://Art/LyricBook/エルゴスム/阿呆なるものは.png" id="18_0ukwh"]
+[ext_resource type="AudioStream" uid="uid://bwi75r27rp2ha" path="res://Audio/Voice/君はもう…いないだろう..wav" id="18_ogrta"]
+[ext_resource type="AudioStream" uid="uid://dhxxaoedbhtj5" path="res://Audio/Voice/でも私、あなたの声を聞きたいと思ってる.wav" id="19_h3h0o"]
 [ext_resource type="Texture2D" uid="uid://cpy325mxhdggr" path="res://Art/LyricBook/エルゴスム/- 或る街のギギ.png" id="19_wrgwr"]
+[ext_resource type="AudioStream" uid="uid://drtgr1taeum81" path="res://Audio/Voice/答えよ、マスター.wav" id="20_x7dj5"]
 [ext_resource type="Texture2D" uid="uid://f773f112dnww" path="res://Art/Scene/C1/p1.png" id="21_uu4i1"]
 [ext_resource type="Texture2D" uid="uid://by8io43dp8ktv" path="res://Art/Scene/C1/p2.png" id="22_5bhq5"]
 [ext_resource type="Texture2D" uid="uid://des0c51q2ljl7" path="res://Art/LyricBook/エルゴスム/- 阿呆なるものは.png" id="22_elaay"]
@@ -138,7 +148,15 @@ animations = [{
 [node name="Chapter1" type="Node2D"]
 script = ExtResource("1_lnugw")
 dialogue_tex = Array[Texture2D]([ExtResource("2_wf4ge"), ExtResource("3_0ukwh"), ExtResource("4_wrgwr"), ExtResource("5_elaay"), ExtResource("6_6yi7t"), ExtResource("7_0hvb1"), ExtResource("8_jeb21"), ExtResource("9_ytnsm"), ExtResource("10_so0ql")])
-nts = ExtResource("2_5bhq5")
+dialogue_voice = Array[AudioStream]([ExtResource("11_x7dj5"), ExtResource("12_rsyhj"), ExtResource("13_cjpxh"), ExtResource("14_v8fem"), ExtResource("15_4okjs"), ExtResource("16_kc1sy"), ExtResource("17_wgxhh"), ExtResource("18_ogrta"), ExtResource("19_h3h0o"), ExtResource("20_x7dj5")])
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_wf4ge")
+autoplay = true
+bus = &"BGM"
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+bus = &"Voice"
 
 [node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_a2fqw")

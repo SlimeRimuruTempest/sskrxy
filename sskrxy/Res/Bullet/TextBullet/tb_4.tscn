@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://epai3oy233y8"]
+
+[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Prefab/bullet.tscn" id="1_viqdv"]
+[ext_resource type="Texture2D" uid="uid://fsr6ljud1440" path="res://Art/SpriteSheet/texturebullet.png" id="2_bbjw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8but"]
+atlas = ExtResource("2_bbjw0")
+region = Rect2(0, 581, 1668, 185)
+
+[node name="TB4" instance=ExtResource("1_viqdv")]
+disposable = false
+
+[node name="Sprite" parent="." index="0"]
+texture = SubResource("AtlasTexture_p8but")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/BulletArea" index="0"]
+polygon = PackedVector2Array(-336, -80, -74, -81, -75, -44, -34, -3, -17, 0, -8, -81, 339, -75, 354, -54, 339, -20, 269, -15, 282, 32, 263, 79, -269, 78, -318, 69, -320, 54, -282, 52, -280, 27, -249, -9, -333, -10, -387, -21, -386, -37, -341, -36)
