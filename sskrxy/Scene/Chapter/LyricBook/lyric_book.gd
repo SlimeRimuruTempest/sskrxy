@@ -8,11 +8,15 @@ extends Node2D
 @onready var click: AudioStreamPlayer = $Click
 @onready var close: AudioStreamPlayer = $Close
 
+var disabled: bool = false
 
 signal book_pressed
 signal book_closed
 
 func _on_texture_button_pressed() -> void:
+	if disabled:
+		return
+	disabled = true
 	GlobalCanvasLayer.set_mouse_disabled(true)
 	animation_player.play("fade in")
 	await animation_player.animation_finished

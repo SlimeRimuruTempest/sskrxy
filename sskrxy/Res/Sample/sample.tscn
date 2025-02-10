@@ -43,7 +43,7 @@ _data = [Vector2(0, 0), 0.0, 36.0, 0, 1, Vector2(10, 360), 36.0, 0.0, 1, 0]
 point_count = 2
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
-game_len = 10.0
+game_len = 30.0
 
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(0, 176)
@@ -55,6 +55,7 @@ once_num = 6
 once_ang_curve = SubResource("Curve_rhpqf")
 shoot_cd = 0.1
 shoot_num = 600
+bullet_follow_mum = true
 lock_rot = true
 lin_curve = SubResource("Curve_nawph")
 ang_curve = SubResource("Curve_50ijf")

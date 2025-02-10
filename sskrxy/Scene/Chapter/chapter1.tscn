@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://dytyix8u0prjx" path="res://Art/Scene/C1/Dialogue/D10.png" id="11_v1t0q"]
 [ext_resource type="AudioStream" uid="uid://dime8h0nap1em" path="res://Audio/Voice/この世界のうたは、もう消えそうだ​..wav" id="11_x7dj5"]
 [ext_resource type="AudioStream" uid="uid://cmt0k62yacdi6" path="res://Audio/Voice/今更どうやって歌い続ければいいのでしょう.wav" id="12_rsyhj"]
-[ext_resource type="AudioStream" uid="uid://bef122ggdfedy" path="res://Audio/BGM/エゴ bgm.mp3" id="12_wf4ge"]
 [ext_resource type="Texture2D" uid="uid://7i22aj64awbu" path="res://Art/LyricBook/エルゴスム/- スマートを模索する.png" id="13_6cm64"]
 [ext_resource type="AudioStream" uid="uid://ojby4wunp6hh" path="res://Audio/Voice/返事の無い返事を待つのが嫌だから.wav" id="13_cjpxh"]
 [ext_resource type="Texture2D" uid="uid://c7nfgeyot6svo" path="res://Art/LyricBook/エルゴスム/レプリカ.png" id="13_kuk0f"]
@@ -42,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://cpy325mxhdggr" path="res://Art/LyricBook/エルゴスム/- 或る街のギギ.png" id="19_wrgwr"]
 [ext_resource type="AudioStream" uid="uid://drtgr1taeum81" path="res://Audio/Voice/答えよ、マスター.wav" id="20_x7dj5"]
 [ext_resource type="Texture2D" uid="uid://f773f112dnww" path="res://Art/Scene/C1/p1.png" id="21_uu4i1"]
+[ext_resource type="AudioStream" uid="uid://dkos4t23fny6m" path="res://Audio/BGM/エゴbgm.wav" id="21_v1t0q"]
 [ext_resource type="Texture2D" uid="uid://by8io43dp8ktv" path="res://Art/Scene/C1/p2.png" id="22_5bhq5"]
 [ext_resource type="Texture2D" uid="uid://des0c51q2ljl7" path="res://Art/LyricBook/エルゴスム/- 阿呆なるものは.png" id="22_elaay"]
 
@@ -149,9 +149,10 @@ animations = [{
 script = ExtResource("1_lnugw")
 dialogue_tex = Array[Texture2D]([ExtResource("2_wf4ge"), ExtResource("3_0ukwh"), ExtResource("4_wrgwr"), ExtResource("5_elaay"), ExtResource("6_6yi7t"), ExtResource("7_0hvb1"), ExtResource("8_jeb21"), ExtResource("9_ytnsm"), ExtResource("10_so0ql")])
 dialogue_voice = Array[AudioStream]([ExtResource("11_x7dj5"), ExtResource("12_rsyhj"), ExtResource("13_cjpxh"), ExtResource("14_v8fem"), ExtResource("15_4okjs"), ExtResource("16_kc1sy"), ExtResource("17_wgxhh"), ExtResource("18_ogrta"), ExtResource("19_h3h0o"), ExtResource("20_x7dj5")])
+nts = "uid://wv8wrc12p5g3"
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_wf4ge")
+stream = ExtResource("21_v1t0q")
 autoplay = true
 bus = &"BGM"
 

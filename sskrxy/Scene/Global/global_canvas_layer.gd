@@ -11,13 +11,26 @@ func _ready() -> void:
 	front_color_rect.modulate.a = 0.0
 	set_mouse_disabled(false)
 
-func change_scene(p: PackedScene):
+func change_scene_to_file(path: String):
 	front_color_rect.show()
 	var tween: = create_tween()
 	tween.tween_property(front_color_rect, "modulate:a", 1, 0.5).from(0)
 	await tween.finished
 	get_tree().paused = false
-	get_tree().change_scene_to_packed(p)
+	get_tree().change_scene_to_file(path)
+	await get_tree().tree_changed
+	tween = create_tween()
+	tween.tween_property(front_color_rect, "modulate:a", 0, 0.5).from(1)
+	await tween.finished
+	front_color_rect.hide()
+
+func change_scene(ps: PackedScene):
+	front_color_rect.show()
+	var tween: = create_tween()
+	tween.tween_property(front_color_rect, "modulate:a", 1, 0.5).from(0)
+	await tween.finished
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(ps)
 	await get_tree().tree_changed
 	tween = create_tween()
 	tween.tween_property(front_color_rect, "modulate:a", 0, 0.5).from(1)

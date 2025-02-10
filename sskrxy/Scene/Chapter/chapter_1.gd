@@ -11,7 +11,7 @@ var book_cnt: int = 0
 @export var dialogue_tex: Array[Texture2D]
 @export var dialogue_voice: Array[AudioStream]
 
-var nts: PackedScene = preload("res://Res/Sample/sample.tscn")
+@export_file("*tscn") var nts: String
 
 func _ready() -> void:
 	dialogue_sprite.modulate.a = 0
@@ -69,4 +69,4 @@ func _on_ego_gui_input(event: InputEvent) -> void:
 		#await tween.finished
 		#ego.hide()
 		await get_tree().create_timer(0.3, false).timeout
-		GlobalCanvasLayer.change_scene(nts)
+		GlobalCanvasLayer.change_scene_to_file(nts)
