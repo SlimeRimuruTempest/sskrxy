@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	var tween: = create_tween()
-	tween.tween_property(self, "modulate", 1, show_cost).from(0)
+	tween.tween_property(self, "modulate:a", 1, show_cost).from(0)
