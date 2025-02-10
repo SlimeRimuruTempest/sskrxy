@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgt7vdrx1hi5e"
-path="res://.godot/imported/第一关boss.png-9817f2a406a6d0110910a5013fd3fd68.ctex"
+uid="uid://cy0komeq1eyxk"
+path="res://.godot/imported/Thank.png-04993d93d26923f6bad9960db47e9e10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/SpriteSheet/第一关boss.png"
-dest_files=["res://.godot/imported/第一关boss.png-9817f2a406a6d0110910a5013fd3fd68.ctex"]
+source_file="res://Art/Scene/StartScene/Thank.png"
+dest_files=["res://.godot/imported/Thank.png-04993d93d26923f6bad9960db47e9e10.ctex"]
 
 [params]
 

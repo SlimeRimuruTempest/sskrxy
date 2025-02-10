@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkb2h8gnjfae8"]
+[gd_scene load_steps=15 format=3 uid="uid://dkb2h8gnjfae8"]
 
 [ext_resource type="Script" uid="uid://c17mfb3r5dlpt" path="res://Scene/StartScene/start_scene.gd" id="1_63fgh"]
 [ext_resource type="Texture2D" uid="uid://dhi7u1r6cl0c" path="res://Art/Scene/StartScene/BG1.png" id="1_o3q03"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bdlo68k5qe8a0" path="res://Art/Scene/StartScene/Title.png" id="7_p5kcj"]
 [ext_resource type="Texture2D" uid="uid://chidtxm4821sl" path="res://Art/Scene/StartScene/- start game -.png" id="8_cea66"]
 [ext_resource type="AudioStream" uid="uid://bxvts4bcq6ygp" path="res://Audio/SFX/start.mp3" id="10_jeevi"]
+[ext_resource type="Texture2D" uid="uid://cy0komeq1eyxk" path="res://Art/Scene/StartScene/Thank.png" id="11_6oqjc"]
 
 [sub_resource type="Animation" id="Animation_63fgh"]
 length = 0.001
@@ -265,4 +266,23 @@ centered = false
 stream = ExtResource("10_jeevi")
 bus = &"SFX"
 
+[node name="ThankRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("11_6oqjc")
+
+[node name="ThankButton" type="Button" parent="ThankRect"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -97.0
+offset_top = 17.0
+offset_right = -16.0
+offset_bottom = 98.0
+grow_horizontal = 0
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ThankRect/ThankButton" to="." method="_on_thank_button_pressed"]

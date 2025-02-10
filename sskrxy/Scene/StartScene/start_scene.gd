@@ -4,6 +4,8 @@ extends Control
 
 @onready var start_game: Sprite2D = $StartGame
 @onready var start_sfx: AudioStreamPlayer = $StartSFX
+@onready var thank_rect: TextureRect = $ThankRect
+
 
 var can_accept: bool = false
 
@@ -14,6 +16,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			GlobalCanvasLayer.change_scene(nts)
 
 func _ready() -> void:
+	if GlobalManager.game_mode == 1:
+		thank_rect.show()
+	else:
+		thank_rect.hide()
 	start_game.hide()
 	await get_tree().create_timer(2.6, false).timeout
 	start_game.show()
@@ -29,3 +35,7 @@ func _on_start_button_pressed() -> void:
 		start_sfx.play()
 		await get_tree().create_timer(1.0, false).timeout
 		GlobalCanvasLayer.change_scene(nts)
+
+
+func _on_thank_button_pressed() -> void:
+	thank_rect.hide()
