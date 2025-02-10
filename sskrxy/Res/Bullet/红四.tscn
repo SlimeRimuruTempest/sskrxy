@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://m73nud1fgd1g"]
+
+[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Prefab/bullet.tscn" id="1_pf25v"]
+[ext_resource type="Texture2D" uid="uid://cfktwgpb8aojr" path="res://Art/SpriteSheet/bullet1.png" id="2_1lgk7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5hqc"]
+atlas = ExtResource("2_1lgk7")
+region = Rect2(20, 165, 43, 97)
+
+[node name="红四" instance=ExtResource("1_pf25v")]
+
+[node name="Sprite" parent="." index="0"]
+texture = SubResource("AtlasTexture_j5hqc")

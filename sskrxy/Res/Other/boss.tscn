@@ -50,6 +50,7 @@ sm = ExtResource("3_qlbr4")
 sr = ExtResource("4_kle4l")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

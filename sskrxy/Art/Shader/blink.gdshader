@@ -7,4 +7,3 @@ void fragment() {
 	vec4 color = texture(TEXTURE, UV);
 	COLOR = mix(color, blink_color, blink_value * color.a);
 }
-
