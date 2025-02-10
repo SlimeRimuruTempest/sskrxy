@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du2l3pqwsnn63"]
 
 [ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Prefab/bullet.tscn" id="1_rii1o"]
-[ext_resource type="Texture2D" uid="uid://fsr6ljud1440" path="res://Art/SpriteSheet/texturebullet.png" id="2_ooyde"]
+[ext_resource type="Texture2D" uid="uid://fsr6ljud1440" path="res://Art/SpriteSheet/textbullet2.png" id="2_ooyde"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgvrt"]
 atlas = ExtResource("2_ooyde")

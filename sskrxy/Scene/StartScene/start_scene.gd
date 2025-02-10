@@ -6,7 +6,6 @@ extends Control
 @onready var start_sfx: AudioStreamPlayer = $StartSFX
 @onready var thank_rect: TextureRect = $ThankRect
 
-
 var can_accept: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:

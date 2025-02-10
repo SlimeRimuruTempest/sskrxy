@@ -33,6 +33,7 @@ window/size/always_on_top=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://dfc6gduij5axo"
 
 [dotnet]
 
