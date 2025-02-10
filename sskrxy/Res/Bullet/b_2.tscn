@@ -1,14 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ph5be25uiah"]
+[gd_scene load_steps=4 format=3 uid="uid://c3ph5be25uiah"]
 
-[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Class/bullet.tscn" id="1_j4wq4"]
+[ext_resource type="PackedScene" uid="uid://c8uj7em4cuuis" path="res://Prefab/bullet.tscn" id="1_j4wq4"]
 [ext_resource type="Texture2D" uid="uid://bolxei7i3x8lb" path="res://Art/SpriteSheet/bullet2.png" id="2_g17pf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_73uhh"]
 atlas = ExtResource("2_g17pf")
 region = Rect2(527, 106, 72, 91)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j4wq4"]
-radius = 5.0
 
 [node name="B2" instance=ExtResource("1_j4wq4")]
 sprite_rot_off = 90.0
@@ -16,6 +13,3 @@ sprite_rot_off = 90.0
 [node name="Sprite" parent="." index="0"]
 scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_73uhh")
-
-[node name="CollisionShape2D" parent="BulletArea" index="0"]
-shape = SubResource("CircleShape2D_j4wq4")
