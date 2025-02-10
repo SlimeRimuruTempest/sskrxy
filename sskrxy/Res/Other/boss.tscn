@@ -17,6 +17,7 @@ atlas = ExtResource("2_qhl5a")
 region = Rect2(369, 96, 117, 211)
 
 [node name="Boss" type="Node2D"]
+z_index = 2
 script = ExtResource("1_ahmox")
 sl = SubResource("AtlasTexture_ndar1")
 sm = SubResource("AtlasTexture_r60e3")
