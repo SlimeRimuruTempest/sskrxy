@@ -15,17 +15,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	start_game.hide()
-	await get_tree().create_timer(2.6).timeout
+	await get_tree().create_timer(2.6, false).timeout
 	start_game.show()
 	var tween: Tween = start_game.create_tween().set_loops()
 	tween.tween_property(start_game, "modulate:a", 1, 0.6).from(0.2)
 	tween.tween_property(start_game, "modulate:a", 0.2, 0.6).from(1)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	can_accept = true
 
 func _on_start_button_pressed() -> void:
 	if can_accept:
 		can_accept = false
 		start_sfx.play()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.0, false).timeout
 		GlobalCanvasLayer.change_scene(nts)

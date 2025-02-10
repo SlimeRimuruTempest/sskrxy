@@ -78,12 +78,12 @@ func shoot_once():
 		bullet.ang_curve = bullet_ang_curve
 
 func shoot():
-	await get_tree().create_timer(start_time).timeout
+	await get_tree().create_timer(start_time, false).timeout
 	for i in shoot_num:
 		await shoot_once()
 		if shoot_cd > 0.0:
-			await get_tree().create_timer(shoot_cd).timeout
-	await get_tree().create_timer(end_time).timeout
+			await get_tree().create_timer(shoot_cd, false).timeout
+	await get_tree().create_timer(end_time, false).timeout
 	delete()
 
 func delete():
@@ -94,6 +94,6 @@ func delete():
 
 func _on_ready() -> void:
 	hide()
-	await get_tree().create_timer(show_time).timeout
+	await get_tree().create_timer(show_time, false).timeout
 	show()
 	shoot()

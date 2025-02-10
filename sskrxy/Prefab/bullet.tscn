@@ -10,6 +10,7 @@ metadata/_custom_type_script = ExtResource("1_7sn2a")
 [node name="Sprite" type="Sprite2D" parent="."]
 
 [node name="BulletArea" type="Area2D" parent="Sprite"]
+process_mode = 1
 collision_layer = 2
 
 [node name="DisappearAreaDetector" parent="." instance=ExtResource("2_fpni1")]

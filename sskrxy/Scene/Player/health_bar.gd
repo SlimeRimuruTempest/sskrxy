@@ -4,4 +4,5 @@ extends TextureProgressBar
 
 func _on_player_health_updated(current_health: float, max_health: float) -> void:
 	value = current_health / max_health
-	animation_player.play("blink")
+	if value < 1:
+		animation_player.play("blink")

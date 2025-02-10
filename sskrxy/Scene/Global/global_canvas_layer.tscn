@@ -22,6 +22,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer10" type="CanvasLayer" parent="."]
+layer = 10
 
 [node name="FrontColorRect" type="ColorRect" parent="CanvasLayer10"]
 anchors_preset = 15

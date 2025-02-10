@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cui2h4b6424kg" path="res://Prefab/disappear_area_detector.tscn" id="2_kieh3"]
 
 [node name="Shooter" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_rc0l3")
 metadata/_custom_type_script = ExtResource("1_rc0l3")
 

@@ -54,5 +54,5 @@ func _on_ego_gui_input(event: InputEvent) -> void:
 		#tween.tween_property(ego, "modulate:a", 0, 0.6).from(1)
 		#await tween.finished
 		#ego.hide()
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.3, false).timeout
 		GlobalCanvasLayer.change_scene(nts)

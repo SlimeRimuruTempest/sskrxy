@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh4n1bsfc3elx"]
+[gd_scene load_steps=11 format=3 uid="uid://bh4n1bsfc3elx"]
 
 [ext_resource type="Shader" uid="uid://dqrpqert7g7bs" path="res://Art/Shader/blink.gdshader" id="1_g25ml"]
 [ext_resource type="Texture2D" uid="uid://birjjg823wxbx" path="res://Art/SpriteSheet/healthbar2.png" id="1_id2oa"]
@@ -8,7 +8,15 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jot0c"]
 shader = ExtResource("1_g25ml")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
-shader_parameter/blink_value = 2.0
+shader_parameter/blink_value = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g25ml"]
+atlas = ExtResource("1_id2oa")
+region = Rect2(174, 34, 479, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jot0c"]
+atlas = ExtResource("2_g25ml")
+region = Rect2(174, 33, 479, 74)
 
 [sub_resource type="Animation" id="Animation_ihptm"]
 resource_name = "blink"
@@ -62,7 +70,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.0]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wf232"]
@@ -74,12 +82,17 @@ _data = {
 [node name="HealthBar" type="TextureProgressBar" node_paths=PackedStringArray("animation_player")]
 texture_filter = 1
 material = SubResource("ShaderMaterial_jot0c")
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -239.5
+offset_right = 239.5
+offset_bottom = 74.0
+grow_horizontal = 2
 max_value = 1.0
 step = 0.0
-texture_under = ExtResource("1_id2oa")
-texture_progress = ExtResource("2_g25ml")
+texture_under = SubResource("AtlasTexture_g25ml")
+texture_progress = SubResource("AtlasTexture_jot0c")
 script = ExtResource("3_jot0c")
 animation_player = NodePath("AnimationPlayer")
 

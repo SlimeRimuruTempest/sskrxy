@@ -6,6 +6,7 @@
 [sub_resource type="Curve" id="Curve_xajes"]
 
 [node name="NodeSTG" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_xajes")
 lin_curve = SubResource("Curve_xajes")
 metadata/_custom_type_script = ExtResource("1_xajes")

@@ -14,6 +14,8 @@ class_name PlayerBody
 
 signal health_updated(current_health: float, max_health: float)
 
+signal game_over
+
 @export var max_health: int = 5:
 	set(v):
 		max_health = v
@@ -40,8 +42,8 @@ func get_damage(value: int):
 	current_health -= value
 	if current_health == 0:
 		wudi = true
-		await get_tree().create_timer(0.3).timeout
-		GlobalCanvasLayer.reload_current_scene()
+		await get_tree().create_timer(0.3, false).timeout
+		game_over.emit()
 	else:
 		wudi = true
 		await animation_player.animation_finished

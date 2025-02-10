@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b18163ipdt2ox"]
+[gd_scene load_steps=16 format=3 uid="uid://b18163ipdt2ox"]
 
 [ext_resource type="Script" uid="uid://d0nqx65taq3w2" path="res://Scene/Level/bg.gd" id="2_kblds"]
 [ext_resource type="Texture2D" uid="uid://cidhrn43333cg" path="res://Art/Scene/L1/BGN.png" id="2_yy3y6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://dejval1hdjjji" path="res://Art/Shader/gblur.gdshader" id="8_kblds"]
 [ext_resource type="Texture2D" uid="uid://dw1dvhisudyc5" path="res://Art/Scene/L1/Pause.png" id="8_yy3y6"]
 [ext_resource type="PackedScene" uid="uid://bh4n1bsfc3elx" path="res://Scene/Player/health_bar.tscn" id="9_6efwd"]
+[ext_resource type="Texture2D" uid="uid://na30atklps7u" path="res://Art/Scene/L1/Over.png" id="9_qomqd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6efwd"]
 shader = ExtResource("8_kblds")
@@ -105,7 +106,6 @@ layer = 3
 
 [node name="PauseUI" type="Control" parent="Layer3"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,6 +114,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("5_kblds")
+
+[node name="PauseSFX" type="AudioStreamPlayer" parent="Layer3/PauseUI"]
+stream = ExtResource("8_6efwd")
+bus = &"SFX"
 
 [node name="Blur" type="ColorRect" parent="Layer3/PauseUI"]
 material = SubResource("ShaderMaterial_6efwd")
@@ -147,22 +151,34 @@ offset_top = 443.0
 offset_right = 1216.0
 offset_bottom = 634.0
 
-[node name="PauseSFX" type="AudioStreamPlayer" parent="Layer3/PauseUI"]
-stream = ExtResource("8_6efwd")
-bus = &"SFX"
+[node name="GameOverSprite" type="TextureRect" parent="Layer3/PauseUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_qomqd")
+
+[node name="RestartButton" type="Button" parent="Layer3/PauseUI/GameOverSprite"]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 59.0
+offset_right = 96.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Layer4" type="CanvasLayer" parent="."]
 layer = 4
 
 [node name="HealthBar" parent="Layer4" instance=ExtResource("9_6efwd")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -239.5
 offset_top = 20.0
-offset_right = 239.5
 offset_bottom = 93.0
-grow_horizontal = 2
 
 [node name="TeachSprite" type="Sprite2D" parent="Layer4"]
 modulate = Color(1, 1, 1, 0)
@@ -175,6 +191,8 @@ libraries = {
 }
 autoplay = "show_teach"
 
+[connection signal="game_over" from="Player" to="Layer3/PauseUI" method="_on_player_game_over"]
 [connection signal="health_updated" from="Player" to="Layer4/HealthBar" method="_on_player_health_updated"]
 [connection signal="pressed" from="Layer3/PauseUI/PauseSprite/RestartButton" to="Layer3/PauseUI" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Layer3/PauseUI/PauseSprite/ContinueButton" to="Layer3/PauseUI" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Layer3/PauseUI/GameOverSprite/RestartButton" to="Layer3/PauseUI" method="_on_restart_button_pressed"]
