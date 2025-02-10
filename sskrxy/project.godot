@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="sskrxy"
+config/name="東方夕雁錄"
 run/main_scene="uid://dkb2h8gnjfae8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false

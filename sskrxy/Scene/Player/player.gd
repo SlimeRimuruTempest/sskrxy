@@ -4,6 +4,7 @@ class_name PlayerBody
 @onready var player_sprite: Sprite2D = $PlayerSprite
 @onready var point: Sprite2D = $Point
 @onready var hit_sfx: AudioStreamPlayer = $HitSFX
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var wudi: bool = false
 
@@ -35,11 +36,16 @@ func get_damage(value: int):
 	if wudi:
 		return
 	hit_sfx.play()
+	animation_player.play("Hit")
 	current_health -= value
 	if current_health == 0:
 		wudi = true
 		await get_tree().create_timer(0.3).timeout
 		GlobalCanvasLayer.reload_current_scene()
+	else:
+		wudi = true
+		await animation_player.animation_finished
+		wudi = false
 
 func _ready() -> void:
 	current_health = max_health

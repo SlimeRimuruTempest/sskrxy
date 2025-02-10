@@ -33,9 +33,6 @@ region = Rect2(310, 274, 53, 67)
 
 [node name="Sample" instance=ExtResource("1_8ypvr")]
 
-[node name="Player" parent="." index="2"]
-wudi = true
-
 [node name="压力测试" parent="Root" index="0" instance=ExtResource("2_h52jr")]
 position = Vector2(0, 176)
 bullet_pool = Array[PackedScene]([ExtResource("3_3lyvt"), ExtResource("4_utjr0")])

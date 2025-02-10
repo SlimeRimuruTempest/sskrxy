@@ -16,6 +16,7 @@ func change_scene(p: PackedScene):
 	var tween: = create_tween()
 	tween.tween_property(front_color_rect, "modulate:a", 1, 0.5).from(0)
 	await tween.finished
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(p)
 	await get_tree().tree_changed
 	tween = create_tween()
@@ -28,6 +29,7 @@ func reload_current_scene():
 	var tween: = create_tween()
 	tween.tween_property(front_color_rect, "modulate:a", 1, 0.5).from(0)
 	await tween.finished
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 	await get_tree().tree_changed
 	tween = create_tween()
