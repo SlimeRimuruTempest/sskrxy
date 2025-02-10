@@ -7,6 +7,9 @@ extends NodeSTG
 
 func _physics_process(delta: float) -> void:
 	super(delta)
+	if abs(lin) <= 10:
+		sprite.texture = sm
+		return
 	var dir: Vector2 = get_dir(ang)
 	if dir.x < 0:
 		sprite.texture = sl
