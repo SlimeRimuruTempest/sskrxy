@@ -1,19 +1,15 @@
-extends NodeSTG
+extends Sprite2D
 
 @export var sl: Texture2D
 @export var sm: Texture2D
 @export var sr: Texture2D
+@export var wait_time: float
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var timer: Timer = $Timer
 
-func _physics_process(delta: float) -> void:
-	super(delta)
-	if abs(lin) <= 10:
-		sprite.texture = sm
-		return
-	var dir: Vector2 = get_dir(ang)
-	if dir.x < 0:
-		sprite.texture = sl
-	elif dir.x > 0:
-		sprite.texture = sr
-	else:
-		sprite.texture = sm
+func _ready() -> void:
+	timer.start(wait_time)
+
+func _on_timer_timeout() -> void:
+	animation_player.play("move")
